@@ -70,9 +70,9 @@ CREATE TABLE assessments (
   FOREIGN KEY (student_id, school_year) REFERENCES enrollment(student_id, school_year),
   UNIQUE (student_id, school_year, subject, "window"),
   CHECK (subject IN ('Math','Reading')),
-  CHECK (window IN ('Fall','Spring')),
+  CHECK ("window" IN ('Fall','Spring')),
   CHECK (score BETWEEN 200 AND 800),
-  CHECK ((score IS NULL AND performance_level IS NULL) OR (score IS NOT NULL AND performance_level = CASE WHEN score >= 570 THEN 'Advanced' WHEN score >= 510 THEN 'Proficient' WHEN score >= 450 THEN 'Developing' ELSE 'Beginning' END))
+  CHECK ((score IS NULL AND performance_level IS NULL) OR (score IS NOT NULL AND performance_level IS NOT NULL AND performance_level = CASE WHEN score >= 570 THEN 'Advanced' WHEN score >= 510 THEN 'Proficient' WHEN score >= 450 THEN 'Developing' ELSE 'Beginning' END))
 );
 CREATE TABLE course_grades (
   "student_id" text NOT NULL,

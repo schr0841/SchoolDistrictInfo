@@ -15,7 +15,7 @@ CHECKS={
  'school_years':['end_date > start_date','instructional_days = 180'],
  'enrollment':['grade_level BETWEEN 0 AND 12'],
  'attendance_monthly':['membership_days > 0','present_days >= 0','excused_absent_days >= 0','unexcused_absent_days >= 0','present_days + excused_absent_days + unexcused_absent_days = membership_days','tardy_days BETWEEN 0 AND present_days'],
- 'assessments':["subject IN ('Math','Reading')","window IN ('Fall','Spring')",'score BETWEEN 200 AND 800',"(score IS NULL AND performance_level IS NULL) OR (score IS NOT NULL AND performance_level = CASE WHEN score >= 570 THEN 'Advanced' WHEN score >= 510 THEN 'Proficient' WHEN score >= 450 THEN 'Developing' ELSE 'Beginning' END)"],
+ 'assessments':["subject IN ('Math','Reading')",'"window" IN (\'Fall\',\'Spring\')','score BETWEEN 200 AND 800',"(score IS NULL AND performance_level IS NULL) OR (score IS NOT NULL AND performance_level IS NOT NULL AND performance_level = CASE WHEN score >= 570 THEN 'Advanced' WHEN score >= 510 THEN 'Proficient' WHEN score >= 450 THEN 'Developing' ELSE 'Beginning' END)"],
  'course_grades':['semester IN (1,2)','percent_grade BETWEEN 0 AND 100','credits_attempted IN (0,0.5)','credits_earned = CASE WHEN percent_grade >= 60 THEN credits_attempted ELSE 0 END'],
  'interventions':['end_date >= start_date','planned_sessions > 0','attended_sessions BETWEEN 0 AND planned_sessions','cost >= 0'],
  'discipline_incidents':['suspension_days BETWEEN 0 AND 3'],
