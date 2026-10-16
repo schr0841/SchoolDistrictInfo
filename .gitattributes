@@ -1,0 +1,3 @@
+# Preserve generated CSV bytes across operating systems for manifest hashes.
+* text=auto
+data/*.csv -text
