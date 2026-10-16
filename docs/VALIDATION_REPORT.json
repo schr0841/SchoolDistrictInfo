@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "checks": [
+    "SHA-256 and row counts",
+    "all primary keys, foreign keys, NOT NULL and CHECK constraints",
+    "complete 180-day attendance",
+    "month belongs to enrolled year",
+    "assessment grade eligibility",
+    "course grade eligibility",
+    "school level consistency",
+    "survey grade eligibility",
+    "program dates within year",
+    "incident dates within year",
+    "assessment completeness",
+    "course completeness"
+  ],
+  "rows": {
+    "schools": 30,
+    "students": 20000,
+    "school_years": 3,
+    "enrollment": 60000,
+    "attendance_monthly": 540000,
+    "assessments": 145444,
+    "course_grades": 261792,
+    "interventions": 14844,
+    "discipline_incidents": 6261,
+    "staffing": 360,
+    "finance": 450,
+    "survey_responses": 30471
+  },
+  "total_csv_rows": 1079655,
+  "engine": "Python standard library + SQLite; PostgreSQL execution not performed"
+}

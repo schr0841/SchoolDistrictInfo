@@ -1,0 +1,43 @@
+name: Validate synthetic district data
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_DB: schooldistrictinfo
+          POSTGRES_USER: analyst
+          POSTGRES_PASSWORD: synthetic_ci_only
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      PGHOST: localhost
+      PGPORT: 5432
+      PGUSER: analyst
+      PGPASSWORD: synthetic_ci_only
+      PGDATABASE: schooldistrictinfo
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Validate CSV integrity and business rules
+        run: python scripts/validate_data.py
+      - name: Install PostgreSQL client
+        run: sudo apt-get update && sudo apt-get install -y postgresql-client
+      - name: Execute PostgreSQL schema, imports, views, and starter queries
+        run: |
+          psql -X -v ON_ERROR_STOP=1 -f sql/01_schema.sql
+          psql -X -v ON_ERROR_STOP=1 -f sql/02_load.sql
+          psql -X -v ON_ERROR_STOP=1 -f sql/03_analytics_views.sql
+          psql -X -v ON_ERROR_STOP=1 -f sql/04_starter_queries.sql
+          psql -X -v ON_ERROR_STOP=1 -f sql/05_validation.sql
