@@ -1,0 +1,59 @@
+{
+  "seed": 20261016,
+  "students": 20000,
+  "years": [
+    "2023-24",
+    "2024-25",
+    "2025-26"
+  ],
+  "files": {
+    "schools.csv": {
+      "rows": 30,
+      "sha256": "b66d11552894d045ae9154387da7c1999d4dd402593b6c3b86e36d3967dc6c24"
+    },
+    "students.csv": {
+      "rows": 20000,
+      "sha256": "7246b27ace96f838b5cb17c61aba71ed3b0b3b55a96e966daa62108e10c2026f"
+    },
+    "school_years.csv": {
+      "rows": 3,
+      "sha256": "16884796a7ea3b39c32da011028d842d86c45e9f0390ba4ea1abb7ebcb552e4d"
+    },
+    "enrollment.csv": {
+      "rows": 60000,
+      "sha256": "1d274ad71ac886ef93ecc9d6d9a703358f0c2f8361e1fbe1881c057bc6f18edc"
+    },
+    "attendance_monthly.csv": {
+      "rows": 540000,
+      "sha256": "bff617fc1cc2f3f1a291d17e200bdab3599cb5987eb43d680644d81078267355"
+    },
+    "assessments.csv": {
+      "rows": 145444,
+      "sha256": "dd19be5314a78ee0a952989b20438bedc9d6bc9d238ee757540d63ea6405876e"
+    },
+    "course_grades.csv": {
+      "rows": 261792,
+      "sha256": "85248273bfbdf8d4da970ec84533f36825d47716e51e53c212aa72762cbb9bf3"
+    },
+    "interventions.csv": {
+      "rows": 14844,
+      "sha256": "2582b93da0384e97e8d1f66c4d778b6725166d49f7f0edf9df2a118377d32e76"
+    },
+    "discipline_incidents.csv": {
+      "rows": 6261,
+      "sha256": "08334c5eb7194ea75033cd0b05b16dd597a46d88a29393387e27fa5deabcd865"
+    },
+    "staffing.csv": {
+      "rows": 360,
+      "sha256": "f2770ba8e523d2d1ff2924fad2d798b04fd4d5525116e76d9bd0998e48f56e27"
+    },
+    "finance.csv": {
+      "rows": 450,
+      "sha256": "0341814303efb8d96801c49a3ae6cc303d670d21e29aee27c223ff9636639c29"
+    },
+    "survey_responses.csv": {
+      "rows": 30471,
+      "sha256": "045cf39ecff1e48952e24d653fba6c2ce74f9be2a54dee0736034309b4978c82"
+    }
+  }
+}
