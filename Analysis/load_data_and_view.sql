@@ -182,16 +182,112 @@ WHERE m.student_id IS NULL;
 -- Expected result: zero rows. 
 -- ANALYSIS VERIFIED
 
+-- Next: A good demonstration is to compare the original totals, the incorrect joined totals, 
+-- and the corrected totals for the same student-year.
+
+-- This finds a high school student-year:
+SELECT student_id, school_year, grade_level
+FROM enrollment
+WHERE grade_level >= 9
+ORDER BY student_id, school_year
+LIMIT 1;
+
+-- use the result in the next query
+-- S000008 and 2025-26
+
+-- Establish the correct totals separately
+-- First, examine attendance:
+SELECT
+    COUNT(*) AS attendance_rows,
+    SUM(membership_days) AS membership_days,
+    SUM(present_days) AS present_days
+FROM attendance_monthly
+WHERE student_id = 'S000008'
+  AND school_year = '2025-26';
+
+-- We find 9 attendance rows and 180 membership days
+-- Next, examine grades
+
+SELECT
+    COUNT(*) AS course_grade_rows,
+    SUM(credits_attempted) AS credits_attempted,
+    SUM(credits_earned) AS credits_earned
+FROM course_grades
+WHERE student_id = 'S000008'
+  AND school_year = '2025-26';
+
+-- You should find 8 course-grade rows and 4.0 attempted credits. Earned credits depend on passing grades.
+
+-- Deliberately create the incorrect join:
+
+SELECT
+    COUNT(*) AS joined_rows,
+    SUM(a.membership_days) AS membership_days,
+    SUM(a.present_days) AS present_days,
+    SUM(g.credits_attempted) AS credits_attempted,
+    SUM(g.credits_earned) AS credits_earned
+FROM attendance_monthly a
+JOIN course_grades g
+    ON a.student_id = g.student_id
+   AND a.school_year = g.school_year
+WHERE a.student_id = 'S000008'
+  AND a.school_year = '2025-26';
 
 
+-- Run this query to see the individual joined rows:
+
+SELECT
+    a.month_start,
+    a.membership_days,
+    g.subject,
+    g.semester,
+    g.credits_attempted
+FROM attendance_monthly a
+JOIN course_grades g
+    ON a.student_id = g.student_id
+   AND a.school_year = g.school_year
+WHERE a.student_id = 'S000008'
+  AND a.school_year = '2025-26'
+ORDER BY a.month_start, g.subject, g.semester;
 
 
+-- Step 4: Aggregate each table before joining
 
+-- Use two common table expressions (CTEs) to summarize attendance and grades separately. Each CTE produces one row per student-year. Joining those summaries then matches one row to one row.
 
-
-
-
-
-
-
+WITH annual_attendance AS (
+    SELECT
+        student_id,
+        school_year,
+        SUM(membership_days) AS membership_days,
+        SUM(present_days) AS present_days
+    FROM attendance_monthly
+    WHERE student_id = 'S000008'
+      AND school_year = '2025-26'
+    GROUP BY student_id, school_year
+),
+annual_grades AS (
+    SELECT
+        student_id,
+        school_year,
+        COUNT(*) AS course_grade_rows,
+        SUM(credits_attempted) AS credits_attempted,
+        SUM(credits_earned) AS credits_earned
+    FROM course_grades
+    WHERE student_id = 'S000008'
+      AND school_year = '2025-26'
+    GROUP BY student_id, school_year
+)
+SELECT
+    a.student_id,
+    a.school_year,
+    a.membership_days,
+    a.present_days,
+    g.course_grade_rows,
+    g.credits_attempted,
+    g.credits_earned
+FROM annual_attendance a
+JOIN annual_grades g
+    ON a.student_id = g.student_id
+   AND a.school_year = g.school_year;
 
