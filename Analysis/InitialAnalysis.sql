@@ -20,6 +20,8 @@ SELECT
     (SELECT COUNT(*) FROM attendance_monthly) AS attendance_records;
 
 
+-- student_year_metrics is a view created from other tables
+
 SELECT
     school_year,
     COUNT(*) AS enrolled_students,
