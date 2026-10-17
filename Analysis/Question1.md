@@ -315,10 +315,8 @@ The query returns one row for the selected student-year, with:
 
 This example uses an inner join because the selected student-year has both attendance and grades. A district-wide model should consider a left join from enrollment or attendance when students without course-grade records must remain in the output.
 
-### Suggested explanation for your analysis
+### Explanation for this analysis
 
-> Joining two tables with multiple records per student-year multiplied the matching rows and inflated summed measures. Aggregating each table to student-year grain before joining preserved the original totals. I checked the joined results against independently calculated attendance and grade totals for the same student-year.
-
-Use the final sentence only after completing those reconciliation checks.
+Joining two tables with multiple records per student-year multiplied the matching rows and inflated summed measures. Aggregating each table to student-year grain before joining preserved the original totals. I checked the joined results against independently calculated attendance and grade totals for the same student-year.
 
 An attendance percentage can still look correct in the incorrect join because present days and membership days are inflated by the same factor. Therefore, validate row counts and additive totals as well as percentages. Using `SUM(DISTINCT membership_days)` is not a valid fix: it would collapse repeated legitimate values, such as nine months that each have 20 membership days.
