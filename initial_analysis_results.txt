@@ -1,0 +1,107 @@
+ school_year | grade_level | student_count 
+-------------+-------------+---------------
+ 2023-24     |           0 |          1819
+ 2023-24     |           1 |          1819
+ 2023-24     |           2 |          1818
+ 2023-24     |           3 |          1818
+ 2023-24     |           4 |          1818
+ 2023-24     |           5 |          1818
+ 2023-24     |           6 |          1818
+ 2023-24     |           7 |          1818
+ 2023-24     |           8 |          1818
+ 2023-24     |           9 |          1818
+ 2023-24     |          10 |          1818
+ 2024-25     |           1 |          1819
+ 2024-25     |           2 |          1819
+ 2024-25     |           3 |          1818
+ 2024-25     |           4 |          1818
+ 2024-25     |           5 |          1818
+ 2024-25     |           6 |          1818
+ 2024-25     |           7 |          1818
+ 2024-25     |           8 |          1818
+ 2024-25     |           9 |          1818
+ 2024-25     |          10 |          1818
+ 2024-25     |          11 |          1818
+ 2025-26     |           2 |          1819
+ 2025-26     |           3 |          1819
+ 2025-26     |           4 |          1818
+ 2025-26     |           5 |          1818
+ 2025-26     |           6 |          1818
+ 2025-26     |           7 |          1818
+ 2025-26     |           8 |          1818
+ 2025-26     |           9 |          1818
+ 2025-26     |          10 |          1818
+ 2025-26     |          11 |          1818
+ 2025-26     |          12 |          1818
+(33 rows)
+
+        school_name         | school_level | student_count 
+----------------------------+--------------+---------------
+ Cedar Valley Middle 04     | Middle       |           916
+ Cedar Valley Middle 01     | Middle       |           913
+ Cedar Valley Middle 05     | Middle       |           911
+ Cedar Valley Middle 06     | Middle       |           907
+ Cedar Valley Middle 03     | Middle       |           904
+ Cedar Valley Middle 02     | Middle       |           903
+ Cedar Valley High 06       | High         |           847
+ Cedar Valley High 02       | High         |           825
+ Cedar Valley High 03       | High         |           816
+ Cedar Valley High 09       | High         |           809
+ Cedar Valley High 07       | High         |           801
+ Cedar Valley High 01       | High         |           800
+ Cedar Valley High 08       | High         |           800
+ Cedar Valley High 04       | High         |           798
+ Cedar Valley High 05       | High         |           776
+ Cedar Valley Elementary 15 | Elementary   |           510
+ Cedar Valley Elementary 01 | Elementary   |           503
+ Cedar Valley Elementary 09 | Elementary   |           502
+ Cedar Valley Elementary 11 | Elementary   |           500
+ Cedar Valley Elementary 07 | Elementary   |           492
+ Cedar Valley Elementary 05 | Elementary   |           492
+ Cedar Valley Elementary 04 | Elementary   |           490
+ Cedar Valley Elementary 03 | Elementary   |           489
+ Cedar Valley Elementary 14 | Elementary   |           482
+ Cedar Valley Elementary 02 | Elementary   |           481
+ Cedar Valley Elementary 10 | Elementary   |           474
+ Cedar Valley Elementary 13 | Elementary   |           474
+ Cedar Valley Elementary 08 | Elementary   |           465
+ Cedar Valley Elementary 06 | Elementary   |           460
+ Cedar Valley Elementary 12 | Elementary   |           460
+(30 rows)
+
+ school_year | possible_attendance_days | days_present | days_absent | attendance_percentage 
+-------------+--------------------------+--------------+-------------+-----------------------
+ 2023-24     |                  3600000 |      3358585 |      241415 |                 93.29
+ 2024-25     |                  3600000 |      3357233 |      242767 |                 93.26
+ 2025-26     |                  3600000 |      3357826 |      242174 |                 93.27
+(3 rows)
+
+ school_year |    subject     | course_records | average_grade | failing_course_records 
+-------------+----------------+----------------+---------------+------------------------
+ 2023-24     | English        |          18180 |          72.7 |                   2656
+ 2023-24     | Math           |          18180 |          72.8 |                   2538
+ 2023-24     | Science        |          18180 |          72.8 |                   2625
+ 2023-24     | Social studies |          18180 |          72.7 |                   2702
+ 2024-25     | English        |          21816 |          72.8 |                   3138
+ 2024-25     | Math           |          21816 |          72.7 |                   3204
+ 2024-25     | Science        |          21816 |          72.8 |                   3164
+ 2024-25     | Social studies |          21816 |          72.8 |                   3148
+ 2025-26     | English        |          25452 |          72.7 |                   3792
+ 2025-26     | Math           |          25452 |          72.7 |                   3750
+ 2025-26     | Science        |          25452 |          72.7 |                   3737
+ 2025-26     | Social studies |          25452 |          72.7 |                   3733
+(12 rows)
+
+ school_year |  intervention_type   | participating_students | planned_sessions | attended_sessions 
+-------------+----------------------+------------------------+------------------+-------------------
+ 2023-24     | Attendance mentoring |                   1942 |            54227 |             40061
+ 2023-24     | Math tutoring        |                   1677 |            46947 |             42469
+ 2023-24     | Reading support      |                   1646 |            46367 |             42020
+ 2024-25     | Attendance mentoring |                   2017 |            56824 |             42671
+ 2024-25     | Reading support      |                   1477 |            41224 |             37436
+ 2024-25     | Math tutoring        |                   1468 |            41242 |             37436
+ 2025-26     | Attendance mentoring |                   1954 |            55033 |             41255
+ 2025-26     | Reading support      |                   1363 |            38240 |             34648
+ 2025-26     | Math tutoring        |                   1300 |            36173 |             32900
+(9 rows)
+
