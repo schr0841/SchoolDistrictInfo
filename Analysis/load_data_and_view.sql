@@ -291,3 +291,36 @@ JOIN annual_grades g
     ON a.student_id = g.student_id
    AND a.school_year = g.school_year;
 
+-- Independent SQL benchmark to check xlsx calculations
+WITH enrollment_totals AS (
+    SELECT
+        school_year,
+        COUNT(*) AS enrolled_students
+    FROM enrollment
+    GROUP BY school_year
+),
+attendance_totals AS (
+    SELECT
+        school_year,
+        COUNT(DISTINCT student_id) AS attendance_headcount,
+        SUM(membership_days) AS membership_days,
+        SUM(present_days) AS present_days,
+        SUM(
+            excused_absent_days + unexcused_absent_days
+        ) AS absent_days
+    FROM attendance_monthly
+    GROUP BY school_year
+)
+SELECT
+    COALESCE(e.school_year, a.school_year) AS school_year,
+    e.enrolled_students,
+    a.attendance_headcount,
+    a.membership_days,
+    a.present_days,
+    a.absent_days
+FROM enrollment_totals e
+FULL OUTER JOIN attendance_totals a
+    ON e.school_year = a.school_year
+ORDER BY school_year;
+
+-- results matched Big Query xlsx calculations
