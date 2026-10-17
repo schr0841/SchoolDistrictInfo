@@ -1,6 +1,19 @@
 # Question 1: Primary keys, foreign keys, and analytical grain
 
-Project: **Build a trustworthy district analytical layer**
+## Project 1: **Build a trustworthy district analytical layer**
+
+**Board question:** Can we trust the numbers presented at meetings?
+
+**Use:** All files; begin with students, enrollment, and attendance. SQL difficulty: introductory to intermediate.
+
+- Load the CSVs with the supplied schema. Explain primary keys, foreign keys, and the difference between a student, student-year, and student-month.
+- Write SQL checks for 20,000 students, 60,000 enrollment rows, 180 membership days per student-year, and no orphan records. Extend the supplied validator with an independently written reconciliation query.
+- Deliberately demonstrate row multiplication by joining attendance and grades for a single student-year; then fix it by aggregating each table first.
+- In Excel, use Power Query to group attendance by student/year and reconcile annual headcounts and total absences against SQL.
+
+**Deliver:** A documented SQL model, an Excel reconciliation workbook, and a one-page data quality scorecard.
+
+**Acceptance:** Counts reconcile exactly; student-year measures are not repeated; NULL scores remain distinguishable from zero; the cohort limitation is visible. Include one failure example and the corrective control.
 
 Dataset: SchoolDistrictInfo — entirely synthetic student and district records.
 
@@ -135,3 +148,49 @@ Expected result: **zero rows**. This is important because the view uses an inner
 ## Project explanation
 
 The district analytical layer uses primary keys to establish record identity and foreign keys to enforce valid relationships. Composite student-year keys preserve the correct relationship across school years. Each fact table is summarized to the intended reporting grain before it is combined with other facts, preventing row multiplication and inflated totals. Counts, uniqueness checks, coverage checks, and reconciled measures provide evidence that the analytical layer is trustworthy.
+
+
+## Demonstrate incorrect joins
+
+A good demonstration is to compare the original totals, the incorrect joined totals, and the corrected totals for the same student-year.
+
+1. Choose a student-year with course grades
+This finds a high school student-year:
+
+```sql
+SELECT student_id, school_year, grade_level
+FROM enrollment
+WHERE grade_level >= 9
+ORDER BY student_id, school_year
+LIMIT 1;
+```
+
+Use the returned student ID and year in the queries below, replacing 'YOUR_STUDENT_ID' and 'YOUR_SCHOOL_YEAR'.
+
+Values: S000008 and 2025-26
+
+```sql
+SELECT
+    COUNT(*) AS attendance_rows,
+    SUM(membership_days) AS membership_days,
+    SUM(present_days) AS present_days
+FROM attendance_monthly
+WHERE student_id = 'S000008'
+  AND school_year = '2025-26';
+  ```
+We find  9 attendance rows and 180 membership days.
+
+Then examine grades:
+```sql
+SELECT
+    COUNT(*) AS course_grade_rows,
+    SUM(credits_attempted) AS credits_attempted,
+    SUM(credits_earned) AS credits_earned
+FROM course_grades
+WHERE student_id = 'S000008'
+  AND school_year = '2025-26';
+```
+
+We find 8 course-grade rows and 4.0 attempted credits. Earned credits depend on passing grades.
+
+Deliberately create the incorrect join:

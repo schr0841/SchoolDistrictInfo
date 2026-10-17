@@ -149,6 +149,41 @@ GROUP BY school_year, intervention_type
 ORDER BY school_year, participating_students DESC;
 
 
+-- Suggested Validation Evidence
+-- Confirm expected record counts
+SELECT
+    (SELECT COUNT(*) FROM students) AS student_rows,
+    (SELECT COUNT(*) FROM enrollment) AS student_year_rows,
+    (SELECT COUNT(*) FROM attendance_monthly) AS student_month_rows,
+    (SELECT COUNT(*) FROM student_year_metrics) AS analytical_student_year_rows;
+-- ANALYSIS VERIFIED
+
+
+-- Confirm that the analytical view has no duplicate student-years
+SELECT
+    student_id,
+    school_year,
+    COUNT(*) AS row_count
+FROM student_year_metrics
+GROUP BY student_id, school_year
+HAVING COUNT(*) > 1;
+-- ANALYSIS VERIFIED
+
+
+-- Confirm that every enrollment appears in the analytical view
+SELECT
+    e.student_id,
+    e.school_year
+FROM enrollment e
+LEFT JOIN student_year_metrics m
+    ON e.student_id = m.student_id
+   AND e.school_year = m.school_year
+WHERE m.student_id IS NULL;
+-- Expected result: zero rows. 
+-- ANALYSIS VERIFIED
+
+
+
 
 
 
