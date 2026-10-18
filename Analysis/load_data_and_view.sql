@@ -324,3 +324,271 @@ FULL OUTER JOIN attendance_totals a
 ORDER BY school_year;
 
 -- results matched Big Query xlsx calculations
+
+
+-- Last step: validate results
+
+-- 1. Record counts - verified
+
+SELECT 'students' AS source, COUNT(*) AS actual_rows
+FROM students
+
+UNION ALL
+
+SELECT 'enrollment', COUNT(*)
+FROM enrollment
+
+UNION ALL
+
+SELECT 'attendance_monthly', COUNT(*)
+FROM attendance_monthly
+
+UNION ALL
+
+SELECT 'student_year_metrics', COUNT(*)
+FROM student_year_metrics;
+
+
+-- 2. Student-year uniqueness
+-- This checks whether enrollment or the analytical view 
+-- contains more than one row for the same student and year.
+-- verified that output has 0 rows
+SELECT
+    'enrollment' AS source,
+    student_id,
+    school_year,
+    COUNT(*) AS row_count
+FROM enrollment
+GROUP BY student_id, school_year
+HAVING COUNT(*) > 1
+
+UNION ALL
+
+SELECT
+    'student_year_metrics',
+    student_id,
+    school_year,
+    COUNT(*)
+FROM student_year_metrics
+GROUP BY student_id, school_year
+HAVING COUNT(*) > 1;
+
+
+-- 3. Referential integrity
+-- Find attendance records without 
+-- matching enrollment for the same student and year:
+-- verified that output has 0 rows
+SELECT
+    a.student_id,
+    a.school_year,
+    a.month_start
+FROM attendance_monthly a
+LEFT JOIN enrollment e
+    ON a.student_id = e.student_id
+   AND a.school_year = e.school_year
+WHERE e.student_id IS NULL;
+
+
+-- 4. Attendance coverage
+-- Start with enrollment and check that every student-year 
+-- has nine monthly records and 180 membership days:
+-- verified that this query returns 0 rows
+SELECT
+    e.student_id,
+    e.school_year,
+    COUNT(a.month_start) AS months_recorded,
+    COALESCE(SUM(a.membership_days), 0) AS membership_days
+FROM enrollment e
+LEFT JOIN attendance_monthly a
+    ON e.student_id = a.student_id
+   AND e.school_year = a.school_year
+GROUP BY e.student_id, e.school_year
+HAVING COUNT(a.month_start) <> 9
+    OR COALESCE(SUM(a.membership_days), 0) <> 180;
+
+-- no enrollments disappeared
+-- verified 0 rows
+SELECT
+    e.student_id,
+    e.school_year
+FROM enrollment e
+LEFT JOIN student_year_metrics m
+    ON e.student_id = m.student_id
+   AND e.school_year = m.school_year
+WHERE m.student_id IS NULL;
+
+
+-- 5. Attendance balance
+-- For every monthly record, present days plus both 
+-- absence categories should equal membership days:
+-- verified expected result of 0 rows
+SELECT
+    student_id,
+    school_year,
+    month_start,
+    membership_days,
+    present_days,
+    excused_absent_days,
+    unexcused_absent_days
+FROM attendance_monthly
+WHERE present_days
+    + excused_absent_days
+    + unexcused_absent_days <> membership_days;
+	
+-- 6. Join accuracy
+-- Your row-multiplication exercise demonstrates the problem for one student-year. This check goes further: it verifies the reporting view against independently
+-- aggregated source tables for every student-year.
+
+WITH attendance_source AS (
+    SELECT
+        student_id,
+        school_year,
+        SUM(membership_days) AS membership_days,
+        SUM(present_days) AS present_days,
+        SUM(
+            excused_absent_days + unexcused_absent_days
+        ) AS absent_days
+    FROM attendance_monthly
+    GROUP BY student_id, school_year
+),
+grades_source AS (
+    SELECT
+        student_id,
+        school_year,
+        SUM(credits_attempted) AS credits_attempted,
+        SUM(credits_earned) AS credits_earned
+    FROM course_grades
+    GROUP BY student_id, school_year
+)
+SELECT
+    e.student_id,
+    e.school_year,
+    a.membership_days AS source_membership_days,
+    m.membership_days AS view_membership_days,
+    a.present_days AS source_present_days,
+    m.present_days AS view_present_days,
+    a.absent_days AS source_absent_days,
+    m.absent_days AS view_absent_days,
+    g.credits_earned AS source_credits_earned,
+    m.credits_earned AS view_credits_earned
+FROM enrollment e
+LEFT JOIN attendance_source a
+    ON e.student_id = a.student_id
+   AND e.school_year = a.school_year
+LEFT JOIN grades_source g
+    ON e.student_id = g.student_id
+   AND e.school_year = g.school_year
+LEFT JOIN student_year_metrics m
+    ON e.student_id = m.student_id
+   AND e.school_year = m.school_year
+WHERE m.student_id IS NULL
+   OR a.membership_days IS DISTINCT FROM m.membership_days
+   OR a.present_days IS DISTINCT FROM m.present_days
+   OR a.absent_days IS DISTINCT FROM m.absent_days
+   OR g.credits_earned IS DISTINCT FROM m.credits_earned;
+
+-- verified expected result of 0 rows
+
+
+-- 7. Excel and SQL agreement
+-- Run the independent annual benchmark:
+
+WITH enrollment_totals AS (
+    SELECT
+        school_year,
+        COUNT(*) AS enrolled_students
+    FROM enrollment
+    GROUP BY school_year
+),
+attendance_totals AS (
+    SELECT
+        school_year,
+        COUNT(DISTINCT student_id) AS attendance_headcount,
+        SUM(membership_days) AS membership_days,
+        SUM(present_days) AS present_days,
+        SUM(
+            excused_absent_days + unexcused_absent_days
+        ) AS absent_days
+    FROM attendance_monthly
+    GROUP BY school_year
+)
+SELECT
+    COALESCE(e.school_year, a.school_year) AS school_year,
+    e.enrolled_students,
+    a.attendance_headcount,
+    a.membership_days,
+    a.present_days,
+    a.absent_days
+FROM enrollment_totals e
+FULL OUTER JOIN attendance_totals a
+    ON e.school_year = a.school_year
+ORDER BY school_year;
+
+-- fully matches output from SQL_Attendance_Benchmark.xlsx
+
+
+
+-- 8. Expected missing values
+-- This involves distinguishing legitimate missing information from data errors.
+
+-- First, summarize missing assessment scores:
+SELECT
+    school_year,
+    COUNT(*) AS expected_assessment_records,
+    COUNT(score) AS valid_scores,
+    COUNT(*) - COUNT(score) AS missing_scores
+FROM assessments
+GROUP BY school_year
+ORDER BY school_year;
+
+-- Check that untested assessments have no performance level, and tested assessments have one:
+SELECT
+    assessment_id,
+    student_id,
+    school_year,
+    score,
+    performance_level
+FROM assessments
+WHERE (score IS NULL AND performance_level IS NOT NULL)
+   OR (score IS NOT NULL AND performance_level IS NULL);
+
+
+-- Finally, check grade-summary eligibility:
+SELECT
+    student_id,
+    school_year,
+    grade_level,
+    mean_course_grade,
+    credits_earned,
+    failed_course_semesters
+FROM student_year_metrics
+WHERE
+    (
+        grade_level < 6
+        AND (
+            mean_course_grade IS NOT NULL
+            OR credits_earned IS NOT NULL
+            OR failed_course_semesters IS NOT NULL
+        )
+    )
+    OR
+    (
+        grade_level >= 6
+        AND (
+            mean_course_grade IS NULL
+            OR credits_earned IS NULL
+            OR failed_course_semesters IS NULL
+        )
+    );
+
+-- verified expected result of 0 rows returned
+
+
+
+
+
+
+
+
+
+
