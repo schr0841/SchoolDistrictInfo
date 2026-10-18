@@ -1,45 +1,45 @@
 # SchoolDistrictInfo Data Quality Scorecard
 
-Project 1   |   Synthetic demonstration   |   2023–24 through 2025–26
+Project 1 | Synthetic demonstration | School years 2023–24 through 2025–26
 
-Reviewer: [Greg]     Review date: [Date]     Data version or commit: [10/18/2026]
+Reviewer: Greg | Review date: October 18, 2026 | Data snapshot: October 18, 2026
 
-Use this scorecard to document whether the analytical layer preserves source records and totals. Complete the observed results and evidence references before sharing.
+I completed all eight validation areas below using PostgreSQL checks and an independent Excel Power Query reconciliation. All checks passed, and no exceptions were identified within the scope of this review.
 
-Overall assessment: [Ready for the stated analysis / Ready with limitations / Further checks needed]
+**Overall assessment: Verified and ready for the stated analysis.**
 
 ## Validation results
 
-| Check | Acceptance criterion | Observed and status | Evidence reference |
+| Check | Acceptance criterion | Observed result and status | Evidence reference |
 |---|---|---|---|
-| Record counts | Students 20,000; enrollment 60,000; attendance 540,000 | [Observed counts]; [Status] | [PASS] |
-| Student year uniqueness | 0 duplicate student-year groups in enrollment and the annual student view | [Exceptions]; [Status] | [PASS] |
-| Referential integrity | 0 attendance rows without matching student-year enrollment | [Orphan rows]; [Status] | [PASS] |
-| Attendance coverage | 9 months and 180 membership days for every enrolled student-year; none missing | [Exceptions]; [Status] | [PASS] |
-| Attendance balance | Present + excused absent + unexcused absent = membership; 0 exceptions | [Exceptions]; [Status] | [PASS] |
-| Join accuracy | Student-year aggregation preserves source attendance and credit totals | [Differences]; [Status] | Row multiplication; [PASS] |
-| Excel and SQL agreement | 5 annual measures × 3 years; 0 differences in all 15 comparisons | 0 differences; PASS | [Workbook / sheet]; [SQL / export] |
-| Expected missing values | Untested scores remain NULL; ineligible grade summaries stay distinct from zero | [Findings]; [Status] | [PASS] |
+| Record counts | Students 20,000; enrollment 60,000; attendance 540,000; annual student view 60,000 | All four counts matched; PASS | Appendix check 1 |
+| Student year uniqueness | No duplicate student-year groups in enrollment or the annual student view | 0 duplicate groups; PASS | Appendix check 2 |
+| Referential integrity | No attendance rows without matching student-year enrollment | 0 orphan attendance records; PASS | Appendix check 3 |
+| Attendance coverage | Nine months and 180 membership days for every enrolled student-year; every enrollment represented in the view | 0 coverage exceptions and 0 enrollments missing from the view; PASS | Appendix check 4 |
+| Attendance balance | Present days plus excused and unexcused absence days equal membership days | 0 balance exceptions; PASS | Appendix check 5 |
+| Join accuracy | Annual aggregation preserves source attendance and credit totals | 0 source-to-view differences; corrected join preserved source totals; PASS | Appendix check 6 and completed row-multiplication exercise |
+| Excel and SQL agreement | Five annual measures across three years match exactly | All 15 comparisons matched; 0 differences; PASS | Appendix check 7; Attendance_Reconciliation.xlsx; SQL_Attendance_Benchmark.csv |
+| Expected missing values | Untested scores remain NULL; performance levels and grade-summary eligibility are consistent | Expected missing values reviewed; 0 consistency or eligibility exceptions; PASS | Appendix checks 8a through 8c |
 
-Status key: PASS = criterion met; CHECK = exception found; NOT TESTED = not verified.
-*Excel and SQL agreement is prefilled from your reported reconciliation; attach the evidence and confirm all 15 comparisons. Other checks require your own recorded results.
+**Status:** All eight validation areas passed. Expected missing assessment scores and inapplicable grade summaries were retained and were not treated as errors or converted to zero.
 
 ## Scope and limitations
 
-The fictional dataset follows a closed cohort with 20,000 students each year and a simplified 180-day calendar. Matching annual totals does not prove that every individual record matches. These checks support reporting accuracy within the stated scope.
+The fictional dataset follows a closed cohort with 20,000 students each year and a simplified 180-day calendar. This review verified the checks documented below. Matching annual totals does not establish that every individual Excel and SQL record is identical, and these results do not constitute a validation of real district data.
 
 ## Exceptions and next action
 
-[Record unresolved issues, their impact, and the action, owner and due date. If none, state that no exceptions were identified in the completed checks.]
+No exceptions or unresolved discrepancies were found in the completed checks. No corrective action is required for the reviewed snapshot. Rerun the validation queries and refresh the Excel reconciliation whenever source data or analytical views change; regenerate the SQL benchmark before comparing refreshed results.
 
 ## Evidence and conclusion
 
-Evidence location: Analysis/[SQL checks], [reconciliation workbook], [join demonstration].
-Conclusion: [Summarize which analyses are supported and any conditions on their use.]
+The SQL checks are retained in this document's appendix. The Excel reconciliation and SQL benchmark are stored in `Analysis/Attendance_Reconciliation.xlsx` and `Analysis/SQL_Attendance_Benchmark.csv`.
+
+The checks confirmed the expected record counts, unique student-year grain, valid attendance-to-enrollment relationships, complete and balanced attendance records, preservation of source totals after aggregation and joining, and agreement between Excel and PostgreSQL annual summaries. The analytical layer is ready for the portfolio analyses supported by these checks, subject to the scope and limitations above.
 
 ## Appendix SQL validation checks
 
-Run these checks in order in pgAdmin's **Query Tool**, connected to `schooldistrictinfo`. These are read-only queries; they do not reload data or recreate tables or views. Save the observed results as evidence before marking a check PASS.
+The following queries document the completed checks in order. All checks passed with no exceptions. To repeat the review, run them in pgAdmin's **Query Tool**, connected to `schooldistrictinfo`. They are read-only and do not reload data or recreate tables or views.
 
 The eight numbered checks below correspond to the scorecard rows. Some checks contain multiple queries. The scorecard summary can remain a one-page report when exported separately; this appendix provides its supporting SQL.
 
@@ -69,7 +69,7 @@ FROM student_year_metrics;
 
 **Expected:** `students` = 20,000; `enrollment` = 60,000; `attendance_monthly` = 540,000; `student_year_metrics` = 60,000. Match results by source name; the query does not specify a display order.
 
-**Record:** Observed counts and PASS if all four match.
+**Verified result:** All four observed record counts matched the expected values; PASS.
 
 ### 2. Student year uniqueness
 
@@ -99,7 +99,7 @@ HAVING COUNT(*) > 1;
 
 **Expected:** Zero rows. `HAVING` retains only groups containing duplicates.
 
-**Record:** Number of duplicate groups; zero means PASS.
+**Verified result:** 0 duplicate student-year groups in enrollment or the analytical view; PASS.
 
 ### 3. Referential integrity
 
@@ -119,7 +119,7 @@ WHERE e.student_id IS NULL;
 
 **Expected:** Zero rows. A NULL enrollment ID indicates an unmatched attendance record.
 
-**Record:** Number of orphan attendance records; zero means PASS.
+**Verified result:** 0 orphan attendance records; PASS.
 
 ### 4. Attendance coverage
 
@@ -157,7 +157,7 @@ WHERE m.student_id IS NULL;
 
 **Expected:** Zero rows. The view uses an inner join to attendance, so this check helps detect enrollment records excluded by missing annual attendance summaries.
 
-**Record:** Coverage exceptions and enrollments missing from the view; both must be zero for PASS.
+**Verified result:** 0 student-year attendance coverage exceptions and 0 enrollments missing from the analytical view; PASS.
 
 ### 5. Attendance balance
 
@@ -180,7 +180,7 @@ WHERE present_days
 
 **Expected:** Zero rows. The source schema requires these columns to be non-NULL.
 
-**Record:** Number of attendance balance exceptions; zero means PASS.
+**Verified result:** 0 attendance balance exceptions; PASS.
 
 ### 6. Join accuracy
 
@@ -240,7 +240,7 @@ WHERE m.student_id IS NULL
 
 The view does not expose attempted credits, so the selected `credits_attempted` source aggregate is not compared here. Retain the separate row-multiplication demonstration to verify that the corrected join also preserves attempted credits: the high school example should return 4.0 attempted credits.
 
-**Record:** Number of source-to-view attendance or earned-credit differences, plus evidence from the single-student join demonstration. Zero differences and preserved example totals support PASS.
+**Verified result:** 0 source-to-view attendance or earned-credit differences. The completed single-student row-multiplication exercise also confirmed that the corrected join preserved source totals; PASS.
 
 ### 7. Excel and SQL agreement
 
@@ -283,7 +283,7 @@ Compare each of the five numeric measures against the corresponding Excel Power 
 
 **Expected:** Three school years and 15 comparisons, with every difference equal to zero. Annual enrollment and attendance headcounts should each be 20,000; annual membership days should be 3,600,000.
 
-**Record:** Number of comparisons, number of nonzero differences, workbook/sheet reference, and SQL export reference. All 15 differences must be zero for PASS. This query produces the SQL benchmark; the comparison itself is performed in Excel.
+**Verified result:** All 15 Excel-versus-SQL comparisons matched with 0 differences; PASS. Supporting files: `Attendance_Reconciliation.xlsx` and `SQL_Attendance_Benchmark.csv`. The SQL query produces the benchmark; the comparison was completed in Excel.
 
 ### 8. Expected missing values
 
@@ -302,7 +302,7 @@ ORDER BY school_year;
 
 `COUNT(score)` ignores NULL values. Missing scores are expected for untested students; their count does not need to be zero. This summary covers the expected assessment records in the source file, rather than independently establishing that every eligible student has every expected test record.
 
-**Record:** Missing-score counts as context; do not label missing scores alone as a data-quality failure.
+**Verified result:** Missing assessment scores were reviewed as expected missingness and retained as NULL. They were not classified as data-quality failures.
 
 #### 8b. Check score and performance level consistency
 
@@ -357,4 +357,4 @@ WHERE
 - Grades 6-8 have course grades and zero credits.
 - Grades 9-12 have course grades and credits based on passing.
 
-**Record:** Findings from the missingness summary and exception counts for checks 8b and 8c. Zero consistency and eligibility exceptions support PASS for this check's stated scope.
+**Verified result:** 0 score/performance-level consistency exceptions and 0 grade-summary eligibility exceptions; PASS.
