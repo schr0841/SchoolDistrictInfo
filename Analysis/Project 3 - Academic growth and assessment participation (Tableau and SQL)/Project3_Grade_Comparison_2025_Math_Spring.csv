@@ -1,0 +1,8 @@
+"school_year","subject","test_window","grade_level","school_level","expected_tests","valid_tests","without_valid_score","recorded_without_score","missing_test_records","proficient_students","tested_below_proficiency","participation_percentage","proficiency_percentage"
+"2025-26","Math","Spring",3,"Elementary",1819,1737,82,82,0,945,792,95.49,54.40
+"2025-26","Math","Spring",4,"Elementary",1818,1735,83,83,0,923,812,95.43,53.20
+"2025-26","Math","Spring",5,"Elementary",1818,1734,84,84,0,923,811,95.38,53.23
+"2025-26","Math","Spring",6,"Middle",1818,1742,76,76,0,891,851,95.82,51.15
+"2025-26","Math","Spring",7,"Middle",1818,1733,85,85,0,910,823,95.32,52.51
+"2025-26","Math","Spring",8,"Middle",1818,1723,95,95,0,891,832,94.77,51.71
+"2025-26","Math","Spring",11,"High",1818,1718,100,100,0,897,821,94.50,52.21
