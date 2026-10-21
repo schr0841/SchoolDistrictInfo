@@ -1,0 +1,602 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20262.26.0912.1023                               -->
+<workbook _.fcp.WorkbookFingerprinting.true...author-id='faa9fb8b0bfc3257a63d23619fb3ebb6319a87ea588de8ca4cb5324db1906fe2' _.fcp.WorkbookFingerprinting.true...creator-author-id='faa9fb8b0bfc3257a63d23619fb3ebb6319a87ea588de8ca4cb5324db1906fe2' _.fcp.WorkbookFingerprinting.true...creator-license-type='free' _.fcp.WorkbookFingerprinting.true...creator-machine-id='a82641a6fca4fb8ffb9f0371e724e15af1cf0b6e6a9494ec4a2d961ef2d9762b' _.fcp.WorkbookFingerprinting.true...license-type='free' _.fcp.WorkbookFingerprinting.true...machine-id='a82641a6fca4fb8ffb9f0371e724e15af1cf0b6e6a9494ec4a2d961ef2d9762b' original-version='18.1' source-build='2026.2.3 (20262.26.0912.1023)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelSharedDimensions />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+    <_.fcp.WorkbookFingerprinting.true...WorkbookFingerprinting />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='Project3_Assessment_Summary+' inline='true' name='federated.1x1s0ou0qervu418p9y2c0hazlr2' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Project3_Assessment_Summary' name='textscan.1ukxvqn1uk3eoa14za9101puzs43'>
+            <connection class='textscan' directory='C:/Users/schre/GitHub/SchoolDistrictInfo/Analysis/Project 3 - Academic growth and assessment participation (Tableau and SQL)' filename='Project3_Assessment_Summary.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='textscan.1ukxvqn1uk3eoa14za9101puzs43' name='Project3_Assessment_Summary.csv' table='[Project3_Assessment_Summary#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='school_year' ordinal='0' />
+              <column datatype='string' name='school_id' ordinal='1' />
+              <column datatype='string' name='school_name' ordinal='2' />
+              <column datatype='string' name='school_level' ordinal='3' />
+              <column datatype='integer' name='grade_level' ordinal='4' />
+              <column datatype='string' name='subject' ordinal='5' />
+              <column datatype='string' name='test_window' ordinal='6' />
+              <column datatype='integer' name='expected_tests' ordinal='7' />
+              <column datatype='integer' name='valid_tests' ordinal='8' />
+              <column datatype='integer' name='without_valid_score' ordinal='9' />
+              <column datatype='integer' name='recorded_without_score' ordinal='10' />
+              <column datatype='integer' name='missing_test_records' ordinal='11' />
+              <column datatype='integer' name='proficient_students' ordinal='12' />
+              <column datatype='integer' name='tested_below_proficiency' ordinal='13' />
+            </columns>
+          </relation>
+          <relation connection='textscan.1ukxvqn1uk3eoa14za9101puzs43' name='Project3_Growth_Detail.csv' table='[Project3_Growth_Detail#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='student_id' ordinal='0' />
+              <column datatype='string' name='school_year' ordinal='1' />
+              <column datatype='string' name='school_id' ordinal='2' />
+              <column datatype='string' name='school_name' ordinal='3' />
+              <column datatype='string' name='school_level' ordinal='4' />
+              <column datatype='integer' name='grade_level' ordinal='5' />
+              <column datatype='string' name='subject' ordinal='6' />
+              <column datatype='integer' name='fall_score' ordinal='7' />
+              <column datatype='integer' name='spring_score' ordinal='8' />
+              <column datatype='integer' name='growth_points' ordinal='9' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[expected_tests]' value='[Project3_Assessment_Summary.csv].[expected_tests]' />
+          <map key='[fall_score]' value='[Project3_Growth_Detail.csv].[fall_score]' />
+          <map key='[grade_level (Project3_Growth_Detail.csv)]' value='[Project3_Growth_Detail.csv].[grade_level]' />
+          <map key='[grade_level]' value='[Project3_Assessment_Summary.csv].[grade_level]' />
+          <map key='[growth_points]' value='[Project3_Growth_Detail.csv].[growth_points]' />
+          <map key='[missing_test_records]' value='[Project3_Assessment_Summary.csv].[missing_test_records]' />
+          <map key='[proficient_students]' value='[Project3_Assessment_Summary.csv].[proficient_students]' />
+          <map key='[recorded_without_score]' value='[Project3_Assessment_Summary.csv].[recorded_without_score]' />
+          <map key='[school_id (Project3_Growth_Detail.csv)]' value='[Project3_Growth_Detail.csv].[school_id]' />
+          <map key='[school_id]' value='[Project3_Assessment_Summary.csv].[school_id]' />
+          <map key='[school_level (Project3_Growth_Detail.csv)]' value='[Project3_Growth_Detail.csv].[school_level]' />
+          <map key='[school_level]' value='[Project3_Assessment_Summary.csv].[school_level]' />
+          <map key='[school_name (Project3_Growth_Detail.csv)]' value='[Project3_Growth_Detail.csv].[school_name]' />
+          <map key='[school_name]' value='[Project3_Assessment_Summary.csv].[school_name]' />
+          <map key='[school_year (Project3_Growth_Detail.csv)]' value='[Project3_Growth_Detail.csv].[school_year]' />
+          <map key='[school_year]' value='[Project3_Assessment_Summary.csv].[school_year]' />
+          <map key='[spring_score]' value='[Project3_Growth_Detail.csv].[spring_score]' />
+          <map key='[student_id]' value='[Project3_Growth_Detail.csv].[student_id]' />
+          <map key='[subject (Project3_Growth_Detail.csv)]' value='[Project3_Growth_Detail.csv].[subject]' />
+          <map key='[subject]' value='[Project3_Assessment_Summary.csv].[subject]' />
+          <map key='[test_window]' value='[Project3_Assessment_Summary.csv].[test_window]' />
+          <map key='[tested_below_proficiency]' value='[Project3_Assessment_Summary.csv].[tested_below_proficiency]' />
+          <map key='[valid_tests]' value='[Project3_Assessment_Summary.csv].[valid_tests]' />
+          <map key='[without_valid_score]' value='[Project3_Assessment_Summary.csv].[without_valid_score]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Project3_Assessment_Summary.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Project3_Growth_Detail.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>school_year</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[school_year]</local-name>
+            <parent-name>[Project3_Assessment_Summary.csv]</parent-name>
+            <remote-alias>school_year</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Project3_Assessment_Summary.csv_294E3796D8884318B25F7F9582937B66]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>school_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[school_id]</local-name>
+            <parent-name>[Project3_Assessment_Summary.csv]</parent-name>
+            <remote-alias>school_id</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Project3_Assessment_Summary.csv_294E3796D8884318B25F7F9582937B66]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>school_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[school_name]</local-name>
+            <parent-name>[Project3_Assessment_Summary.csv]</parent-name>
+            <remote-alias>school_name</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Project3_Assessment_Summary.csv_294E3796D8884318B25F7F9582937B66]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>school_level</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[school_level]</local-name>
+            <parent-name>[Project3_Assessment_Summary.csv]</parent-name>
+            <remote-alias>school_level</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Project3_Assessment_Summary.csv_294E3796D8884318B25F7F9582937B66]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>grade_level</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[grade_level]</local-name>
+            <parent-name>[Project3_Assessment_Summary.csv]</parent-name>
+            <remote-alias>grade_level</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Project3_Assessment_Summary.csv_294E3796D8884318B25F7F9582937B66]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>subject</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[subject]</local-name>
+            <parent-name>[Project3_Assessment_Summary.csv]</parent-name>
+            <remote-alias>subject</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Project3_Assessment_Summary.csv_294E3796D8884318B25F7F9582937B66]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>test_window</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[test_window]</local-name>
+            <parent-name>[Project3_Assessment_Summary.csv]</parent-name>
+            <remote-alias>test_window</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Project3_Assessment_Summary.csv_294E3796D8884318B25F7F9582937B66]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>expected_tests</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[expected_tests]</local-name>
+            <parent-name>[Project3_Assessment_Summary.csv]</parent-name>
+            <remote-alias>expected_tests</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Project3_Assessment_Summary.csv_294E3796D8884318B25F7F9582937B66]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>valid_tests</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[valid_tests]</local-name>
+            <parent-name>[Project3_Assessment_Summary.csv]</parent-name>
+            <remote-alias>valid_tests</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Project3_Assessment_Summary.csv_294E3796D8884318B25F7F9582937B66]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>without_valid_score</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[without_valid_score]</local-name>
+            <parent-name>[Project3_Assessment_Summary.csv]</parent-name>
+            <remote-alias>without_valid_score</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Project3_Assessment_Summary.csv_294E3796D8884318B25F7F9582937B66]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>recorded_without_score</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[recorded_without_score]</local-name>
+            <parent-name>[Project3_Assessment_Summary.csv]</parent-name>
+            <remote-alias>recorded_without_score</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Project3_Assessment_Summary.csv_294E3796D8884318B25F7F9582937B66]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>missing_test_records</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[missing_test_records]</local-name>
+            <parent-name>[Project3_Assessment_Summary.csv]</parent-name>
+            <remote-alias>missing_test_records</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Project3_Assessment_Summary.csv_294E3796D8884318B25F7F9582937B66]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>proficient_students</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[proficient_students]</local-name>
+            <parent-name>[Project3_Assessment_Summary.csv]</parent-name>
+            <remote-alias>proficient_students</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Project3_Assessment_Summary.csv_294E3796D8884318B25F7F9582937B66]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tested_below_proficiency</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[tested_below_proficiency]</local-name>
+            <parent-name>[Project3_Assessment_Summary.csv]</parent-name>
+            <remote-alias>tested_below_proficiency</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Project3_Assessment_Summary.csv_294E3796D8884318B25F7F9582937B66]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>student_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[student_id]</local-name>
+            <parent-name>[Project3_Growth_Detail.csv]</parent-name>
+            <remote-alias>student_id</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Project3_Growth_Detail.csv_01F853FB5F634A7D8A71EC35E8AC1B72]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>school_year</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[school_year (Project3_Growth_Detail.csv)]</local-name>
+            <parent-name>[Project3_Growth_Detail.csv]</parent-name>
+            <remote-alias>school_year</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Project3_Growth_Detail.csv_01F853FB5F634A7D8A71EC35E8AC1B72]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>school_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[school_id (Project3_Growth_Detail.csv)]</local-name>
+            <parent-name>[Project3_Growth_Detail.csv]</parent-name>
+            <remote-alias>school_id</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Project3_Growth_Detail.csv_01F853FB5F634A7D8A71EC35E8AC1B72]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>school_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[school_name (Project3_Growth_Detail.csv)]</local-name>
+            <parent-name>[Project3_Growth_Detail.csv]</parent-name>
+            <remote-alias>school_name</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Project3_Growth_Detail.csv_01F853FB5F634A7D8A71EC35E8AC1B72]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>school_level</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[school_level (Project3_Growth_Detail.csv)]</local-name>
+            <parent-name>[Project3_Growth_Detail.csv]</parent-name>
+            <remote-alias>school_level</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Project3_Growth_Detail.csv_01F853FB5F634A7D8A71EC35E8AC1B72]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>grade_level</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[grade_level (Project3_Growth_Detail.csv)]</local-name>
+            <parent-name>[Project3_Growth_Detail.csv]</parent-name>
+            <remote-alias>grade_level</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Project3_Growth_Detail.csv_01F853FB5F634A7D8A71EC35E8AC1B72]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>subject</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[subject (Project3_Growth_Detail.csv)]</local-name>
+            <parent-name>[Project3_Growth_Detail.csv]</parent-name>
+            <remote-alias>subject</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Project3_Growth_Detail.csv_01F853FB5F634A7D8A71EC35E8AC1B72]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>fall_score</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[fall_score]</local-name>
+            <parent-name>[Project3_Growth_Detail.csv]</parent-name>
+            <remote-alias>fall_score</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Project3_Growth_Detail.csv_01F853FB5F634A7D8A71EC35E8AC1B72]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>spring_score</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[spring_score]</local-name>
+            <parent-name>[Project3_Growth_Detail.csv]</parent-name>
+            <remote-alias>spring_score</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Project3_Growth_Detail.csv_01F853FB5F634A7D8A71EC35E8AC1B72]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>growth_points</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[growth_points]</local-name>
+            <parent-name>[Project3_Growth_Detail.csv]</parent-name>
+            <remote-alias>growth_points</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Project3_Growth_Detail.csv_01F853FB5F634A7D8A71EC35E8AC1B72]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Project3_Assessment_Summary.csv' datatype='table' name='[__tableau_internal_object_id__].[Project3_Assessment_Summary.csv_294E3796D8884318B25F7F9582937B66]' role='measure' type='quantitative' />
+      <column caption='Project3_Growth_Detail.csv' datatype='table' name='[__tableau_internal_object_id__].[Project3_Growth_Detail.csv_01F853FB5F634A7D8A71EC35E8AC1B72]' role='measure' type='quantitative' />
+      <column caption='Expected Tests' datatype='integer' name='[expected_tests]' role='measure' type='quantitative' />
+      <column caption='Fall Score' datatype='integer' name='[fall_score]' role='measure' type='quantitative' />
+      <column caption='grade level (Project3 Growth Detail.csv)' datatype='integer' name='[grade_level (Project3_Growth_Detail.csv)]' role='measure' type='quantitative' />
+      <column caption='Grade Level' datatype='integer' name='[grade_level]' role='measure' type='quantitative' />
+      <column caption='Growth Points' datatype='integer' name='[growth_points]' role='measure' type='quantitative' />
+      <column caption='Missing Test Records' datatype='integer' name='[missing_test_records]' role='measure' type='quantitative' />
+      <column caption='Proficient Students' datatype='integer' name='[proficient_students]' role='measure' type='quantitative' />
+      <column caption='Recorded Without Score' datatype='integer' name='[recorded_without_score]' role='measure' type='quantitative' />
+      <column caption='school id (Project3 Growth Detail.csv)' datatype='string' name='[school_id (Project3_Growth_Detail.csv)]' role='dimension' type='nominal' />
+      <column caption='School Id' datatype='string' name='[school_id]' role='dimension' type='nominal' />
+      <column caption='school level (Project3 Growth Detail.csv)' datatype='string' name='[school_level (Project3_Growth_Detail.csv)]' role='dimension' type='nominal' />
+      <column caption='School Level' datatype='string' name='[school_level]' role='dimension' type='nominal' />
+      <column caption='school name (Project3 Growth Detail.csv)' datatype='string' name='[school_name (Project3_Growth_Detail.csv)]' role='dimension' type='nominal' />
+      <column caption='School Name' datatype='string' name='[school_name]' role='dimension' type='nominal' />
+      <column caption='school year (Project3 Growth Detail.csv)' datatype='string' name='[school_year (Project3_Growth_Detail.csv)]' role='dimension' type='nominal' />
+      <column caption='School Year' datatype='string' name='[school_year]' role='dimension' type='nominal' />
+      <column caption='Spring Score' datatype='integer' name='[spring_score]' role='measure' type='quantitative' />
+      <column caption='Student Id' datatype='string' name='[student_id]' role='dimension' type='nominal' />
+      <column caption='subject (Project3 Growth Detail.csv)' datatype='string' name='[subject (Project3_Growth_Detail.csv)]' role='dimension' type='nominal' />
+      <column caption='Subject' datatype='string' name='[subject]' role='dimension' type='nominal' />
+      <column caption='Test Window' datatype='string' name='[test_window]' role='dimension' type='nominal' />
+      <column caption='Tested Below Proficiency' datatype='integer' name='[tested_below_proficiency]' role='measure' type='quantitative' />
+      <column caption='Valid Tests' datatype='integer' name='[valid_tests]' role='measure' type='quantitative' />
+      <column caption='Without Valid Score' datatype='integer' name='[without_valid_score]' role='measure' type='quantitative' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='Project3_Assessment_Summary.csv' id='Project3_Assessment_Summary.csv_294E3796D8884318B25F7F9582937B66'>
+            <properties context=''>
+              <relation connection='textscan.1ukxvqn1uk3eoa14za9101puzs43' name='Project3_Assessment_Summary.csv' table='[Project3_Assessment_Summary#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='school_year' ordinal='0' />
+                  <column datatype='string' name='school_id' ordinal='1' />
+                  <column datatype='string' name='school_name' ordinal='2' />
+                  <column datatype='string' name='school_level' ordinal='3' />
+                  <column datatype='integer' name='grade_level' ordinal='4' />
+                  <column datatype='string' name='subject' ordinal='5' />
+                  <column datatype='string' name='test_window' ordinal='6' />
+                  <column datatype='integer' name='expected_tests' ordinal='7' />
+                  <column datatype='integer' name='valid_tests' ordinal='8' />
+                  <column datatype='integer' name='without_valid_score' ordinal='9' />
+                  <column datatype='integer' name='recorded_without_score' ordinal='10' />
+                  <column datatype='integer' name='missing_test_records' ordinal='11' />
+                  <column datatype='integer' name='proficient_students' ordinal='12' />
+                  <column datatype='integer' name='tested_below_proficiency' ordinal='13' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='Project3_Growth_Detail.csv' id='Project3_Growth_Detail.csv_01F853FB5F634A7D8A71EC35E8AC1B72'>
+            <properties context=''>
+              <relation connection='textscan.1ukxvqn1uk3eoa14za9101puzs43' name='Project3_Growth_Detail.csv' table='[Project3_Growth_Detail#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='student_id' ordinal='0' />
+                  <column datatype='string' name='school_year' ordinal='1' />
+                  <column datatype='string' name='school_id' ordinal='2' />
+                  <column datatype='string' name='school_name' ordinal='3' />
+                  <column datatype='string' name='school_level' ordinal='4' />
+                  <column datatype='integer' name='grade_level' ordinal='5' />
+                  <column datatype='string' name='subject' ordinal='6' />
+                  <column datatype='integer' name='fall_score' ordinal='7' />
+                  <column datatype='integer' name='spring_score' ordinal='8' />
+                  <column datatype='integer' name='growth_points' ordinal='9' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{30C32A42-F552-4200-B9CA-4002F98DC1EC}' />
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='1.5' source-height='44'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{DB0D659D-611A-411E-9612-52FA2D8987F7}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='384' name='Sheet 1' width='384'>
+      iVBORw0KGgoAAAANSUhEUgAAAYAAAAGACAYAAACkx7W/AAAACXBIWXMAABYlAAAWJQFJUiTw
+      AAAFXUlEQVR4nO3VMQEAIAzAMMC/5yFjRxMF/XpnZg4AOW87AIAdBgAQZQAAUQYAEGUAAFEG
+      ABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAA
+      UQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBl
+      AABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYA
+      EGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABR
+      BgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUA
+      AFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQ
+      ZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEG
+      ABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAA
+      UQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBl
+      AABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYA
+      EGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABR
+      BgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUA
+      AFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQ
+      ZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEG
+      ABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAA
+      UQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBl
+      AABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYA
+      EGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABR
+      BgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUA
+      AFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQ
+      ZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEG
+      ABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAA
+      UQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBl
+      AABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEGABBlAABRBgAQZQAAUQYA
+      EGUAAFEGABBlAABRBgAQZQAAUQYAEGUAAFEfFxoG/IiMv0YAAAAASUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>
