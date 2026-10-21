@@ -150,3 +150,7 @@ JOIN public.schools s
 ORDER BY c.school_id, c.school_year;
 
 -- output shows each school's chronic absence rate plus prior year change
+
+-- verifying that there are 30 schools in the district
+SELECT COUNT(DISTINCT school_id) AS total_schools
+FROM schools;

@@ -1,0 +1,13 @@
+"school_year","subject","test_window","expected_assessment_records","valid_scores","missing_scores","participation_percentage"
+"2023-24","Math","Fall",10908,10397,511,95.3
+"2023-24","Math","Spring",10908,10439,469,95.7
+"2023-24","Reading","Fall",10908,10367,541,95.0
+"2023-24","Reading","Spring",10908,10403,505,95.4
+"2024-25","Math","Fall",12726,12142,584,95.4
+"2024-25","Math","Spring",12726,12103,623,95.1
+"2024-25","Reading","Fall",12726,12133,593,95.3
+"2024-25","Reading","Spring",12726,12152,574,95.5
+"2025-26","Math","Fall",12727,12190,537,95.8
+"2025-26","Math","Spring",12727,12122,605,95.2
+"2025-26","Reading","Fall",12727,12144,583,95.4
+"2025-26","Reading","Spring",12727,12122,605,95.2
