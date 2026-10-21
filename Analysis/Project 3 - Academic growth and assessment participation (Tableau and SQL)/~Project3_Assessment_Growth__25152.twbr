@@ -1,0 +1,1145 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20262.26.0912.1023                               -->
+<workbook _.fcp.WorkbookFingerprinting.true...author-id='faa9fb8b0bfc3257a63d23619fb3ebb6319a87ea588de8ca4cb5324db1906fe2' _.fcp.WorkbookFingerprinting.true...creator-author-id='faa9fb8b0bfc3257a63d23619fb3ebb6319a87ea588de8ca4cb5324db1906fe2' _.fcp.WorkbookFingerprinting.true...creator-license-type='free' _.fcp.WorkbookFingerprinting.true...creator-machine-id='a82641a6fca4fb8ffb9f0371e724e15af1cf0b6e6a9494ec4a2d961ef2d9762b' _.fcp.WorkbookFingerprinting.true...license-type='free' _.fcp.WorkbookFingerprinting.true...machine-id='a82641a6fca4fb8ffb9f0371e724e15af1cf0b6e6a9494ec4a2d961ef2d9762b' original-version='18.1' source-build='2026.2.3 (20262.26.0912.1023)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+    <_.fcp.WorkbookFingerprinting.true...WorkbookFingerprinting />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='Project3_Assessment_Summary+' inline='true' name='federated.1x1s0ou0qervu418p9y2c0hazlr2' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Project3_Assessment_Summary' name='textscan.1ukxvqn1uk3eoa14za9101puzs43'>
+            <connection class='textscan' directory='C:/Users/schre/GitHub/SchoolDistrictInfo/Analysis/Project 3 - Academic growth and assessment participation (Tableau and SQL)' filename='Project3_Assessment_Summary.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1ukxvqn1uk3eoa14za9101puzs43' name='Project3_Assessment_Summary.csv' table='[Project3_Assessment_Summary#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='school_year' ordinal='0' />
+            <column datatype='string' name='school_id' ordinal='1' />
+            <column datatype='string' name='school_name' ordinal='2' />
+            <column datatype='string' name='school_level' ordinal='3' />
+            <column datatype='integer' name='grade_level' ordinal='4' />
+            <column datatype='string' name='subject' ordinal='5' />
+            <column datatype='string' name='test_window' ordinal='6' />
+            <column datatype='integer' name='expected_tests' ordinal='7' />
+            <column datatype='integer' name='valid_tests' ordinal='8' />
+            <column datatype='integer' name='without_valid_score' ordinal='9' />
+            <column datatype='integer' name='recorded_without_score' ordinal='10' />
+            <column datatype='integer' name='missing_test_records' ordinal='11' />
+            <column datatype='integer' name='proficient_students' ordinal='12' />
+            <column datatype='integer' name='tested_below_proficiency' ordinal='13' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Project3_Assessment_Summary.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>school_year</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[school_year]</local-name>
+            <parent-name>[Project3_Assessment_Summary.csv]</parent-name>
+            <remote-alias>school_year</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Project3_Assessment_Summary.csv_294E3796D8884318B25F7F9582937B66]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>school_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[school_id]</local-name>
+            <parent-name>[Project3_Assessment_Summary.csv]</parent-name>
+            <remote-alias>school_id</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Project3_Assessment_Summary.csv_294E3796D8884318B25F7F9582937B66]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>school_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[school_name]</local-name>
+            <parent-name>[Project3_Assessment_Summary.csv]</parent-name>
+            <remote-alias>school_name</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Project3_Assessment_Summary.csv_294E3796D8884318B25F7F9582937B66]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>school_level</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[school_level]</local-name>
+            <parent-name>[Project3_Assessment_Summary.csv]</parent-name>
+            <remote-alias>school_level</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Project3_Assessment_Summary.csv_294E3796D8884318B25F7F9582937B66]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>grade_level</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[grade_level]</local-name>
+            <parent-name>[Project3_Assessment_Summary.csv]</parent-name>
+            <remote-alias>grade_level</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Project3_Assessment_Summary.csv_294E3796D8884318B25F7F9582937B66]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>subject</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[subject]</local-name>
+            <parent-name>[Project3_Assessment_Summary.csv]</parent-name>
+            <remote-alias>subject</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Project3_Assessment_Summary.csv_294E3796D8884318B25F7F9582937B66]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>test_window</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[test_window]</local-name>
+            <parent-name>[Project3_Assessment_Summary.csv]</parent-name>
+            <remote-alias>test_window</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Project3_Assessment_Summary.csv_294E3796D8884318B25F7F9582937B66]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>expected_tests</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[expected_tests]</local-name>
+            <parent-name>[Project3_Assessment_Summary.csv]</parent-name>
+            <remote-alias>expected_tests</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Project3_Assessment_Summary.csv_294E3796D8884318B25F7F9582937B66]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>valid_tests</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[valid_tests]</local-name>
+            <parent-name>[Project3_Assessment_Summary.csv]</parent-name>
+            <remote-alias>valid_tests</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Project3_Assessment_Summary.csv_294E3796D8884318B25F7F9582937B66]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>without_valid_score</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[without_valid_score]</local-name>
+            <parent-name>[Project3_Assessment_Summary.csv]</parent-name>
+            <remote-alias>without_valid_score</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Project3_Assessment_Summary.csv_294E3796D8884318B25F7F9582937B66]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>recorded_without_score</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[recorded_without_score]</local-name>
+            <parent-name>[Project3_Assessment_Summary.csv]</parent-name>
+            <remote-alias>recorded_without_score</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Project3_Assessment_Summary.csv_294E3796D8884318B25F7F9582937B66]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>missing_test_records</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[missing_test_records]</local-name>
+            <parent-name>[Project3_Assessment_Summary.csv]</parent-name>
+            <remote-alias>missing_test_records</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Project3_Assessment_Summary.csv_294E3796D8884318B25F7F9582937B66]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>proficient_students</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[proficient_students]</local-name>
+            <parent-name>[Project3_Assessment_Summary.csv]</parent-name>
+            <remote-alias>proficient_students</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Project3_Assessment_Summary.csv_294E3796D8884318B25F7F9582937B66]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tested_below_proficiency</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[tested_below_proficiency]</local-name>
+            <parent-name>[Project3_Assessment_Summary.csv]</parent-name>
+            <remote-alias>tested_below_proficiency</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Project3_Assessment_Summary.csv_294E3796D8884318B25F7F9582937B66]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Participation Rate' datatype='real' default-format='p0.0%' name='[Calculation_1728490523033600]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([valid_tests])/SUM([expected_tests])' />
+      </column>
+      <column caption='Missing Score Rate' datatype='real' default-format='p0.0%' name='[Calculation_1728490523332609]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([without_valid_score])/SUM([expected_tests])' />
+      </column>
+      <column caption='Proficiency Rate' datatype='real' default-format='p0.0%' name='[Calculation_1728490533564419]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF SUM([valid_tests]) &gt; 0 THEN&#13;&#10;    SUM([proficient_students]) / SUM([valid_tests])&#13;&#10;END' />
+      </column>
+      <column caption='Project3_Assessment_Summary.csv' datatype='table' name='[__tableau_internal_object_id__].[Project3_Assessment_Summary.csv_294E3796D8884318B25F7F9582937B66]' role='measure' type='quantitative' />
+      <column caption='Expected Tests' datatype='integer' name='[expected_tests]' role='measure' type='quantitative' />
+      <column caption='Grade Level' datatype='integer' name='[grade_level]' role='measure' type='quantitative' />
+      <column caption='Missing Test Records' datatype='integer' name='[missing_test_records]' role='measure' type='quantitative' />
+      <column caption='Proficient Students' datatype='integer' name='[proficient_students]' role='measure' type='quantitative' />
+      <column caption='Recorded Without Score' datatype='integer' name='[recorded_without_score]' role='measure' type='quantitative' />
+      <column caption='School Id' datatype='string' name='[school_id]' role='dimension' type='nominal' />
+      <column caption='School Level' datatype='string' name='[school_level]' role='dimension' type='nominal' />
+      <column caption='School Name' datatype='string' name='[school_name]' role='dimension' type='nominal' />
+      <column caption='School Year' datatype='string' name='[school_year]' role='dimension' type='nominal' />
+      <column caption='Subject' datatype='string' name='[subject]' role='dimension' type='nominal' />
+      <column caption='Test Window' datatype='string' name='[test_window]' role='dimension' type='nominal' />
+      <column caption='Tested Below Proficiency' datatype='integer' name='[tested_below_proficiency]' role='measure' type='quantitative' />
+      <column caption='Valid Tests' datatype='integer' name='[valid_tests]' role='measure' type='quantitative' />
+      <column caption='Without Valid Score' datatype='integer' name='[without_valid_score]' role='measure' type='quantitative' />
+      <column-instance column='[Calculation_1728490523033600]' derivation='User' name='[usr:Calculation_1728490523033600:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_1728490523332609]' derivation='User' name='[usr:Calculation_1728490523332609:qk]' pivot='key' type='quantitative' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1x1s0ou0qervu418p9y2c0hazlr2].[usr:Calculation_1728490523033600:qk]&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;[federated.1x1s0ou0qervu418p9y2c0hazlr2].[usr:Calculation_1728490523332609:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='Project3_Assessment_Summary.csv' id='Project3_Assessment_Summary.csv_294E3796D8884318B25F7F9582937B66'>
+            <properties context=''>
+              <relation connection='textscan.1ukxvqn1uk3eoa14za9101puzs43' name='Project3_Assessment_Summary.csv' table='[Project3_Assessment_Summary#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='school_year' ordinal='0' />
+                  <column datatype='string' name='school_id' ordinal='1' />
+                  <column datatype='string' name='school_name' ordinal='2' />
+                  <column datatype='string' name='school_level' ordinal='3' />
+                  <column datatype='integer' name='grade_level' ordinal='4' />
+                  <column datatype='string' name='subject' ordinal='5' />
+                  <column datatype='string' name='test_window' ordinal='6' />
+                  <column datatype='integer' name='expected_tests' ordinal='7' />
+                  <column datatype='integer' name='valid_tests' ordinal='8' />
+                  <column datatype='integer' name='without_valid_score' ordinal='9' />
+                  <column datatype='integer' name='recorded_without_score' ordinal='10' />
+                  <column datatype='integer' name='missing_test_records' ordinal='11' />
+                  <column datatype='integer' name='proficient_students' ordinal='12' />
+                  <column datatype='integer' name='tested_below_proficiency' ordinal='13' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='Project3_Growth_Detail' inline='true' name='federated.1q9lyum1p784hl1h0fgxq0vj8ckd' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Project3_Growth_Detail' name='textscan.0nlgrbd0a5c8oh19ubjgk0tk1hfl'>
+            <connection class='textscan' directory='C:/Users/schre/GitHub/SchoolDistrictInfo/Analysis/Project 3 - Academic growth and assessment participation (Tableau and SQL)' filename='Project3_Growth_Detail.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.0nlgrbd0a5c8oh19ubjgk0tk1hfl' name='Project3_Growth_Detail.csv' table='[Project3_Growth_Detail#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='student_id' ordinal='0' />
+            <column datatype='string' name='school_year' ordinal='1' />
+            <column datatype='string' name='school_id' ordinal='2' />
+            <column datatype='string' name='school_name' ordinal='3' />
+            <column datatype='string' name='school_level' ordinal='4' />
+            <column datatype='integer' name='grade_level' ordinal='5' />
+            <column datatype='string' name='subject' ordinal='6' />
+            <column datatype='integer' name='fall_score' ordinal='7' />
+            <column datatype='integer' name='spring_score' ordinal='8' />
+            <column datatype='integer' name='growth_points' ordinal='9' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Project3_Growth_Detail.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>student_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[student_id]</local-name>
+            <parent-name>[Project3_Growth_Detail.csv]</parent-name>
+            <remote-alias>student_id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Project3_Growth_Detail.csv_E9B92C2F895B4F3FB407C8E5367B035B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>school_year</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[school_year]</local-name>
+            <parent-name>[Project3_Growth_Detail.csv]</parent-name>
+            <remote-alias>school_year</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Project3_Growth_Detail.csv_E9B92C2F895B4F3FB407C8E5367B035B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>school_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[school_id]</local-name>
+            <parent-name>[Project3_Growth_Detail.csv]</parent-name>
+            <remote-alias>school_id</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Project3_Growth_Detail.csv_E9B92C2F895B4F3FB407C8E5367B035B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>school_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[school_name]</local-name>
+            <parent-name>[Project3_Growth_Detail.csv]</parent-name>
+            <remote-alias>school_name</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Project3_Growth_Detail.csv_E9B92C2F895B4F3FB407C8E5367B035B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>school_level</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[school_level]</local-name>
+            <parent-name>[Project3_Growth_Detail.csv]</parent-name>
+            <remote-alias>school_level</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Project3_Growth_Detail.csv_E9B92C2F895B4F3FB407C8E5367B035B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>grade_level</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[grade_level]</local-name>
+            <parent-name>[Project3_Growth_Detail.csv]</parent-name>
+            <remote-alias>grade_level</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Project3_Growth_Detail.csv_E9B92C2F895B4F3FB407C8E5367B035B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>subject</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[subject]</local-name>
+            <parent-name>[Project3_Growth_Detail.csv]</parent-name>
+            <remote-alias>subject</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Project3_Growth_Detail.csv_E9B92C2F895B4F3FB407C8E5367B035B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>fall_score</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[fall_score]</local-name>
+            <parent-name>[Project3_Growth_Detail.csv]</parent-name>
+            <remote-alias>fall_score</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Project3_Growth_Detail.csv_E9B92C2F895B4F3FB407C8E5367B035B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>spring_score</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[spring_score]</local-name>
+            <parent-name>[Project3_Growth_Detail.csv]</parent-name>
+            <remote-alias>spring_score</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Project3_Growth_Detail.csv_E9B92C2F895B4F3FB407C8E5367B035B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>growth_points</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[growth_points]</local-name>
+            <parent-name>[Project3_Growth_Detail.csv]</parent-name>
+            <remote-alias>growth_points</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Project3_Growth_Detail.csv_E9B92C2F895B4F3FB407C8E5367B035B]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Matched Pair Count' datatype='integer' name='[Calculation_1728490547732484]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT([student_id])' />
+      </column>
+      <column caption='Total Pairs in Distribution' datatype='integer' name='[Calculation_1728490549727237]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='WINDOW_SUM(COUNT([student_id]))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Growth Points (bin)' datatype='integer' name='[Growth Points (bin)]' role='dimension' type='ordinal'>
+        <calculation class='bin' decimals='1' formula='[growth_points]' peg='0' size='10' />
+      </column>
+      <column caption='Project3_Growth_Detail.csv' datatype='table' name='[__tableau_internal_object_id__].[Project3_Growth_Detail.csv_E9B92C2F895B4F3FB407C8E5367B035B]' role='measure' type='quantitative' />
+      <column caption='Fall Score' datatype='integer' name='[fall_score]' role='measure' type='quantitative' />
+      <column caption='Grade Level' datatype='integer' name='[grade_level]' role='measure' type='quantitative' />
+      <column caption='Growth Points' datatype='integer' name='[growth_points]' role='measure' type='quantitative' />
+      <column caption='School Id' datatype='string' name='[school_id]' role='dimension' type='nominal' />
+      <column caption='School Level' datatype='string' name='[school_level]' role='dimension' type='nominal' />
+      <column caption='School Name' datatype='string' name='[school_name]' role='dimension' type='nominal' />
+      <column caption='School Year' datatype='string' name='[school_year]' role='dimension' type='nominal' />
+      <column caption='Spring Score' datatype='integer' name='[spring_score]' role='measure' type='quantitative' />
+      <column caption='Student Id' datatype='string' name='[student_id]' role='dimension' type='nominal' />
+      <column caption='Subject' datatype='string' name='[subject]' role='dimension' type='nominal' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='Project3_Growth_Detail.csv' id='Project3_Growth_Detail.csv_E9B92C2F895B4F3FB407C8E5367B035B'>
+            <properties context=''>
+              <relation connection='textscan.0nlgrbd0a5c8oh19ubjgk0tk1hfl' name='Project3_Growth_Detail.csv' table='[Project3_Growth_Detail#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='student_id' ordinal='0' />
+                  <column datatype='string' name='school_year' ordinal='1' />
+                  <column datatype='string' name='school_id' ordinal='2' />
+                  <column datatype='string' name='school_name' ordinal='3' />
+                  <column datatype='string' name='school_level' ordinal='4' />
+                  <column datatype='integer' name='grade_level' ordinal='5' />
+                  <column datatype='string' name='subject' ordinal='6' />
+                  <column datatype='integer' name='fall_score' ordinal='7' />
+                  <column datatype='integer' name='spring_score' ordinal='8' />
+                  <column datatype='integer' name='growth_points' ordinal='9' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Assessment Participation'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#000000' fontname='Benton Sans Book'>Spring assessment participation and missing scores — Math, grade 5</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Project3_Assessment_Summary+' name='federated.1x1s0ou0qervu418p9y2c0hazlr2' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1x1s0ou0qervu418p9y2c0hazlr2'>
+            <column caption='Participation Rate' datatype='real' default-format='p0.0%' name='[Calculation_1728490523033600]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([valid_tests])/SUM([expected_tests])' />
+            </column>
+            <column caption='Missing Score Rate' datatype='real' default-format='p0.0%' name='[Calculation_1728490523332609]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([without_valid_score])/SUM([expected_tests])' />
+            </column>
+            <column caption='Expected Tests' datatype='integer' name='[expected_tests]' role='measure' type='quantitative' />
+            <column caption='Grade Level' datatype='integer' name='[grade_level]' role='measure' type='quantitative' />
+            <column-instance column='[grade_level]' derivation='None' name='[none:grade_level:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[school_year]' derivation='None' name='[none:school_year:nk]' pivot='key' type='nominal' />
+            <column-instance column='[subject]' derivation='None' name='[none:subject:nk]' pivot='key' type='nominal' />
+            <column-instance column='[test_window]' derivation='None' name='[none:test_window:nk]' pivot='key' type='nominal' />
+            <column caption='School Year' datatype='string' name='[school_year]' role='dimension' type='nominal' />
+            <column caption='Subject' datatype='string' name='[subject]' role='dimension' type='nominal' />
+            <column-instance column='[expected_tests]' derivation='Sum' name='[sum:expected_tests:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[valid_tests]' derivation='Sum' name='[sum:valid_tests:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[without_valid_score]' derivation='Sum' name='[sum:without_valid_score:qk]' pivot='key' type='quantitative' />
+            <column caption='Test Window' datatype='string' name='[test_window]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_1728490523033600]' derivation='User' name='[usr:Calculation_1728490523033600:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1728490523332609]' derivation='User' name='[usr:Calculation_1728490523332609:qk]' pivot='key' type='quantitative' />
+            <column caption='Valid Tests' datatype='integer' name='[valid_tests]' role='measure' type='quantitative' />
+            <column caption='Without Valid Score' datatype='integer' name='[without_valid_score]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1x1s0ou0qervu418p9y2c0hazlr2].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1x1s0ou0qervu418p9y2c0hazlr2].[usr:Calculation_1728490523332609:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1x1s0ou0qervu418p9y2c0hazlr2].[usr:Calculation_1728490523033600:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <filter class='quantitative' column='[federated.1x1s0ou0qervu418p9y2c0hazlr2].[none:grade_level:qk]' included-values='in-range'>
+            <min>5</min>
+            <max>5</max>
+          </filter>
+          <filter class='categorical' column='[federated.1x1s0ou0qervu418p9y2c0hazlr2].[none:subject:nk]'>
+            <groupfilter function='member' level='[none:subject:nk]' member='&quot;Math&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1x1s0ou0qervu418p9y2c0hazlr2].[none:test_window:nk]'>
+            <groupfilter function='member' level='[none:test_window:nk]' member='&quot;Spring&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1x1s0ou0qervu418p9y2c0hazlr2].[none:subject:nk]</column>
+            <column>[federated.1x1s0ou0qervu418p9y2c0hazlr2].[none:grade_level:qk]</column>
+            <column>[federated.1x1s0ou0qervu418p9y2c0hazlr2].[none:test_window:nk]</column>
+            <column>[federated.1x1s0ou0qervu418p9y2c0hazlr2].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.1x1s0ou0qervu418p9y2c0hazlr2].[none:school_year:nk]' value='89' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.1x1s0ou0qervu418p9y2c0hazlr2].[:Measure Names]' />
+              <tooltip column='[federated.1x1s0ou0qervu418p9y2c0hazlr2].[sum:expected_tests:qk]' />
+              <tooltip column='[federated.1x1s0ou0qervu418p9y2c0hazlr2].[sum:valid_tests:qk]' />
+              <tooltip column='[federated.1x1s0ou0qervu418p9y2c0hazlr2].[sum:without_valid_score:qk]' />
+              <tooltip column='[federated.1x1s0ou0qervu418p9y2c0hazlr2].[usr:Calculation_1728490523033600:qk]' />
+              <text column='[federated.1x1s0ou0qervu418p9y2c0hazlr2].[Multiple Values]' />
+              <lod column='[federated.1x1s0ou0qervu418p9y2c0hazlr2].[:Measure Names]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#757575'>School Year:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1x1s0ou0qervu418p9y2c0hazlr2].[none:school_year:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'><![CDATA[<[federated.1x1s0ou0qervu418p9y2c0hazlr2].[:Measure Names]>:	]]></run>
+                <run bold='true'><![CDATA[<[federated.1x1s0ou0qervu418p9y2c0hazlr2].[Multiple Values]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Expected Tests:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1x1s0ou0qervu418p9y2c0hazlr2].[sum:expected_tests:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Valid Scores:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1x1s0ou0qervu418p9y2c0hazlr2].[sum:valid_tests:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Without Valid Score:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1x1s0ou0qervu418p9y2c0hazlr2].[sum:without_valid_score:qk]>]]></run>
+                <run>Æ&#10;&#10;</run>
+                <run fontcolor='#000000' fontname='Courier New'>Missing scores are reported separately,</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#000000' fontname='Courier New'>not classified as below proficiency.</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1x1s0ou0qervu418p9y2c0hazlr2].[Multiple Values]</rows>
+        <cols>[federated.1x1s0ou0qervu418p9y2c0hazlr2].[none:school_year:nk]</cols>
+      </table>
+      <simple-id uuid='{30C32A42-F552-4200-B9CA-4002F98DC1EC}' />
+    </worksheet>
+    <worksheet name='Matched Growth Distribution'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Project3_Growth_Detail' name='federated.1q9lyum1p784hl1h0fgxq0vj8ckd' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1q9lyum1p784hl1h0fgxq0vj8ckd'>
+            <column caption='Matched Pair Count' datatype='integer' name='[Calculation_1728490547732484]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT([student_id])' />
+            </column>
+            <column caption='Total Pairs in Distribution' datatype='integer' name='[Calculation_1728490549727237]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='WINDOW_SUM(COUNT([student_id]))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='Growth Points (bin)' datatype='integer' name='[Growth Points (bin)]' role='dimension' type='ordinal'>
+              <calculation class='bin' decimals='1' formula='[growth_points]' peg='0' size='10' />
+            </column>
+            <column caption='Grade Level' datatype='integer' name='[grade_level]' role='measure' type='quantitative' />
+            <column caption='Growth Points' datatype='integer' name='[growth_points]' role='measure' type='quantitative' />
+            <column-instance column='[Growth Points (bin)]' derivation='None' name='[none:Growth Points (bin):ok]' pivot='key' type='ordinal' />
+            <column-instance column='[grade_level]' derivation='None' name='[none:grade_level:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[school_year]' derivation='None' name='[none:school_year:nk]' pivot='key' type='nominal' />
+            <column-instance column='[subject]' derivation='None' name='[none:subject:nk]' pivot='key' type='nominal' />
+            <column caption='School Year' datatype='string' name='[school_year]' role='dimension' type='nominal' />
+            <column caption='Student Id' datatype='string' name='[student_id]' role='dimension' type='nominal' />
+            <column caption='Subject' datatype='string' name='[subject]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_1728490547732484]' derivation='User' name='[usr:Calculation_1728490547732484:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1728490549727237]' derivation='User' name='[usr:Calculation_1728490549727237:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' />
+            </column-instance>
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.1q9lyum1p784hl1h0fgxq0vj8ckd].[none:grade_level:qk]' included-values='in-range'>
+            <min>5</min>
+            <max>5</max>
+          </filter>
+          <filter class='categorical' column='[federated.1q9lyum1p784hl1h0fgxq0vj8ckd].[none:school_year:nk]'>
+            <groupfilter function='member' level='[none:school_year:nk]' member='&quot;2025-26&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1q9lyum1p784hl1h0fgxq0vj8ckd].[none:subject:nk]'>
+            <groupfilter function='member' level='[none:subject:nk]' member='&quot;Math&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1q9lyum1p784hl1h0fgxq0vj8ckd].[none:school_year:nk]</column>
+            <column>[federated.1q9lyum1p784hl1h0fgxq0vj8ckd].[none:subject:nk]</column>
+            <column>[federated.1q9lyum1p784hl1h0fgxq0vj8ckd].[none:grade_level:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <tooltip column='[federated.1q9lyum1p784hl1h0fgxq0vj8ckd].[usr:Calculation_1728490547732484:qk]' />
+              <tooltip column='[federated.1q9lyum1p784hl1h0fgxq0vj8ckd].[usr:Calculation_1728490549727237:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#757575'>Growth Points (bin):&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1q9lyum1p784hl1h0fgxq0vj8ckd].[none:Growth Points (bin):ok]>]]></run>
+                <run>Æ&#10;</run>
+                <run bold='true'>Bin width: 10 score points</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Matched Pair Count:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1q9lyum1p784hl1h0fgxq0vj8ckd].[usr:Calculation_1728490547732484:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Total Pairs in Distribution:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1q9lyum1p784hl1h0fgxq0vj8ckd].[usr:Calculation_1728490549727237:qk]>]]></run>
+                <run>Æ&#10;&#10;</run>
+                <run fontcolor='#000000' fontname='Courier New'>Each pair requires a valid Fall and Spring score</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#000000' fontname='Courier New'>for the same student, subject, and school year.</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#000000' fontname='Courier New'>Students missing either score are excluded.</run>
+              </formatted-text>
+            </customized-tooltip>
+          </pane>
+        </panes>
+        <rows>[federated.1q9lyum1p784hl1h0fgxq0vj8ckd].[usr:Calculation_1728490547732484:qk]</rows>
+        <cols>[federated.1q9lyum1p784hl1h0fgxq0vj8ckd].[none:Growth Points (bin):ok]</cols>
+        <show-full-range>
+          <column>[federated.1q9lyum1p784hl1h0fgxq0vj8ckd].[Growth Points (bin)]</column>
+        </show-full-range>
+      </table>
+      <simple-id uuid='{8F1AE57C-7BA0-4682-B9F7-0CD8353A80E1}' />
+    </worksheet>
+    <worksheet name='Spring Proficiency Trend'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#000000' fontname='Benton Sans Book'>Spring proficiency among tested students — Math, grade 5</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Project3_Assessment_Summary+' name='federated.1x1s0ou0qervu418p9y2c0hazlr2' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1x1s0ou0qervu418p9y2c0hazlr2'>
+            <column caption='Proficiency Rate' datatype='real' default-format='p0.0%' name='[Calculation_1728490533564419]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF SUM([valid_tests]) &gt; 0 THEN&#13;&#10;    SUM([proficient_students]) / SUM([valid_tests])&#13;&#10;END' />
+            </column>
+            <column caption='Expected Tests' datatype='integer' name='[expected_tests]' role='measure' type='quantitative' />
+            <column-instance column='[school_year]' derivation='None' name='[none:school_year:nk]' pivot='key' type='nominal' />
+            <column-instance column='[subject]' derivation='None' name='[none:subject:nk]' pivot='key' type='nominal' />
+            <column-instance column='[test_window]' derivation='None' name='[none:test_window:nk]' pivot='key' type='nominal' />
+            <column caption='Proficient Students' datatype='integer' name='[proficient_students]' role='measure' type='quantitative' />
+            <column caption='School Year' datatype='string' name='[school_year]' role='dimension' type='nominal' />
+            <column caption='Subject' datatype='string' name='[subject]' role='dimension' type='nominal' />
+            <column-instance column='[expected_tests]' derivation='Sum' name='[sum:expected_tests:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[proficient_students]' derivation='Sum' name='[sum:proficient_students:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[valid_tests]' derivation='Sum' name='[sum:valid_tests:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[without_valid_score]' derivation='Sum' name='[sum:without_valid_score:qk]' pivot='key' type='quantitative' />
+            <column caption='Test Window' datatype='string' name='[test_window]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_1728490533564419]' derivation='User' name='[usr:Calculation_1728490533564419:qk]' pivot='key' type='quantitative' />
+            <column caption='Valid Tests' datatype='integer' name='[valid_tests]' role='measure' type='quantitative' />
+            <column caption='Without Valid Score' datatype='integer' name='[without_valid_score]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1x1s0ou0qervu418p9y2c0hazlr2].[none:subject:nk]'>
+            <groupfilter function='member' level='[none:subject:nk]' member='&quot;Math&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1x1s0ou0qervu418p9y2c0hazlr2].[none:test_window:nk]'>
+            <groupfilter function='member' level='[none:test_window:nk]' member='&quot;Spring&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1x1s0ou0qervu418p9y2c0hazlr2].[none:subject:nk]</column>
+            <column>[federated.1x1s0ou0qervu418p9y2c0hazlr2].[none:test_window:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.1x1s0ou0qervu418p9y2c0hazlr2].[none:school_year:nk]' value='127' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <tooltip column='[federated.1x1s0ou0qervu418p9y2c0hazlr2].[sum:proficient_students:qk]' />
+              <tooltip column='[federated.1x1s0ou0qervu418p9y2c0hazlr2].[sum:valid_tests:qk]' />
+              <tooltip column='[federated.1x1s0ou0qervu418p9y2c0hazlr2].[sum:expected_tests:qk]' />
+              <tooltip column='[federated.1x1s0ou0qervu418p9y2c0hazlr2].[sum:without_valid_score:qk]' />
+              <text column='[federated.1x1s0ou0qervu418p9y2c0hazlr2].[usr:Calculation_1728490533564419:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#757575'>School Year:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1x1s0ou0qervu418p9y2c0hazlr2].[none:school_year:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Expected Tests:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1x1s0ou0qervu418p9y2c0hazlr2].[sum:expected_tests:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Proficient Students:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1x1s0ou0qervu418p9y2c0hazlr2].[sum:proficient_students:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Valid Tests - Proficiency Denominator:	</run>
+                <run bold='true'><![CDATA[<[federated.1x1s0ou0qervu418p9y2c0hazlr2].[sum:valid_tests:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Without Valid Score:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.1x1s0ou0qervu418p9y2c0hazlr2].[sum:without_valid_score:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Proficiency Among Tested Students:	</run>
+                <run bold='true'><![CDATA[<[federated.1x1s0ou0qervu418p9y2c0hazlr2].[usr:Calculation_1728490533564419:qk]>]]></run>
+                <run>Æ&#10;&#10;</run>
+                <run fontcolor='#000000' fontname='Courier New'>Proficiency means a valid score of at least 510</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#000000' fontname='Courier New'>on this fictional assessment scale.</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1x1s0ou0qervu418p9y2c0hazlr2].[usr:Calculation_1728490533564419:qk]</rows>
+        <cols>[federated.1x1s0ou0qervu418p9y2c0hazlr2].[none:school_year:nk]</cols>
+      </table>
+      <simple-id uuid='{678415D4-5CD9-4728-BC6F-B7D249A051D5}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Academic Growth'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <datasources>
+        <datasource caption='Project3_Growth_Detail' name='federated.1q9lyum1p784hl1h0fgxq0vj8ckd' />
+      </datasources>
+      <datasource-dependencies datasource='federated.1q9lyum1p784hl1h0fgxq0vj8ckd'>
+        <column-instance column='[school_year]' derivation='None' name='[none:school_year:nk]' pivot='key' type='nominal' />
+        <column caption='School Year' datatype='string' name='[school_year]' role='dimension' type='nominal' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='7' param='horz' type-v2='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='98000' id='5' type-v2='layout-basic' w='82400' x='800' y='1000'>
+              <zone h='98000' id='3' name='Matched Growth Distribution' w='82400' x='800' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone fixed-size='160' h='98000' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='16000' x='83200' y='1000'>
+              <zone h='18500' id='8' name='Matched Growth Distribution' param='[federated.1q9lyum1p784hl1h0fgxq0vj8ckd].[none:school_year:nk]' type-v2='filter' w='16000' x='83200' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='10' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='9' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+                <zone h='18500' id='8' mode='checkdropdown' name='Matched Growth Distribution' param='[federated.1q9lyum1p784hl1h0fgxq0vj8ckd].[none:school_year:nk]' type-v2='filter' w='16000' x='83200' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='98000' id='3' is-fixed='true' name='Matched Growth Distribution' w='82400' x='800' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{D275E2C6-0348-47E5-BE08-FF2FCCF0E913}' />
+    </dashboard>
+    <dashboard enable-sort-zone-taborder='true' name='Participation and Proficiency'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='7' param='horz' type-v2='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='98000' id='5' type-v2='layout-basic' w='44100' x='800' y='1000'>
+              <zone h='98000' id='3' name='Assessment Participation' w='44100' x='800' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone fixed-size='543' h='98000' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='54300' x='44900' y='1000'>
+              <zone h='10500' id='8' name='Assessment Participation' pane-specification-id='0' param='[federated.1x1s0ou0qervu418p9y2c0hazlr2].[:Measure Names]' type-v2='color' w='54300' x='44900' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='87500' id='9' name='Spring Proficiency Trend' w='54300' x='44900' y='11500'>
+                <layout-cache cell-count-w='3' minheight='240' non-cell-size-w='99' type-h='scalable' type-w='cell' />
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='13' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='12' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+                <zone fixed-size='280' h='98000' id='3' is-fixed='true' name='Assessment Participation' w='44100' x='800' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='10500' id='8' name='Assessment Participation' pane-specification-id='0' param='[federated.1x1s0ou0qervu418p9y2c0hazlr2].[:Measure Names]' type-v2='color' w='54300' x='44900' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='87500' id='9' is-fixed='true' name='Spring Proficiency Trend' w='54300' x='44900' y='11500'>
+                  <layout-cache cell-count-w='3' minheight='240' non-cell-size-w='99' type-h='scalable' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{BF0536A1-FE15-4A09-A155-E46D0E55DE93}' />
+    </dashboard>
+  </dashboards>
+  <windows saved-dpi-scale-factor='1.5' source-height='75'>
+    <window class='worksheet' name='Assessment Participation'>
+      <cards>
+        <edge name='left'>
+          <strip size='300'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1x1s0ou0qervu418p9y2c0hazlr2].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{DB0D659D-611A-411E-9612-52FA2D8987F7}' />
+    </window>
+    <window class='worksheet' name='Spring Proficiency Trend'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{31EFF58B-6E92-46EE-89A2-826C579CCB67}' />
+    </window>
+    <window class='worksheet' name='Matched Growth Distribution'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.1q9lyum1p784hl1h0fgxq0vj8ckd].[none:school_year:nk]' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{63B4CF6E-7796-43DC-A1E6-7C1B0BF30E53}' />
+    </window>
+    <window class='dashboard' name='Participation and Proficiency'>
+      <viewpoints>
+        <viewpoint name='Assessment Participation'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Spring Proficiency Trend'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{03F1484F-8876-451B-9F9B-DD8D2B6C1CEF}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Academic Growth'>
+      <viewpoints>
+        <viewpoint name='Matched Growth Distribution'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='8' />
+      <simple-id uuid='{9E80A341-92E4-4E98-B1C2-25500A6002DF}' />
+    </window>
+  </windows>
+</workbook>
