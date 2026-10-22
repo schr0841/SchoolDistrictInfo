@@ -305,8 +305,112 @@ END;
 
 
 
+-- PROJECT 3: COMPARE PAIRED GROWTH WITH THE DIFFERENCE IN OVERALL MEANS
+-- Run this entire query in pgAdmin Query Tool, connected to schooldistrictinfo.
+-- Starting selection: 2025-26, Math, grade 5.
+-- Change only the settings CTE to explore another year/subject/eligible grade.
+-- Eligible grades: 3-8 and 11. All scores and growth scales are fictional.
+-- Read-only: no database objects or records are changed.
+
+WITH settings AS (
+    SELECT '2025-26' AS school_year, 'Math' AS subject, 5 AS grade_level
+),
+selected_scores AS (
+    -- Same eligible population for both methods. NULL scores remain NULL.
+    SELECT a.student_id, a."window" AS test_window, a.score
+    FROM public.assessments a
+    JOIN public.enrollment e
+        ON a.student_id = e.student_id
+       AND a.school_year = e.school_year
+    JOIN settings p
+        ON a.school_year = p.school_year
+       AND a.subject = p.subject
+       AND e.grade_level = p.grade_level
+),
+overall_means AS (
+    -- Each window uses all of its valid scores, independently of the other.
+    -- AVG ignores NULLs; COUNT(score) counts only nonmissing scores.
+    SELECT
+        COUNT(score) FILTER (WHERE test_window = 'Fall') AS fall_tested,
+        COUNT(score) FILTER (WHERE test_window = 'Spring') AS spring_tested,
+        AVG(score) FILTER (WHERE test_window = 'Fall') AS all_fall_mean,
+        AVG(score) FILTER (WHERE test_window = 'Spring') AS all_spring_mean
+    FROM selected_scores
+),
+matched_pairs AS (
+    -- selected_scores already fixes the year and subject, so student_id is
+    -- sufficient here to match Fall and Spring within that fixed selection.
+    -- In an unfiltered multi-year/subject query, also join on year and subject.
+    SELECT
+        f.student_id,
+        f.score AS fall_score,
+        sp.score AS spring_score,
+        sp.score - f.score AS growth_points
+    FROM selected_scores f
+    JOIN selected_scores sp
+        ON f.student_id = sp.student_id
+       AND sp.test_window = 'Spring'
+    WHERE f.test_window = 'Fall'
+      AND f.score IS NOT NULL
+      AND sp.score IS NOT NULL
+),
+paired_summary AS (
+    -- Both means and growth use exactly the same matched students.
+    SELECT
+        COUNT(*) AS paired_students,
+        AVG(fall_score) AS paired_fall_mean,
+        AVG(spring_score) AS paired_spring_mean,
+        AVG(growth_points) AS paired_growth
+    FROM matched_pairs
+)
+SELECT
+    p.school_year,
+    p.subject,
+    p.grade_level,
+    o.fall_tested,
+    o.spring_tested,
+    m.paired_students,
+    o.fall_tested - m.paired_students AS fall_only_students,
+    o.spring_tested - m.paired_students AS spring_only_students,
+    ROUND(o.all_fall_mean, 2) AS overall_fall_mean,
+    ROUND(o.all_spring_mean, 2) AS overall_spring_mean,
+    ROUND(o.all_spring_mean - o.all_fall_mean, 2)
+        AS overall_mean_change_points,
+    ROUND(m.paired_fall_mean, 2) AS paired_fall_mean,
+    ROUND(m.paired_spring_mean, 2) AS paired_spring_mean,
+    ROUND(m.paired_growth, 2) AS paired_growth_points,
+    ROUND((o.all_spring_mean - o.all_fall_mean) - m.paired_growth, 2)
+        AS overall_change_minus_paired_growth
+FROM settings p
+CROSS JOIN overall_means o
+CROSS JOIN paired_summary m;
+
+-- INTERPRETATION
+-- Overall change = mean of ALL valid Spring scores - mean of ALL valid Fall scores.
+-- Paired growth = average individual Spring-minus-Fall change among valid pairs.
+-- fall_only_students have a valid Fall score but no valid Spring score.
+-- spring_only_students have a valid Spring score but no valid Fall score.
+-- Those one-window students affect overall means but are excluded from paired growth.
+-- Equal Fall/Spring sample sizes do not prove they contain the same students.
+-- If the valid student sets are identical, both methods agree (before rounding).
+-- If sets differ, the results MAY differ, but can still agree by coincidence.
+-- Missing both scores means a student contributes to neither method.
+-- Neither method proves a program or school caused a change.
+-- Paired growth describes tested pairs, not every eligible student.
+
+-- CHECKS
+-- paired_students <= fall_tested and paired_students <= spring_tested.
+-- paired_growth_points matches the earlier matched-growth query for this selection.
+-- paired_spring_mean - paired_fall_mean approximately equals paired_growth_points;
+-- tiny differences can arise from rounding displayed values separately.
+-- Results are score points, not percentages or growth percentiles.
 
 
 
+-- For 2025–26 Math in grade 5, there were 1744 valid Fall scores, 1734 valid Spring scores, 
+-- and 1662 matched student pairs. The difference between overall Spring and Fall means was 
+-- 18.36 points, compared with 18.31 points of average paired growth. The methods differed by 0.05
+-- points because the overall means included students tested in only one window, while 
+-- paired growth used the same students at both times.
 
 
