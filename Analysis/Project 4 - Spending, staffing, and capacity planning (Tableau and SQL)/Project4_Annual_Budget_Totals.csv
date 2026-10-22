@@ -1,0 +1,4 @@
+"school_year","finance_records","schools","total_budget","total_actual","budget_variance","variance_percentage_of_budget","variance_status"
+"2023-24",150,30,225833500.0,226612843.48,779343.48,0.35,"Unfavorable - over budget"
+"2024-25",150,30,237249334.01,237558935.48,309601.47,0.13,"Unfavorable - over budget"
+"2025-26",150,30,247670004.75,246824699.09,-845305.66,-0.34,"Favorable - under budget"
