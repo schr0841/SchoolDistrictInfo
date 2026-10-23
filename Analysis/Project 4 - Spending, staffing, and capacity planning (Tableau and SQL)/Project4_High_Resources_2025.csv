@@ -1,0 +1,10 @@
+"school_year","school_id","school_name","school_level","enrolled_students","actual_operating_spending","teacher_fte","capacity","spending_per_student","students_per_teacher_fte","capacity_utilization_percentage"
+"2025-26","H07","Cedar Valley High 07","High",801,10330566.03,44.5,1100,12897.09,18.00,72.82
+"2025-26","H03","Cedar Valley High 03","High",816,10345283.92,45.5,1100,12678.04,17.93,74.18
+"2025-26","H02","Cedar Valley High 02","High",825,10349705.35,45.3,1100,12545.10,18.21,75.00
+"2025-26","H01","Cedar Valley High 01","High",800,9974110.31,40.0,1100,12467.64,20.00,72.73
+"2025-26","H09","Cedar Valley High 09","High",809,10003001.52,42.9,1100,12364.65,18.86,73.55
+"2025-26","H08","Cedar Valley High 08","High",800,9884687.88,41.5,1100,12355.86,19.28,72.73
+"2025-26","H05","Cedar Valley High 05","High",776,9519914.27,39.1,1100,12267.93,19.85,70.55
+"2025-26","H06","Cedar Valley High 06","High",847,10352410.64,44.8,1100,12222.44,18.91,77.00
+"2025-26","H04","Cedar Valley High 04","High",798,9693273.97,44.5,1100,12146.96,17.93,72.55
