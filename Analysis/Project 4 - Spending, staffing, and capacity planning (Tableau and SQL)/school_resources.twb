@@ -921,8 +921,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='1450' minheight='1450' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='20' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='99000' id='19' param='vert' type-v2='layout-flow' w='98546' x='727' y='500'>
+            <zone h='100000' id='22' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='99000' id='21' param='vert' type-v2='layout-flow' w='98546' x='727' y='500'>
                 <zone h='9250' id='12' mode='checkdropdown' name='Resource Scatterplot' param='[federated.0d30d3e0no0njl1d6pd0s061riqm].[none:school_level:nk]' type-v2='filter' w='14545' x='84728' y='24250'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
