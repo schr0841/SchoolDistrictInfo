@@ -405,3 +405,73 @@ END;
 -- Student (12258.12). It had 18.16 students per teacher FTE 
 -- and 67.71% capacity utilization.
 
+
+
+-- PROJECT 4 STEP 3: TABLEAU DATASETS
+-- Run each numbered SELECT separately in pgAdmin Query Tool.
+-- Export results with column headers using the indicated filenames.
+-- Read-only; all years and school levels are retained.
+-- Import as TWO SEPARATE Tableau data sources, not joined tables.
+
+-- 1. Export as Project4_School_Resources.csv
+-- Tableau source name: School Resources
+-- Grain: one school-year. Expected original dataset: 90 rows.
+-- For the budget variance chart and resource scatterplot.
+-- capacity_utilization is a proportion: 0.80 = 80%.
+SELECT
+    school_id,
+    school_name,
+    school_level,
+    school_year,
+    enrollment,
+    budget,
+    actual,
+    budget_variance,
+    teacher_fte,
+    capacity,
+    spending_per_student,
+    students_per_teacher_fte,
+    capacity_utilization
+FROM public.school_year_metrics
+ORDER BY school_year, school_level, school_name;
+
+
+
+-- 2. Export as Project4_Staffing_Detail.csv
+-- Tableau source name: Staffing Detail
+-- Grain: one school-year-role. Expected original dataset: 360 rows.
+-- FTE is not employee headcount. salary_benefits is total annual role cost,
+-- not cost per FTE. Do not add it to finance totals, which cover staffing.
+SELECT
+    st.school_id,
+    s.school_name,
+    s.school_level,
+    st.school_year,
+    st.staff_role,
+    st.fte,
+    st.salary_benefits
+FROM public.staffing st
+JOIN public.schools s
+    ON st.school_id = s.school_id
+ORDER BY st.school_year, s.school_level, s.school_name, st.staff_role;
+
+-- CHECKS
+-- School Resources enrollment sums to 20,000 for each year.
+-- actual - budget equals budget_variance.
+-- Sum annual budget and actual and compare with prior reconciliations.
+-- Teacher FTE in Staffing Detail, filtered to Teacher, must match
+-- School Resources teacher_fte under identical school/year/level filters.
+-- Start with ONE year (2025-26) and ONE level (Elementary).
+-- Scatterplot: School Name on Detail gives one mark per school.
+-- All costs are synthetic nominal, partial operating expenses.
+
+
+
+
+
+
+
+
+
+
+
