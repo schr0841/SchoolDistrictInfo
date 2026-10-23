@@ -220,7 +220,7 @@ SELECT
     ROUND(100 * capacity_utilization, 2) AS capacity_utilization_percentage
 FROM school_calculations
 WHERE school_year = '2025-26'
-  AND school_level = 'High'
+  AND school_level = 'Elementary'
 ORDER BY spending_per_student DESC;
 
 
@@ -400,5 +400,8 @@ END;
 --   that already-multiplied value as Percentage without dividing by 100.
 
 
-
+-- In 2025–26, Cedar Valley Elementary 13 spent $13307.16 per student 
+-- compared with the elementary-level benchmark of Query 3: Level Spending Per 
+-- Student (12258.12). It had 18.16 students per teacher FTE 
+-- and 67.71% capacity utilization.
 
