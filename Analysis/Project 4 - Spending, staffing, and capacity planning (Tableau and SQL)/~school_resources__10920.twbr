@@ -492,6 +492,36 @@
       </object-graph>
     </datasource>
   </datasources>
+  <datasource-relationships>
+    <datasource-dependencies datasource='federated.0d30d3e0no0njl1d6pd0s061riqm'>
+      <column-instance column='[school_id]' derivation='None' name='[none:school_id:nk]' pivot='key' type='nominal' />
+      <column-instance column='[school_level]' derivation='None' name='[none:school_level:nk]' pivot='key' type='nominal' />
+      <column-instance column='[school_name]' derivation='None' name='[none:school_name:nk]' pivot='key' type='nominal' />
+      <column-instance column='[school_year]' derivation='None' name='[none:school_year:nk]' pivot='key' type='nominal' />
+      <column caption='School Id' datatype='string' name='[school_id]' role='dimension' type='nominal' />
+      <column caption='School Level' datatype='string' name='[school_level]' role='dimension' type='nominal' />
+      <column caption='School Name' datatype='string' name='[school_name]' role='dimension' type='nominal' />
+      <column caption='School Year' datatype='string' name='[school_year]' role='dimension' type='nominal' />
+    </datasource-dependencies>
+    <datasource-dependencies datasource='federated.0xtiyg20mh22u41gpci9z18xz4zn'>
+      <column-instance column='[school_id]' derivation='None' name='[none:school_id:nk]' pivot='key' type='nominal' />
+      <column-instance column='[school_level]' derivation='None' name='[none:school_level:nk]' pivot='key' type='nominal' />
+      <column-instance column='[school_name]' derivation='None' name='[none:school_name:nk]' pivot='key' type='nominal' />
+      <column-instance column='[school_year]' derivation='None' name='[none:school_year:nk]' pivot='key' type='nominal' />
+      <column caption='School Id' datatype='string' name='[school_id]' role='dimension' type='nominal' />
+      <column caption='School Level' datatype='string' name='[school_level]' role='dimension' type='nominal' />
+      <column caption='School Name' datatype='string' name='[school_name]' role='dimension' type='nominal' />
+      <column caption='School Year' datatype='string' name='[school_year]' role='dimension' type='nominal' />
+    </datasource-dependencies>
+    <datasource-relationship source='federated.0d30d3e0no0njl1d6pd0s061riqm' target='federated.0xtiyg20mh22u41gpci9z18xz4zn'>
+      <column-mapping>
+        <map key='[federated.0d30d3e0no0njl1d6pd0s061riqm].[none:school_id:nk]' value='[federated.0xtiyg20mh22u41gpci9z18xz4zn].[none:school_id:nk]' />
+        <map key='[federated.0d30d3e0no0njl1d6pd0s061riqm].[none:school_level:nk]' value='[federated.0xtiyg20mh22u41gpci9z18xz4zn].[none:school_level:nk]' />
+        <map key='[federated.0d30d3e0no0njl1d6pd0s061riqm].[none:school_name:nk]' value='[federated.0xtiyg20mh22u41gpci9z18xz4zn].[none:school_name:nk]' />
+        <map key='[federated.0d30d3e0no0njl1d6pd0s061riqm].[none:school_year:nk]' value='[federated.0xtiyg20mh22u41gpci9z18xz4zn].[none:school_year:nk]' />
+      </column-mapping>
+    </datasource-relationship>
+  </datasource-relationships>
   <worksheets>
     <worksheet name='Budget Variance'>
       <layout-options>
@@ -527,12 +557,14 @@
             <column-instance column='[budget_variance]' derivation='Sum' name='[sum:budget_variance:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Calculation_1653449565454336]' derivation='User' name='[usr:Calculation_1653449565454336:nk]' pivot='key' type='nominal' />
           </datasource-dependencies>
-          <filter class='categorical' column='[federated.0d30d3e0no0njl1d6pd0s061riqm].[none:school_level:nk]'>
+          <filter class='categorical' column='[federated.0d30d3e0no0njl1d6pd0s061riqm].[none:school_level:nk]' filter-group='4'>
             <groupfilter function='member' level='[none:school_level:nk]' member='&quot;Elementary&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+            <target field='[federated.0d30d3e0no0njl1d6pd0s061riqm].[none:school_level:nk]' />
           </filter>
           <computed-sort column='[federated.0d30d3e0no0njl1d6pd0s061riqm].[none:school_name:nk]' direction='DESC' using='[federated.0d30d3e0no0njl1d6pd0s061riqm].[sum:budget_variance:qk]' />
-          <filter class='categorical' column='[federated.0d30d3e0no0njl1d6pd0s061riqm].[none:school_year:nk]'>
-            <groupfilter function='empty-level' member='[none:school_year:nk]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          <filter class='categorical' column='[federated.0d30d3e0no0njl1d6pd0s061riqm].[none:school_year:nk]' filter-group='3'>
+            <groupfilter function='member' level='[none:school_year:nk]' member='&quot;2023-24&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+            <target field='[federated.0d30d3e0no0njl1d6pd0s061riqm].[none:school_year:nk]' />
           </filter>
           <slices>
             <column>[federated.0d30d3e0no0njl1d6pd0s061riqm].[none:school_year:nk]</column>
@@ -642,11 +674,13 @@
             <column-instance column='[Calculation_1653449591558145]' derivation='User' name='[usr:Calculation_1653449591558145:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Calculation_1653449591992322]' derivation='User' name='[usr:Calculation_1653449591992322:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
-          <filter class='categorical' column='[federated.0d30d3e0no0njl1d6pd0s061riqm].[none:school_level:nk]'>
+          <filter class='categorical' column='[federated.0d30d3e0no0njl1d6pd0s061riqm].[none:school_level:nk]' filter-group='4'>
             <groupfilter function='member' level='[none:school_level:nk]' member='&quot;Elementary&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+            <target field='[federated.0d30d3e0no0njl1d6pd0s061riqm].[none:school_level:nk]' />
           </filter>
-          <filter class='categorical' column='[federated.0d30d3e0no0njl1d6pd0s061riqm].[none:school_year:nk]'>
-            <groupfilter function='member' level='[none:school_year:nk]' member='&quot;2024-25&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          <filter class='categorical' column='[federated.0d30d3e0no0njl1d6pd0s061riqm].[none:school_year:nk]' filter-group='3'>
+            <groupfilter function='member' level='[none:school_year:nk]' member='&quot;2023-24&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+            <target field='[federated.0d30d3e0no0njl1d6pd0s061riqm].[none:school_year:nk]' />
           </filter>
           <slices>
             <column>[federated.0d30d3e0no0njl1d6pd0s061riqm].[none:school_year:nk]</column>
@@ -725,7 +759,14 @@
         <view>
           <datasources>
             <datasource caption='Project4_Staffing_Detail' name='federated.0xtiyg20mh22u41gpci9z18xz4zn' />
+            <datasource caption='Project4_School_Resources' name='federated.0d30d3e0no0njl1d6pd0s061riqm' />
           </datasources>
+          <datasource-dependencies datasource='federated.0d30d3e0no0njl1d6pd0s061riqm'>
+            <column-instance column='[school_level]' derivation='None' name='[none:school_level:nk]' pivot='key' type='nominal' />
+            <column-instance column='[school_year]' derivation='None' name='[none:school_year:nk]' pivot='key' type='nominal' />
+            <column caption='School Level' datatype='string' name='[school_level]' role='dimension' type='nominal' />
+            <column caption='School Year' datatype='string' name='[school_year]' role='dimension' type='nominal' />
+          </datasource-dependencies>
           <datasource-dependencies datasource='federated.0xtiyg20mh22u41gpci9z18xz4zn'>
             <column caption='Fte' datatype='real' default-format='n#,##0.0;-#,##0.0' name='[fte]' role='measure' type='quantitative' />
             <column-instance column='[school_level]' derivation='None' name='[none:school_level:nk]' pivot='key' type='nominal' />
@@ -740,15 +781,17 @@
             <column-instance column='[fte]' derivation='Sum' name='[sum:fte:qk]' pivot='key' type='quantitative' />
             <column-instance column='[salary_benefits]' derivation='Sum' name='[sum:salary_benefits:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
-          <filter class='categorical' column='[federated.0xtiyg20mh22u41gpci9z18xz4zn].[none:school_level:nk]'>
+          <filter class='categorical' column='[federated.0d30d3e0no0njl1d6pd0s061riqm].[none:school_level:nk]' filter-group='4'>
             <groupfilter function='member' level='[none:school_level:nk]' member='&quot;Elementary&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+            <target field='[federated.0xtiyg20mh22u41gpci9z18xz4zn].[none:school_level:nk]' />
           </filter>
-          <filter class='categorical' column='[federated.0xtiyg20mh22u41gpci9z18xz4zn].[none:school_year:nk]'>
-            <groupfilter function='member' level='[none:school_year:nk]' member='&quot;2024-25&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          <filter class='categorical' column='[federated.0d30d3e0no0njl1d6pd0s061riqm].[none:school_year:nk]' filter-group='3'>
+            <groupfilter function='member' level='[none:school_year:nk]' member='&quot;2023-24&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+            <target field='[federated.0xtiyg20mh22u41gpci9z18xz4zn].[none:school_year:nk]' />
           </filter>
           <slices>
-            <column>[federated.0xtiyg20mh22u41gpci9z18xz4zn].[none:school_year:nk]</column>
-            <column>[federated.0xtiyg20mh22u41gpci9z18xz4zn].[none:school_level:nk]</column>
+            <column>[federated.0d30d3e0no0njl1d6pd0s061riqm].[none:school_year:nk]</column>
+            <column>[federated.0d30d3e0no0njl1d6pd0s061riqm].[none:school_level:nk]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -889,7 +932,6 @@
       <size maxheight='1600' maxwidth='1100' minheight='800' minwidth='1000' sizing-mode='range' />
       <datasources>
         <datasource caption='Project4_School_Resources' name='federated.0d30d3e0no0njl1d6pd0s061riqm' />
-        <datasource caption='Project4_Staffing_Detail' name='federated.0xtiyg20mh22u41gpci9z18xz4zn' />
       </datasources>
       <datasource-dependencies datasource='federated.0d30d3e0no0njl1d6pd0s061riqm'>
         <column-instance column='[school_level]' derivation='None' name='[none:school_level:nk]' pivot='key' type='nominal' />
@@ -897,17 +939,11 @@
         <column caption='School Level' datatype='string' name='[school_level]' role='dimension' type='nominal' />
         <column caption='School Year' datatype='string' name='[school_year]' role='dimension' type='nominal' />
       </datasource-dependencies>
-      <datasource-dependencies datasource='federated.0xtiyg20mh22u41gpci9z18xz4zn'>
-        <column-instance column='[school_level]' derivation='None' name='[none:school_level:nk]' pivot='key' type='nominal' />
-        <column-instance column='[school_year]' derivation='None' name='[none:school_year:nk]' pivot='key' type='nominal' />
-        <column caption='School Level' datatype='string' name='[school_level]' role='dimension' type='nominal' />
-        <column caption='School Year' datatype='string' name='[school_year]' role='dimension' type='nominal' />
-      </datasource-dependencies>
       <zones>
         <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
-          <zone h='98884' id='7' param='horz' type-v2='layout-flow' w='98546' x='727' y='558'>
-            <zone h='98884' id='5' type-v2='layout-basic' w='84001' x='727' y='558'>
-              <zone h='29215' id='3' name='Budget Variance' w='84001' x='727' y='37387'>
+          <zone h='99000' id='7' param='horz' type-v2='layout-flow' w='98546' x='727' y='500'>
+            <zone h='99000' id='5' type-v2='layout-basic' w='84001' x='727' y='500'>
+              <zone h='29249' id='3' name='Budget Variance' w='84001' x='727' y='37372'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -915,7 +951,7 @@
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone h='36829' id='11' name='Resource Scatterplot' w='84001' x='727' y='558'>
+              <zone h='36872' id='11' name='Resource Scatterplot' w='84001' x='727' y='500'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -923,7 +959,7 @@
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone h='32840' id='16' name='Staffing Table' w='84001' x='727' y='66602'>
+              <zone h='32879' id='16' name='Staffing Table' w='84001' x='727' y='66621'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -932,8 +968,8 @@
                 </zone-style>
               </zone>
             </zone>
-            <zone fixed-size='160' h='98884' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='14545' x='84728' y='558'>
-              <zone h='10321' id='8' name='Budget Variance' param='[federated.0d30d3e0no0njl1d6pd0s061riqm].[none:school_level:nk]' type-v2='filter' w='14545' x='84728' y='558'>
+            <zone fixed-size='160' h='99000' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='14545' x='84728' y='500'>
+              <zone h='9250' id='8' name='Budget Variance' param='[federated.0d30d3e0no0njl1d6pd0s061riqm].[none:school_level:nk]' type-v2='filter' w='14545' x='84728' y='500'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -941,7 +977,7 @@
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone h='10321' id='9' name='Budget Variance' param='[federated.0d30d3e0no0njl1d6pd0s061riqm].[none:school_year:nk]' type-v2='filter' w='14545' x='84728' y='10879'>
+              <zone h='9250' id='9' name='Budget Variance' param='[federated.0d30d3e0no0njl1d6pd0s061riqm].[none:school_year:nk]' type-v2='filter' w='14545' x='84728' y='9750'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -949,55 +985,7 @@
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone h='5858' id='10' name='Budget Variance' pane-specification-id='0' param='[federated.0d30d3e0no0njl1d6pd0s061riqm].[usr:Calculation_1653449565454336:nk]' type-v2='color' w='14545' x='84728' y='21200'>
-                <zone-style>
-                  <format attr='border-color' value='#000000' />
-                  <format attr='border-style' value='none' />
-                  <format attr='border-width' value='0' />
-                  <format attr='margin' value='4' />
-                </zone-style>
-              </zone>
-              <zone h='10321' id='12' name='Resource Scatterplot' param='[federated.0d30d3e0no0njl1d6pd0s061riqm].[none:school_level:nk]' type-v2='filter' w='14545' x='84728' y='27058'>
-                <zone-style>
-                  <format attr='border-color' value='#000000' />
-                  <format attr='border-style' value='none' />
-                  <format attr='border-width' value='0' />
-                  <format attr='margin' value='4' />
-                </zone-style>
-              </zone>
-              <zone h='10321' id='13' name='Resource Scatterplot' param='[federated.0d30d3e0no0njl1d6pd0s061riqm].[none:school_year:nk]' type-v2='filter' w='14545' x='84728' y='37379'>
-                <zone-style>
-                  <format attr='border-color' value='#000000' />
-                  <format attr='border-style' value='none' />
-                  <format attr='border-width' value='0' />
-                  <format attr='margin' value='4' />
-                </zone-style>
-              </zone>
-              <zone h='9345' id='14' name='Resource Scatterplot' pane-specification-id='0' param='[federated.0d30d3e0no0njl1d6pd0s061riqm].[sum:enrollment:qk]' type-v2='size' w='14545' x='84728' y='47700'>
-                <zone-style>
-                  <format attr='border-color' value='#000000' />
-                  <format attr='border-style' value='none' />
-                  <format attr='border-width' value='0' />
-                  <format attr='margin' value='4' />
-                </zone-style>
-              </zone>
-              <zone h='5649' id='15' name='Resource Scatterplot' pane-specification-id='0' param='[federated.0d30d3e0no0njl1d6pd0s061riqm].[sum:enrollment:qk]' type-v2='color' w='14545' x='84728' y='57045'>
-                <zone-style>
-                  <format attr='border-color' value='#000000' />
-                  <format attr='border-style' value='none' />
-                  <format attr='border-width' value='0' />
-                  <format attr='margin' value='4' />
-                </zone-style>
-              </zone>
-              <zone h='10321' id='17' name='Staffing Table' param='[federated.0xtiyg20mh22u41gpci9z18xz4zn].[none:school_year:nk]' type-v2='filter' w='14545' x='84728' y='62694'>
-                <zone-style>
-                  <format attr='border-color' value='#000000' />
-                  <format attr='border-style' value='none' />
-                  <format attr='border-width' value='0' />
-                  <format attr='margin' value='4' />
-                </zone-style>
-              </zone>
-              <zone h='10321' id='18' name='Staffing Table' param='[federated.0xtiyg20mh22u41gpci9z18xz4zn].[none:school_level:nk]' type-v2='filter' w='14545' x='84728' y='73015'>
+              <zone h='5250' id='10' name='Budget Variance' pane-specification-id='0' param='[federated.0d30d3e0no0njl1d6pd0s061riqm].[usr:Calculation_1653449565454336:nk]' type-v2='color' w='14545' x='84728' y='19000'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -1017,47 +1005,11 @@
       </zones>
       <devicelayouts>
         <devicelayout auto-generated='true' name='Phone'>
-          <size maxheight='1450' minheight='1450' sizing-mode='vscroll' />
+          <size maxheight='1050' minheight='1050' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='26' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='99000' id='25' param='vert' type-v2='layout-flow' w='98546' x='727' y='500'>
-                <zone h='9250' id='12' mode='checkdropdown' name='Resource Scatterplot' param='[federated.0d30d3e0no0njl1d6pd0s061riqm].[none:school_level:nk]' type-v2='filter' w='14545' x='84728' y='24250'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
-                <zone h='9250' id='13' mode='checkdropdown' name='Resource Scatterplot' param='[federated.0d30d3e0no0njl1d6pd0s061riqm].[none:school_year:nk]' type-v2='filter' w='14545' x='84728' y='33500'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
-                <zone fixed-size='280' h='36873' id='11' is-fixed='true' name='Resource Scatterplot' w='84001' x='727' y='500'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
-                <zone h='11500' id='14' name='Resource Scatterplot' pane-specification-id='0' param='[federated.0d30d3e0no0njl1d6pd0s061riqm].[sum:enrollment:qk]' type-v2='size' w='14545' x='84728' y='42750'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
-                <zone h='5063' id='15' name='Resource Scatterplot' pane-specification-id='0' param='[federated.0d30d3e0no0njl1d6pd0s061riqm].[sum:enrollment:qk]' type-v2='color' w='14545' x='84728' y='54250'>
+            <zone h='100000' id='30' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='99000' id='29' param='vert' type-v2='layout-flow' w='98546' x='727' y='500'>
+                <zone fixed-size='280' h='36872' id='11' is-fixed='true' name='Resource Scatterplot' w='84001' x='727' y='500'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1084,7 +1036,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='29249' id='3' is-fixed='true' name='Budget Variance' w='84001' x='727' y='37373'>
+                <zone fixed-size='280' h='29249' id='3' is-fixed='true' name='Budget Variance' w='84001' x='727' y='37372'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1102,25 +1054,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone h='9250' id='17' mode='checkdropdown' name='Staffing Table' param='[federated.0xtiyg20mh22u41gpci9z18xz4zn].[none:school_year:nk]' type-v2='filter' w='14545' x='84728' y='59313'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
-                <zone h='9250' id='18' mode='checkdropdown' name='Staffing Table' param='[federated.0xtiyg20mh22u41gpci9z18xz4zn].[none:school_level:nk]' type-v2='filter' w='14545' x='84728' y='68563'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
-                <zone fixed-size='280' h='32878' id='16' is-fixed='true' name='Staffing Table' w='84001' x='727' y='66622'>
+                <zone fixed-size='280' h='32879' id='16' is-fixed='true' name='Staffing Table' w='84001' x='727' y='66621'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1143,7 +1077,7 @@
       <simple-id uuid='{57DADD8C-B52A-4E20-B3A9-C3D2E9F671B7}' />
     </dashboard>
   </dashboards>
-  <windows source-height='72'>
+  <windows saved-dpi-scale-factor='1.5' source-height='75'>
     <window class='worksheet' name='Budget Variance'>
       <cards>
         <edge name='left'>
@@ -1208,7 +1142,7 @@
     <window class='worksheet' name='Staffing Table'>
       <cards>
         <edge name='left'>
-          <strip size='160'>
+          <strip size='225'>
             <card type='pages' />
             <card type='filters' />
             <card type='marks' />
@@ -1227,8 +1161,8 @@
         </edge>
         <edge name='right'>
           <strip size='160'>
-            <card param='[federated.0xtiyg20mh22u41gpci9z18xz4zn].[none:school_year:nk]' type='filter' />
-            <card param='[federated.0xtiyg20mh22u41gpci9z18xz4zn].[none:school_level:nk]' type='filter' />
+            <card param='[federated.0d30d3e0no0njl1d6pd0s061riqm].[none:school_level:nk]' show-morefewerbutton='false' type='filter' />
+            <card param='[federated.0d30d3e0no0njl1d6pd0s061riqm].[none:school_year:nk]' show-morefewerbutton='false' type='filter' />
           </strip>
         </edge>
       </cards>
