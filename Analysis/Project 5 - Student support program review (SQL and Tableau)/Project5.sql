@@ -274,7 +274,9 @@ ORDER BY prior_need_category;
 -- Prior absence: 10% or more category, attendance was 88.93% in 
 -- 2024-25 and 92.09% in 2025-26, a change of 3.16% percentage points.
 
-
+-- This is a descriptive annual comparison, not an estimate of program impact. 
+-- Current-year attendance includes days before and during the intervention,
+-- and other factors may explain changes.
 
 
 

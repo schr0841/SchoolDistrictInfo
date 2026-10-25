@@ -1,0 +1,1958 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20262.26.0912.1023                               -->
+<workbook _.fcp.WorkbookFingerprinting.true...author-id='faa9fb8b0bfc3257a63d23619fb3ebb6319a87ea588de8ca4cb5324db1906fe2' _.fcp.WorkbookFingerprinting.true...creator-author-id='faa9fb8b0bfc3257a63d23619fb3ebb6319a87ea588de8ca4cb5324db1906fe2' _.fcp.WorkbookFingerprinting.true...creator-license-type='free' _.fcp.WorkbookFingerprinting.true...creator-machine-id='a82641a6fca4fb8ffb9f0371e724e15af1cf0b6e6a9494ec4a2d961ef2d9762b' _.fcp.WorkbookFingerprinting.true...license-type='free' _.fcp.WorkbookFingerprinting.true...machine-id='a82641a6fca4fb8ffb9f0371e724e15af1cf0b6e6a9494ec4a2d961ef2d9762b' original-version='18.1' source-build='2026.2.3 (20262.26.0912.1023)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+    <_.fcp.WorkbookFingerprinting.true...WorkbookFingerprinting />
+    <WorksheetBackgroundTransparency />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Program to Review' datatype='string' name='[Parameter 0830190968479744]' param-domain-type='list' role='measure' type='nominal' value='&quot;Math tutoring&quot;'>
+        <calculation class='tableau' formula='&quot;Math tutoring&quot;' />
+        <members>
+          <member value='&quot;Attendance mentoring&quot;' />
+          <member value='&quot;Math tutoring&quot;' />
+          <member value='&quot;Reading support&quot;' />
+        </members>
+      </column>
+      <column caption='Subject to Review' datatype='string' name='[Parameter 0830190969257985]' param-domain-type='list' role='measure' type='nominal' value='&quot;Math&quot;'>
+        <calculation class='tableau' formula='&quot;Math&quot;' />
+        <members>
+          <member value='&quot;Math&quot;' />
+          <member value='&quot;Reading&quot;' />
+        </members>
+      </column>
+    </datasource>
+    <datasource caption='Project5_Tableau_Student_Year' inline='true' name='federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Project5_Tableau_Student_Year' name='textscan.1coakk209k2qgy19ah7lg02uhdqb'>
+            <connection class='textscan' directory='C:/Users/schre/GitHub/SchoolDistrictInfo/Analysis/Project 5 - Student support program review (SQL and Tableau)' filename='Project5_Tableau_Student_Year.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1coakk209k2qgy19ah7lg02uhdqb' name='Project5_Tableau_Student_Year.csv' table='[Project5_Tableau_Student_Year#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='Student ID' ordinal='0' />
+            <column datatype='string' name='School Year' ordinal='1' />
+            <column datatype='integer' name='Grade Level' ordinal='2' />
+            <column datatype='string' name='School Name' ordinal='3' />
+            <column datatype='string' name='School Level' ordinal='4' />
+            <column datatype='string' name='Program' ordinal='5' />
+            <column datatype='integer' name='Planned Sessions' ordinal='6' />
+            <column datatype='integer' name='Attended Sessions' ordinal='7' />
+            <column datatype='real' name='Intervention Cost' ordinal='8' />
+            <column datatype='integer' name='Membership Days' ordinal='9' />
+            <column datatype='integer' name='Present Days' ordinal='10' />
+            <column datatype='string' name='Prior School Year' ordinal='11' />
+            <column datatype='integer' name='Prior Membership Days' ordinal='12' />
+            <column datatype='integer' name='Prior Absent Days' ordinal='13' />
+            <column datatype='string' name='Prior Need Category' ordinal='14' />
+            <column datatype='integer' name='Math Growth Points' ordinal='15' />
+            <column datatype='integer' name='Reading Growth Points' ordinal='16' />
+            <column datatype='integer' name='Assessment Eligible Flag' ordinal='17' />
+            <column datatype='integer' name='Prior Baseline Flag' ordinal='18' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Project5_Tableau_Student_Year.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Student ID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Student ID]</local-name>
+            <parent-name>[Project5_Tableau_Student_Year.csv]</parent-name>
+            <remote-alias>Student ID</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>School Year</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[School Year]</local-name>
+            <parent-name>[Project5_Tableau_Student_Year.csv]</parent-name>
+            <remote-alias>School Year</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Grade Level</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Grade Level]</local-name>
+            <parent-name>[Project5_Tableau_Student_Year.csv]</parent-name>
+            <remote-alias>Grade Level</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>School Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[School Name]</local-name>
+            <parent-name>[Project5_Tableau_Student_Year.csv]</parent-name>
+            <remote-alias>School Name</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>School Level</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[School Level]</local-name>
+            <parent-name>[Project5_Tableau_Student_Year.csv]</parent-name>
+            <remote-alias>School Level</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Program</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Program]</local-name>
+            <parent-name>[Project5_Tableau_Student_Year.csv]</parent-name>
+            <remote-alias>Program</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Planned Sessions</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Planned Sessions]</local-name>
+            <parent-name>[Project5_Tableau_Student_Year.csv]</parent-name>
+            <remote-alias>Planned Sessions</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Attended Sessions</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Attended Sessions]</local-name>
+            <parent-name>[Project5_Tableau_Student_Year.csv]</parent-name>
+            <remote-alias>Attended Sessions</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Intervention Cost</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Intervention Cost]</local-name>
+            <parent-name>[Project5_Tableau_Student_Year.csv]</parent-name>
+            <remote-alias>Intervention Cost</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Membership Days</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Membership Days]</local-name>
+            <parent-name>[Project5_Tableau_Student_Year.csv]</parent-name>
+            <remote-alias>Membership Days</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Present Days</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Present Days]</local-name>
+            <parent-name>[Project5_Tableau_Student_Year.csv]</parent-name>
+            <remote-alias>Present Days</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Prior School Year</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Prior School Year]</local-name>
+            <parent-name>[Project5_Tableau_Student_Year.csv]</parent-name>
+            <remote-alias>Prior School Year</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Prior Membership Days</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Prior Membership Days]</local-name>
+            <parent-name>[Project5_Tableau_Student_Year.csv]</parent-name>
+            <remote-alias>Prior Membership Days</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>1</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Prior Absent Days</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Prior Absent Days]</local-name>
+            <parent-name>[Project5_Tableau_Student_Year.csv]</parent-name>
+            <remote-alias>Prior Absent Days</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>1</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Prior Need Category</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Prior Need Category]</local-name>
+            <parent-name>[Project5_Tableau_Student_Year.csv]</parent-name>
+            <remote-alias>Prior Need Category</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Math Growth Points</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Math Growth Points]</local-name>
+            <parent-name>[Project5_Tableau_Student_Year.csv]</parent-name>
+            <remote-alias>Math Growth Points</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Reading Growth Points</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Reading Growth Points]</local-name>
+            <parent-name>[Project5_Tableau_Student_Year.csv]</parent-name>
+            <remote-alias>Reading Growth Points</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Assessment Eligible Flag</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Assessment Eligible Flag]</local-name>
+            <parent-name>[Project5_Tableau_Student_Year.csv]</parent-name>
+            <remote-alias>Assessment Eligible Flag</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Prior Baseline Flag</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Prior Baseline Flag]</local-name>
+            <parent-name>[Project5_Tableau_Student_Year.csv]</parent-name>
+            <remote-alias>Prior Baseline Flag</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Selected Program' datatype='boolean' name='[Calculation_0830190972178435]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IFNULL([Program], &quot;&quot;) = [Parameters].[Parameter 0830190968479744]' />
+      </column>
+      <column caption='Students in View' datatype='integer' name='[Calculation_0830190972321796]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNTD([Student ID])' />
+      </column>
+      <column caption='Program Reach' datatype='real' default-format='p0.00%' name='[Calculation_0830190972432389]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM(IF [Calculation_0830190972178435] THEN 1 ELSE 0 END)&#13;&#10;/ COUNTD([Student ID])' />
+      </column>
+      <column caption='Session Completion' datatype='real' default-format='p0.00%' name='[Calculation_0830190972751878]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF SUM([Planned Sessions]) &gt; 0 THEN&#13;&#10;    SUM([Attended Sessions]) / SUM([Planned Sessions])&#13;&#10;END' />
+      </column>
+      <column caption='Cost per Attended Session' datatype='real' default-format='C1033%' name='[Calculation_0830190972866567]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF SUM([Attended Sessions]) &gt; 0 THEN&#13;&#10;    SUM([Intervention Cost]) / SUM([Attended Sessions])&#13;&#10;END' />
+      </column>
+      <column caption='Zero Attendance Participants' datatype='integer' name='[Calculation_0830190973030408]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM(IF [Attended Sessions] = 0 THEN 1 ELSE 0 END)' />
+      </column>
+      <column caption='Participants Without Baseline' datatype='integer' name='[Calculation_0830190973181961]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM(IF [Prior Baseline Flag] = 0 THEN 1 ELSE 0 END)' />
+      </column>
+      <column caption='Comparison Group' datatype='string' name='[Calculation_0830190973308938]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [Calculation_0830190972178435] THEN &quot;Recorded participant&quot;&#13;&#10;ELSEIF ISNULL([Program]) OR [Program] = &quot;&quot; THEN &quot;No recorded intervention&quot;&#13;&#10;ELSE &quot;Other program — exclude from comparison&quot;&#13;&#10;END' />
+      </column>
+      <column caption='Selected Growth' datatype='integer' name='[Calculation_0830190973562891]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='CASE [Parameters].[Parameter 0830190969257985]&#13;&#10;WHEN &quot;Math&quot; THEN [Math Growth Points]&#13;&#10;WHEN &quot;Reading&quot; THEN [Reading Growth Points]&#13;&#10;END' />
+      </column>
+      <column caption='Pair Status' datatype='string' name='[Calculation_0830190973661196]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [Assessment Eligible Flag] = 0 THEN &quot;Not assessment-eligible&quot;&#13;&#10;ELSEIF ISNULL([Calculation_0830190973562891]) THEN &quot;Missing valid Fall/Spring pair&quot;&#13;&#10;ELSE &quot;Valid Fall/Spring pair&quot;&#13;&#10;END' />
+      </column>
+      <column caption='Paired Students' datatype='integer' name='[Calculation_0830190973997069]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNTD(IF [Assessment Eligible Flag] = 1&#13;&#10;AND NOT ISNULL([Calculation_0830190973562891]) THEN [Student ID] END)' />
+      </column>
+      <column caption='Comparable Attendance' datatype='boolean' name='[Calculation_0830190974226446]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Prior Baseline Flag] = 1&#13;&#10;AND [Membership Days] &gt; 0&#13;&#10;AND NOT ISNULL([Present Days])' />
+      </column>
+      <column caption='Baseline Attendance Rate' datatype='real' default-format='p0.00%' name='[Calculation_0830190975561744]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM(IF [Calculation_0830190974226446] THEN&#13;&#10;    [Prior Membership Days] - [Prior Absent Days] END)&#13;&#10;/&#13;&#10;SUM(IF [Calculation_0830190974226446] THEN [Prior Membership Days] END)' />
+      </column>
+      <column caption='Comparable Current Attendance Rate' datatype='real' default-format='p0.00%' name='[Calculation_0830190976040977]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM(IF [Calculation_0830190974226446] THEN [Present Days] END)&#13;&#10;/&#13;&#10;SUM(IF [Calculation_0830190974226446] THEN [Membership Days] END)' />
+      </column>
+      <column caption='Attendance Change PP' datatype='real' default-format='n#,##0.00;-#,##0.00' name='[Calculation_0830190976196626]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='100 * ([Calculation_0830190976040977] - [Calculation_0830190975561744])' />
+      </column>
+      <column caption='Comparable Attendance Students' datatype='integer' name='[Calculation_0830190976393235]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNTD(IF [Calculation_0830190974226446] THEN [Student ID] END)' />
+      </column>
+      <column aggregation='Sum' datatype='integer' name='[Grade Level]' role='dimension' type='ordinal' />
+      <column datatype='real' default-format='C1033%' name='[Intervention Cost]' role='measure' type='quantitative' />
+      <column caption='Project5_Tableau_Student_Year.csv' datatype='table' name='[__tableau_internal_object_id__].[Project5_Tableau_Student_Year.csv_A322B895335E412A910913149A86DCA1]' role='measure' type='quantitative' />
+      <column-instance column='[Calculation_0830190973308938]' derivation='None' name='[none:Calculation_0830190973308938:nk]' pivot='key' type='nominal' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Calculation_0830190973308938:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;No recorded intervention&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Recorded participant&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Program to Review' datatype='string' name='[Parameter 0830190968479744]' param-domain-type='list' role='measure' type='nominal' value='&quot;Math tutoring&quot;'>
+          <calculation class='tableau' formula='&quot;Math tutoring&quot;' />
+        </column>
+        <column caption='Subject to Review' datatype='string' name='[Parameter 0830190969257985]' param-domain-type='list' role='measure' type='nominal' value='&quot;Math&quot;'>
+          <calculation class='tableau' formula='&quot;Math&quot;' />
+        </column>
+      </datasource-dependencies>
+      <object-graph>
+        <objects>
+          <object caption='Project5_Tableau_Student_Year.csv' id='Project5_Tableau_Student_Year.csv_A322B895335E412A910913149A86DCA1'>
+            <properties context=''>
+              <relation connection='textscan.1coakk209k2qgy19ah7lg02uhdqb' name='Project5_Tableau_Student_Year.csv' table='[Project5_Tableau_Student_Year#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='Student ID' ordinal='0' />
+                  <column datatype='string' name='School Year' ordinal='1' />
+                  <column datatype='integer' name='Grade Level' ordinal='2' />
+                  <column datatype='string' name='School Name' ordinal='3' />
+                  <column datatype='string' name='School Level' ordinal='4' />
+                  <column datatype='string' name='Program' ordinal='5' />
+                  <column datatype='integer' name='Planned Sessions' ordinal='6' />
+                  <column datatype='integer' name='Attended Sessions' ordinal='7' />
+                  <column datatype='real' name='Intervention Cost' ordinal='8' />
+                  <column datatype='integer' name='Membership Days' ordinal='9' />
+                  <column datatype='integer' name='Present Days' ordinal='10' />
+                  <column datatype='string' name='Prior School Year' ordinal='11' />
+                  <column datatype='integer' name='Prior Membership Days' ordinal='12' />
+                  <column datatype='integer' name='Prior Absent Days' ordinal='13' />
+                  <column datatype='string' name='Prior Need Category' ordinal='14' />
+                  <column datatype='integer' name='Math Growth Points' ordinal='15' />
+                  <column datatype='integer' name='Reading Growth Points' ordinal='16' />
+                  <column datatype='integer' name='Assessment Eligible Flag' ordinal='17' />
+                  <column datatype='integer' name='Prior Baseline Flag' ordinal='18' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Attendance Comparison'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Project5_Tableau_Student_Year' name='federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Program to Review' datatype='string' name='[Parameter 0830190968479744]' param-domain-type='list' role='measure' type='nominal' value='&quot;Math tutoring&quot;'>
+              <calculation class='tableau' formula='&quot;Math tutoring&quot;' />
+            </column>
+            <column caption='Subject to Review' datatype='string' name='[Parameter 0830190969257985]' param-domain-type='list' role='measure' type='nominal' value='&quot;Math&quot;'>
+              <calculation class='tableau' formula='&quot;Math&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9'>
+            <column datatype='integer' name='[Assessment Eligible Flag]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Attended Sessions]' role='measure' type='quantitative' />
+            <column caption='Selected Program' datatype='boolean' name='[Calculation_0830190972178435]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IFNULL([Program], &quot;&quot;) = [Parameters].[Parameter 0830190968479744]' />
+            </column>
+            <column caption='Program Reach' datatype='real' default-format='p0.00%' name='[Calculation_0830190972432389]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM(IF [Calculation_0830190972178435] THEN 1 ELSE 0 END)&#13;&#10;/ COUNTD([Student ID])' />
+            </column>
+            <column caption='Session Completion' datatype='real' default-format='p0.00%' name='[Calculation_0830190972751878]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF SUM([Planned Sessions]) &gt; 0 THEN&#13;&#10;    SUM([Attended Sessions]) / SUM([Planned Sessions])&#13;&#10;END' />
+            </column>
+            <column caption='Cost per Attended Session' datatype='real' default-format='C1033%' name='[Calculation_0830190972866567]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF SUM([Attended Sessions]) &gt; 0 THEN&#13;&#10;    SUM([Intervention Cost]) / SUM([Attended Sessions])&#13;&#10;END' />
+            </column>
+            <column caption='Participants Without Baseline' datatype='integer' name='[Calculation_0830190973181961]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM(IF [Prior Baseline Flag] = 0 THEN 1 ELSE 0 END)' />
+            </column>
+            <column caption='Comparison Group' datatype='string' name='[Calculation_0830190973308938]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Calculation_0830190972178435] THEN &quot;Recorded participant&quot;&#13;&#10;ELSEIF ISNULL([Program]) OR [Program] = &quot;&quot; THEN &quot;No recorded intervention&quot;&#13;&#10;ELSE &quot;Other program — exclude from comparison&quot;&#13;&#10;END' />
+            </column>
+            <column caption='Selected Growth' datatype='integer' name='[Calculation_0830190973562891]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='CASE [Parameters].[Parameter 0830190969257985]&#13;&#10;WHEN &quot;Math&quot; THEN [Math Growth Points]&#13;&#10;WHEN &quot;Reading&quot; THEN [Reading Growth Points]&#13;&#10;END' />
+            </column>
+            <column caption='Paired Students' datatype='integer' name='[Calculation_0830190973997069]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNTD(IF [Assessment Eligible Flag] = 1&#13;&#10;AND NOT ISNULL([Calculation_0830190973562891]) THEN [Student ID] END)' />
+            </column>
+            <column caption='Comparable Attendance' datatype='boolean' name='[Calculation_0830190974226446]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Prior Baseline Flag] = 1&#13;&#10;AND [Membership Days] &gt; 0&#13;&#10;AND NOT ISNULL([Present Days])' />
+            </column>
+            <column caption='Baseline Attendance Rate' datatype='real' default-format='p0.00%' name='[Calculation_0830190975561744]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM(IF [Calculation_0830190974226446] THEN&#13;&#10;    [Prior Membership Days] - [Prior Absent Days] END)&#13;&#10;/&#13;&#10;SUM(IF [Calculation_0830190974226446] THEN [Prior Membership Days] END)' />
+            </column>
+            <column caption='Comparable Current Attendance Rate' datatype='real' default-format='p0.00%' name='[Calculation_0830190976040977]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM(IF [Calculation_0830190974226446] THEN [Present Days] END)&#13;&#10;/&#13;&#10;SUM(IF [Calculation_0830190974226446] THEN [Membership Days] END)' />
+            </column>
+            <column caption='Attendance Change PP' datatype='real' default-format='n#,##0.00;-#,##0.00' name='[Calculation_0830190976196626]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='100 * ([Calculation_0830190976040977] - [Calculation_0830190975561744])' />
+            </column>
+            <column caption='Comparable Attendance Students' datatype='integer' name='[Calculation_0830190976393235]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNTD(IF [Calculation_0830190974226446] THEN [Student ID] END)' />
+            </column>
+            <column aggregation='Sum' datatype='integer' name='[Grade Level]' role='dimension' type='ordinal' />
+            <column datatype='real' default-format='C1033%' name='[Intervention Cost]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Math Growth Points]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Membership Days]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Planned Sessions]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Present Days]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Prior Absent Days]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Prior Baseline Flag]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Prior Membership Days]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[Prior Need Category]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Program]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Reading Growth Points]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Student ID]' role='dimension' type='nominal' />
+            <column caption='Project5_Tableau_Student_Year.csv' datatype='table' name='[__tableau_internal_object_id__].[Project5_Tableau_Student_Year.csv_A322B895335E412A910913149A86DCA1]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[Project5_Tableau_Student_Year.csv_A322B895335E412A910913149A86DCA1]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:Project5_Tableau_Student_Year.csv_A322B895335E412A910913149A86DCA1:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0830190973308938]' derivation='None' name='[none:Calculation_0830190973308938:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_0830190974226446]' derivation='None' name='[none:Calculation_0830190974226446:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Grade Level]' derivation='None' name='[none:Grade Level:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Prior Need Category]' derivation='None' name='[none:Prior Need Category:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Assessment Eligible Flag]' derivation='Sum' name='[sum:Assessment Eligible Flag:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Attended Sessions]' derivation='Sum' name='[sum:Attended Sessions:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0830190973562891]' derivation='Sum' name='[sum:Calculation_0830190973562891:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Intervention Cost]' derivation='Sum' name='[sum:Intervention Cost:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Math Growth Points]' derivation='Sum' name='[sum:Math Growth Points:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Membership Days]' derivation='Sum' name='[sum:Membership Days:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Planned Sessions]' derivation='Sum' name='[sum:Planned Sessions:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Present Days]' derivation='Sum' name='[sum:Present Days:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Prior Baseline Flag]' derivation='Sum' name='[sum:Prior Baseline Flag:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Reading Growth Points]' derivation='Sum' name='[sum:Reading Growth Points:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0830190972432389]' derivation='User' name='[usr:Calculation_0830190972432389:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0830190972751878]' derivation='User' name='[usr:Calculation_0830190972751878:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0830190972866567]' derivation='User' name='[usr:Calculation_0830190972866567:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0830190973181961]' derivation='User' name='[usr:Calculation_0830190973181961:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0830190973997069]' derivation='User' name='[usr:Calculation_0830190973997069:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0830190975561744]' derivation='User' name='[usr:Calculation_0830190975561744:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0830190976040977]' derivation='User' name='[usr:Calculation_0830190976040977:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0830190976196626]' derivation='User' name='[usr:Calculation_0830190976196626:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0830190976393235]' derivation='User' name='[usr:Calculation_0830190976393235:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190976393235:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190975561744:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190976040977:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190976196626:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[sum:Assessment Eligible Flag:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[sum:Attended Sessions:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190972866567:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[__tableau_internal_object_id__].[cnt:Project5_Tableau_Student_Year.csv_A322B895335E412A910913149A86DCA1:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[sum:Intervention Cost:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[sum:Math Growth Points:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[sum:Membership Days:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190973997069:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190973181961:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[sum:Planned Sessions:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[sum:Present Days:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[sum:Prior Baseline Flag:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190972432389:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[sum:Reading Growth Points:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[sum:Calculation_0830190973562891:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190972751878:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190976393235:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190975561744:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190976040977:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190976196626:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <filter class='categorical' column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Calculation_0830190973308938:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:Calculation_0830190973308938:nk]' member='&quot;No recorded intervention&quot;' />
+              <groupfilter function='member' level='[none:Calculation_0830190973308938:nk]' member='&quot;Recorded participant&quot;' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Calculation_0830190974226446:nk]'>
+            <groupfilter function='member' level='[none:Calculation_0830190974226446:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Grade Level:ok]' filter-group='3'>
+            <groupfilter function='member' level='[none:Grade Level:ok]' member='5' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Calculation_0830190973308938:nk]</column>
+            <column>[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Calculation_0830190974226446:nk]</column>
+            <column>[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[:Measure Names]</column>
+            <column>[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Grade Level:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[:Measure Names]' value='298' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Calculation_0830190973308938:nk]' value='252' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[Multiple Values]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Prior Need Category:nk] / [federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Calculation_0830190973308938:nk])</rows>
+        <cols>[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[:Measure Names]</cols>
+      </table>
+      <simple-id uuid='{2E95879D-3DD0-44CB-B148-6FBEBCE084C9}' />
+    </worksheet>
+    <worksheet name='Cost per Session'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run> &lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Project5_Tableau_Student_Year' name='federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Program to Review' datatype='string' name='[Parameter 0830190968479744]' param-domain-type='list' role='measure' type='nominal' value='&quot;Math tutoring&quot;'>
+              <calculation class='tableau' formula='&quot;Math tutoring&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9'>
+            <column datatype='integer' name='[Attended Sessions]' role='measure' type='quantitative' />
+            <column caption='Selected Program' datatype='boolean' name='[Calculation_0830190972178435]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IFNULL([Program], &quot;&quot;) = [Parameters].[Parameter 0830190968479744]' />
+            </column>
+            <column caption='Students in View' datatype='integer' name='[Calculation_0830190972321796]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNTD([Student ID])' />
+            </column>
+            <column caption='Cost per Attended Session' datatype='real' default-format='C1033%' name='[Calculation_0830190972866567]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF SUM([Attended Sessions]) &gt; 0 THEN&#13;&#10;    SUM([Intervention Cost]) / SUM([Attended Sessions])&#13;&#10;END' />
+            </column>
+            <column datatype='real' default-format='C1033%' name='[Intervention Cost]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Program]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Student ID]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_0830190972178435]' derivation='None' name='[none:Calculation_0830190972178435:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_0830190972321796]' derivation='User' name='[usr:Calculation_0830190972321796:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0830190972866567]' derivation='User' name='[usr:Calculation_0830190972866567:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Calculation_0830190972178435:nk]'>
+            <groupfilter function='member' level='[none:Calculation_0830190972178435:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Calculation_0830190972178435:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <text column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190972866567:qk]' />
+              <tooltip column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190972321796:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{D31E885E-7460-49FA-9818-18A1DBBA9479}' />
+    </worksheet>
+    <worksheet name='Delivery and Baseline'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Project5_Tableau_Student_Year' name='federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Program to Review' datatype='string' name='[Parameter 0830190968479744]' param-domain-type='list' role='measure' type='nominal' value='&quot;Math tutoring&quot;'>
+              <calculation class='tableau' formula='&quot;Math tutoring&quot;' />
+            </column>
+            <column caption='Subject to Review' datatype='string' name='[Parameter 0830190969257985]' param-domain-type='list' role='measure' type='nominal' value='&quot;Math&quot;'>
+              <calculation class='tableau' formula='&quot;Math&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9'>
+            <column datatype='integer' name='[Assessment Eligible Flag]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Attended Sessions]' role='measure' type='quantitative' />
+            <column caption='Selected Program' datatype='boolean' name='[Calculation_0830190972178435]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IFNULL([Program], &quot;&quot;) = [Parameters].[Parameter 0830190968479744]' />
+            </column>
+            <column caption='Students in View' datatype='integer' name='[Calculation_0830190972321796]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNTD([Student ID])' />
+            </column>
+            <column caption='Program Reach' datatype='real' default-format='p0.00%' name='[Calculation_0830190972432389]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM(IF [Calculation_0830190972178435] THEN 1 ELSE 0 END)&#13;&#10;/ COUNTD([Student ID])' />
+            </column>
+            <column caption='Session Completion' datatype='real' default-format='p0.00%' name='[Calculation_0830190972751878]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF SUM([Planned Sessions]) &gt; 0 THEN&#13;&#10;    SUM([Attended Sessions]) / SUM([Planned Sessions])&#13;&#10;END' />
+            </column>
+            <column caption='Cost per Attended Session' datatype='real' default-format='C1033%' name='[Calculation_0830190972866567]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF SUM([Attended Sessions]) &gt; 0 THEN&#13;&#10;    SUM([Intervention Cost]) / SUM([Attended Sessions])&#13;&#10;END' />
+            </column>
+            <column caption='Zero Attendance Participants' datatype='integer' name='[Calculation_0830190973030408]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM(IF [Attended Sessions] = 0 THEN 1 ELSE 0 END)' />
+            </column>
+            <column caption='Participants Without Baseline' datatype='integer' name='[Calculation_0830190973181961]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM(IF [Prior Baseline Flag] = 0 THEN 1 ELSE 0 END)' />
+            </column>
+            <column caption='Selected Growth' datatype='integer' name='[Calculation_0830190973562891]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='CASE [Parameters].[Parameter 0830190969257985]&#13;&#10;WHEN &quot;Math&quot; THEN [Math Growth Points]&#13;&#10;WHEN &quot;Reading&quot; THEN [Reading Growth Points]&#13;&#10;END' />
+            </column>
+            <column caption='Paired Students' datatype='integer' name='[Calculation_0830190973997069]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNTD(IF [Assessment Eligible Flag] = 1&#13;&#10;AND NOT ISNULL([Calculation_0830190973562891]) THEN [Student ID] END)' />
+            </column>
+            <column caption='Comparable Attendance' datatype='boolean' name='[Calculation_0830190974226446]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Prior Baseline Flag] = 1&#13;&#10;AND [Membership Days] &gt; 0&#13;&#10;AND NOT ISNULL([Present Days])' />
+            </column>
+            <column caption='Baseline Attendance Rate' datatype='real' default-format='p0.00%' name='[Calculation_0830190975561744]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM(IF [Calculation_0830190974226446] THEN&#13;&#10;    [Prior Membership Days] - [Prior Absent Days] END)&#13;&#10;/&#13;&#10;SUM(IF [Calculation_0830190974226446] THEN [Prior Membership Days] END)' />
+            </column>
+            <column caption='Comparable Current Attendance Rate' datatype='real' default-format='p0.00%' name='[Calculation_0830190976040977]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM(IF [Calculation_0830190974226446] THEN [Present Days] END)&#13;&#10;/&#13;&#10;SUM(IF [Calculation_0830190974226446] THEN [Membership Days] END)' />
+            </column>
+            <column caption='Attendance Change PP' datatype='real' default-format='n#,##0.00;-#,##0.00' name='[Calculation_0830190976196626]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='100 * ([Calculation_0830190976040977] - [Calculation_0830190975561744])' />
+            </column>
+            <column caption='Comparable Attendance Students' datatype='integer' name='[Calculation_0830190976393235]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNTD(IF [Calculation_0830190974226446] THEN [Student ID] END)' />
+            </column>
+            <column aggregation='Sum' datatype='integer' name='[Grade Level]' role='dimension' type='ordinal' />
+            <column datatype='real' default-format='C1033%' name='[Intervention Cost]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Math Growth Points]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Membership Days]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Planned Sessions]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Present Days]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Prior Absent Days]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Prior Baseline Flag]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Prior Membership Days]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[Program]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Reading Growth Points]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Student ID]' role='dimension' type='nominal' />
+            <column caption='Project5_Tableau_Student_Year.csv' datatype='table' name='[__tableau_internal_object_id__].[Project5_Tableau_Student_Year.csv_A322B895335E412A910913149A86DCA1]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[Project5_Tableau_Student_Year.csv_A322B895335E412A910913149A86DCA1]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:Project5_Tableau_Student_Year.csv_A322B895335E412A910913149A86DCA1:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0830190972178435]' derivation='None' name='[none:Calculation_0830190972178435:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Grade Level]' derivation='None' name='[none:Grade Level:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Assessment Eligible Flag]' derivation='Sum' name='[sum:Assessment Eligible Flag:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Attended Sessions]' derivation='Sum' name='[sum:Attended Sessions:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0830190973562891]' derivation='Sum' name='[sum:Calculation_0830190973562891:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Intervention Cost]' derivation='Sum' name='[sum:Intervention Cost:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Math Growth Points]' derivation='Sum' name='[sum:Math Growth Points:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Membership Days]' derivation='Sum' name='[sum:Membership Days:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Planned Sessions]' derivation='Sum' name='[sum:Planned Sessions:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Present Days]' derivation='Sum' name='[sum:Present Days:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Prior Baseline Flag]' derivation='Sum' name='[sum:Prior Baseline Flag:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Reading Growth Points]' derivation='Sum' name='[sum:Reading Growth Points:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0830190972321796]' derivation='User' name='[usr:Calculation_0830190972321796:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0830190972432389]' derivation='User' name='[usr:Calculation_0830190972432389:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0830190972751878]' derivation='User' name='[usr:Calculation_0830190972751878:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0830190972866567]' derivation='User' name='[usr:Calculation_0830190972866567:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0830190973030408]' derivation='User' name='[usr:Calculation_0830190973030408:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0830190973181961]' derivation='User' name='[usr:Calculation_0830190973181961:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0830190973997069]' derivation='User' name='[usr:Calculation_0830190973997069:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0830190975561744]' derivation='User' name='[usr:Calculation_0830190975561744:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0830190976040977]' derivation='User' name='[usr:Calculation_0830190976040977:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0830190976196626]' derivation='User' name='[usr:Calculation_0830190976196626:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0830190976393235]' derivation='User' name='[usr:Calculation_0830190976393235:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190972321796:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[sum:Planned Sessions:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[sum:Attended Sessions:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190972751878:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190973030408:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[sum:Intervention Cost:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190972866567:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190973181961:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[sum:Assessment Eligible Flag:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190976196626:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190975561744:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190976393235:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190976040977:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[__tableau_internal_object_id__].[cnt:Project5_Tableau_Student_Year.csv_A322B895335E412A910913149A86DCA1:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[sum:Math Growth Points:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[sum:Membership Days:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190973997069:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[sum:Present Days:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[sum:Prior Baseline Flag:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190972432389:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[sum:Reading Growth Points:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[sum:Calculation_0830190973562891:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190972321796:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[sum:Planned Sessions:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[sum:Attended Sessions:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190972751878:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190973030408:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[sum:Intervention Cost:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190972866567:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190973181961:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <filter class='categorical' column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Calculation_0830190972178435:nk]'>
+            <groupfilter function='member' level='[none:Calculation_0830190972178435:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Calculation_0830190972178435:nk]</column>
+            <column>[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[:Measure Names]' value='236' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Grade Level:ok]' value='128' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[Multiple Values]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Grade Level:ok]</rows>
+        <cols>[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[:Measure Names]</cols>
+      </table>
+      <simple-id uuid='{6A1A1C61-F7B6-4B53-988A-6A87BF4B9447}' />
+    </worksheet>
+    <worksheet name='Matched Growth'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#000000' fontname='Benton Sans Book'>Descriptive matched growth — not a program impact estimate</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Project5_Tableau_Student_Year' name='federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Program to Review' datatype='string' name='[Parameter 0830190968479744]' param-domain-type='list' role='measure' type='nominal' value='&quot;Math tutoring&quot;'>
+              <calculation class='tableau' formula='&quot;Math tutoring&quot;' />
+            </column>
+            <column caption='Subject to Review' datatype='string' name='[Parameter 0830190969257985]' param-domain-type='list' role='measure' type='nominal' value='&quot;Math&quot;'>
+              <calculation class='tableau' formula='&quot;Math&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9'>
+            <column datatype='integer' name='[Assessment Eligible Flag]' role='measure' type='quantitative' />
+            <column caption='Selected Program' datatype='boolean' name='[Calculation_0830190972178435]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IFNULL([Program], &quot;&quot;) = [Parameters].[Parameter 0830190968479744]' />
+            </column>
+            <column caption='Students in View' datatype='integer' name='[Calculation_0830190972321796]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNTD([Student ID])' />
+            </column>
+            <column caption='Comparison Group' datatype='string' name='[Calculation_0830190973308938]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Calculation_0830190972178435] THEN &quot;Recorded participant&quot;&#13;&#10;ELSEIF ISNULL([Program]) OR [Program] = &quot;&quot; THEN &quot;No recorded intervention&quot;&#13;&#10;ELSE &quot;Other program — exclude from comparison&quot;&#13;&#10;END' />
+            </column>
+            <column caption='Selected Growth' datatype='integer' name='[Calculation_0830190973562891]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='CASE [Parameters].[Parameter 0830190969257985]&#13;&#10;WHEN &quot;Math&quot; THEN [Math Growth Points]&#13;&#10;WHEN &quot;Reading&quot; THEN [Reading Growth Points]&#13;&#10;END' />
+            </column>
+            <column caption='Paired Students' datatype='integer' name='[Calculation_0830190973997069]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNTD(IF [Assessment Eligible Flag] = 1&#13;&#10;AND NOT ISNULL([Calculation_0830190973562891]) THEN [Student ID] END)' />
+            </column>
+            <column aggregation='Sum' datatype='integer' name='[Grade Level]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Math Growth Points]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Prior Need Category]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Program]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Reading Growth Points]' role='measure' type='quantitative' />
+            <column datatype='string' name='[School Year]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Student ID]' role='dimension' type='nominal' />
+            <column-instance column='[School Year]' derivation='Attribute' name='[attr:School Year:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_0830190973562891]' derivation='Avg' name='[avg:Calculation_0830190973562891:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0830190973308938]' derivation='None' name='[none:Calculation_0830190973308938:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Grade Level]' derivation='None' name='[none:Grade Level:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Prior Need Category]' derivation='None' name='[none:Prior Need Category:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_0830190972321796]' derivation='User' name='[usr:Calculation_0830190972321796:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0830190973997069]' derivation='User' name='[usr:Calculation_0830190973997069:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Calculation_0830190973308938:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:Calculation_0830190973308938:nk]' member='&quot;No recorded intervention&quot;' />
+              <groupfilter function='member' level='[none:Calculation_0830190973308938:nk]' member='&quot;Recorded participant&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Calculation_0830190973308938:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;No recorded intervention&quot;</bucket>
+              <bucket>&quot;Recorded participant&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <filter class='categorical' column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Grade Level:ok]' filter-group='3'>
+            <groupfilter function='member' level='[none:Grade Level:ok]' member='5' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Prior Need Category:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:Prior Need Category:nk]' member='&quot;Prior absence: 10\% or more&quot;' />
+              <groupfilter function='member' level='[none:Prior Need Category:nk]' member='&quot;Prior absence: 5\% to under 10\%&quot;' />
+              <groupfilter function='member' level='[none:Prior Need Category:nk]' member='&quot;Prior absence: under 5\%&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Calculation_0830190973308938:nk]</column>
+            <column>[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Grade Level:ok]</column>
+            <column>[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Prior Need Category:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='height' field='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Calculation_0830190973308938:nk]' value='58' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Prior Need Category:nk]' value='192' />
+            <format attr='width' field='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Calculation_0830190973308938:nk]' value='208' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Calculation_0830190973308938:nk]' />
+              <tooltip column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190973997069:qk]' />
+              <tooltip column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190972321796:qk]' />
+              <tooltip column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[attr:School Year:nk]' />
+              <lod column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Grade Level:ok]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>([federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Prior Need Category:nk] / [federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Calculation_0830190973308938:nk])</rows>
+        <cols>[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[avg:Calculation_0830190973562891:qk]</cols>
+      </table>
+      <simple-id uuid='{066D42A3-9129-421C-A5D7-EFE4A469754F}' />
+    </worksheet>
+    <worksheet name='Outcome Availability'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Project5_Tableau_Student_Year' name='federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Program to Review' datatype='string' name='[Parameter 0830190968479744]' param-domain-type='list' role='measure' type='nominal' value='&quot;Math tutoring&quot;'>
+              <calculation class='tableau' formula='&quot;Math tutoring&quot;' />
+            </column>
+            <column caption='Subject to Review' datatype='string' name='[Parameter 0830190969257985]' param-domain-type='list' role='measure' type='nominal' value='&quot;Math&quot;'>
+              <calculation class='tableau' formula='&quot;Math&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9'>
+            <column datatype='integer' name='[Assessment Eligible Flag]' role='measure' type='quantitative' />
+            <column caption='Selected Program' datatype='boolean' name='[Calculation_0830190972178435]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IFNULL([Program], &quot;&quot;) = [Parameters].[Parameter 0830190968479744]' />
+            </column>
+            <column caption='Students in View' datatype='integer' name='[Calculation_0830190972321796]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNTD([Student ID])' />
+            </column>
+            <column caption='Comparison Group' datatype='string' name='[Calculation_0830190973308938]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Calculation_0830190972178435] THEN &quot;Recorded participant&quot;&#13;&#10;ELSEIF ISNULL([Program]) OR [Program] = &quot;&quot; THEN &quot;No recorded intervention&quot;&#13;&#10;ELSE &quot;Other program — exclude from comparison&quot;&#13;&#10;END' />
+            </column>
+            <column caption='Selected Growth' datatype='integer' name='[Calculation_0830190973562891]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='CASE [Parameters].[Parameter 0830190969257985]&#13;&#10;WHEN &quot;Math&quot; THEN [Math Growth Points]&#13;&#10;WHEN &quot;Reading&quot; THEN [Reading Growth Points]&#13;&#10;END' />
+            </column>
+            <column caption='Pair Status' datatype='string' name='[Calculation_0830190973661196]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Assessment Eligible Flag] = 0 THEN &quot;Not assessment-eligible&quot;&#13;&#10;ELSEIF ISNULL([Calculation_0830190973562891]) THEN &quot;Missing valid Fall/Spring pair&quot;&#13;&#10;ELSE &quot;Valid Fall/Spring pair&quot;&#13;&#10;END' />
+            </column>
+            <column aggregation='Sum' datatype='integer' name='[Grade Level]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Math Growth Points]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Prior Need Category]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Program]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Reading Growth Points]' role='measure' type='quantitative' />
+            <column datatype='string' name='[School Year]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Student ID]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_0830190973308938]' derivation='None' name='[none:Calculation_0830190973308938:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_0830190973661196]' derivation='None' name='[none:Calculation_0830190973661196:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Grade Level]' derivation='None' name='[none:Grade Level:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Prior Need Category]' derivation='None' name='[none:Prior Need Category:nk]' pivot='key' type='nominal' />
+            <column-instance column='[School Year]' derivation='None' name='[none:School Year:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_0830190972321796]' derivation='User' name='[usr:Calculation_0830190972321796:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Calculation_0830190973308938:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:Calculation_0830190973308938:nk]' member='&quot;No recorded intervention&quot;' />
+              <groupfilter function='member' level='[none:Calculation_0830190973308938:nk]' member='&quot;Recorded participant&quot;' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Grade Level:ok]' filter-group='3'>
+            <groupfilter function='member' level='[none:Grade Level:ok]' member='5' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:School Year:nk]'>
+            <groupfilter function='member' level='[none:School Year:nk]' member='&quot;2025-26&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Calculation_0830190973308938:nk]</column>
+            <column>[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:School Year:nk]</column>
+            <column>[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Grade Level:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='height' field='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Calculation_0830190973308938:nk]' value='39' />
+            <format attr='width' field='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Calculation_0830190973661196:nk]' value='312' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Calculation_0830190973308938:nk]' value='228' />
+            <format attr='width' field='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Prior Need Category:nk]' value='308' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190972321796:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Prior Need Category:nk] / [federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Calculation_0830190973308938:nk])</rows>
+        <cols>[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Calculation_0830190973661196:nk]</cols>
+      </table>
+      <simple-id uuid='{41930D33-71B0-4F8A-A03A-4DA866A79527}' />
+    </worksheet>
+    <worksheet name='Participants'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Recorded &lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Project5_Tableau_Student_Year' name='federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Program to Review' datatype='string' name='[Parameter 0830190968479744]' param-domain-type='list' role='measure' type='nominal' value='&quot;Math tutoring&quot;'>
+              <calculation class='tableau' formula='&quot;Math tutoring&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9'>
+            <column caption='Selected Program' datatype='boolean' name='[Calculation_0830190972178435]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IFNULL([Program], &quot;&quot;) = [Parameters].[Parameter 0830190968479744]' />
+            </column>
+            <column caption='Students in View' datatype='integer' name='[Calculation_0830190972321796]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNTD([Student ID])' />
+            </column>
+            <column aggregation='Sum' datatype='integer' name='[Grade Level]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[Program]' role='dimension' type='nominal' />
+            <column datatype='string' name='[School Year]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Student ID]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_0830190972178435]' derivation='None' name='[none:Calculation_0830190972178435:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Grade Level]' derivation='None' name='[none:Grade Level:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[School Year]' derivation='None' name='[none:School Year:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_0830190972321796]' derivation='User' name='[usr:Calculation_0830190972321796:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Calculation_0830190972178435:nk]'>
+            <groupfilter function='member' level='[none:Calculation_0830190972178435:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Calculation_0830190972178435:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='title'>
+            <format attr='background-color' value='#ffffff' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <text column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190972321796:qk]' />
+              <tooltip column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190972321796:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{D552BA3A-AC72-4013-889C-E4447A905A7F}' />
+    </worksheet>
+    <worksheet name='Reach'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#000000'>Selected-program reach among enrolled students.</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Project5_Tableau_Student_Year' name='federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Program to Review' datatype='string' name='[Parameter 0830190968479744]' param-domain-type='list' role='measure' type='nominal' value='&quot;Math tutoring&quot;'>
+              <calculation class='tableau' formula='&quot;Math tutoring&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9'>
+            <column caption='Selected Program' datatype='boolean' name='[Calculation_0830190972178435]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IFNULL([Program], &quot;&quot;) = [Parameters].[Parameter 0830190968479744]' />
+            </column>
+            <column caption='Students in View' datatype='integer' name='[Calculation_0830190972321796]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNTD([Student ID])' />
+            </column>
+            <column caption='Program Reach' datatype='real' default-format='p0.00%' name='[Calculation_0830190972432389]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM(IF [Calculation_0830190972178435] THEN 1 ELSE 0 END)&#13;&#10;/ COUNTD([Student ID])' />
+            </column>
+            <column datatype='string' name='[Program]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Student ID]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_0830190972321796]' derivation='User' name='[usr:Calculation_0830190972321796:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0830190972432389]' derivation='User' name='[usr:Calculation_0830190972432389:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <text column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190972432389:qk]' />
+              <tooltip column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190972321796:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{775A5409-32E5-4222-8D35-0769D128846D}' />
+    </worksheet>
+    <worksheet name='Recorded Cost'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>&lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Project5_Tableau_Student_Year' name='federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Program to Review' datatype='string' name='[Parameter 0830190968479744]' param-domain-type='list' role='measure' type='nominal' value='&quot;Math tutoring&quot;'>
+              <calculation class='tableau' formula='&quot;Math tutoring&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9'>
+            <column caption='Selected Program' datatype='boolean' name='[Calculation_0830190972178435]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IFNULL([Program], &quot;&quot;) = [Parameters].[Parameter 0830190968479744]' />
+            </column>
+            <column caption='Students in View' datatype='integer' name='[Calculation_0830190972321796]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNTD([Student ID])' />
+            </column>
+            <column datatype='real' default-format='C1033%' name='[Intervention Cost]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Program]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Student ID]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_0830190972178435]' derivation='None' name='[none:Calculation_0830190972178435:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Intervention Cost]' derivation='Sum' name='[sum:Intervention Cost:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0830190972321796]' derivation='User' name='[usr:Calculation_0830190972321796:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Calculation_0830190972178435:nk]'>
+            <groupfilter function='member' level='[none:Calculation_0830190972178435:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Calculation_0830190972178435:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <text column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[sum:Intervention Cost:qk]' />
+              <tooltip column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190972321796:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{CF673F1F-AD33-4A19-8085-8A124CD389BA}' />
+    </worksheet>
+    <worksheet name='Session Completion'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run> &lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Project5_Tableau_Student_Year' name='federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Program to Review' datatype='string' name='[Parameter 0830190968479744]' param-domain-type='list' role='measure' type='nominal' value='&quot;Math tutoring&quot;'>
+              <calculation class='tableau' formula='&quot;Math tutoring&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9'>
+            <column datatype='integer' name='[Attended Sessions]' role='measure' type='quantitative' />
+            <column caption='Selected Program' datatype='boolean' name='[Calculation_0830190972178435]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IFNULL([Program], &quot;&quot;) = [Parameters].[Parameter 0830190968479744]' />
+            </column>
+            <column caption='Students in View' datatype='integer' name='[Calculation_0830190972321796]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNTD([Student ID])' />
+            </column>
+            <column caption='Session Completion' datatype='real' default-format='p0.00%' name='[Calculation_0830190972751878]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF SUM([Planned Sessions]) &gt; 0 THEN&#13;&#10;    SUM([Attended Sessions]) / SUM([Planned Sessions])&#13;&#10;END' />
+            </column>
+            <column datatype='integer' name='[Planned Sessions]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Program]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Student ID]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_0830190972178435]' derivation='None' name='[none:Calculation_0830190972178435:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_0830190972321796]' derivation='User' name='[usr:Calculation_0830190972321796:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0830190972751878]' derivation='User' name='[usr:Calculation_0830190972751878:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Calculation_0830190972178435:nk]'>
+            <groupfilter function='member' level='[none:Calculation_0830190972178435:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Calculation_0830190972178435:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <text column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190972751878:qk]' />
+              <tooltip column='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[usr:Calculation_0830190972321796:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{A26EC76A-3CAD-423B-B523-34D66D1BBEAD}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Program Operations Dashboard'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontsize='28'>&lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style />
+      <size maxheight='1000' maxwidth='1500' minheight='1000' minwidth='1500' sizing-mode='fixed' />
+      <datasources>
+        <datasource name='Parameters' />
+        <datasource caption='Project5_Tableau_Student_Year' name='federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9' />
+      </datasources>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Program to Review' datatype='string' name='[Parameter 0830190968479744]' param-domain-type='list' role='measure' type='nominal' value='&quot;Math tutoring&quot;'>
+          <calculation class='tableau' formula='&quot;Math tutoring&quot;' />
+          <members>
+            <member value='&quot;Attendance mentoring&quot;' />
+            <member value='&quot;Math tutoring&quot;' />
+            <member value='&quot;Reading support&quot;' />
+          </members>
+        </column>
+      </datasource-dependencies>
+      <datasource-dependencies datasource='federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9'>
+        <column aggregation='Sum' datatype='integer' name='[Grade Level]' role='dimension' type='ordinal' />
+        <column datatype='string' name='[School Year]' role='dimension' type='nominal' />
+        <column-instance column='[Grade Level]' derivation='None' name='[none:Grade Level:ok]' pivot='key' type='ordinal' />
+        <column-instance column='[School Year]' derivation='None' name='[none:School Year:nk]' pivot='key' type='nominal' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98400' id='19' param='vert' type-v2='layout-flow' w='98934' x='533' y='800'>
+            <zone h='8600' id='20' type-v2='title' w='98934' x='533' y='800'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='89800' id='5' param='vert' type-v2='layout-flow' w='98934' x='533' y='9400'>
+              <zone h='89800' id='6' type-v2='layout-basic' w='98934' x='533' y='9400' />
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone h='6200' id='8' mode='dropdown' name='Participants' param='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Grade Level:ok]' type-v2='filter' w='11467' x='86400' y='50700' />
+        <zone h='6200' id='9' mode='dropdown' name='Participants' param='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:School Year:nk]' type-v2='filter' w='11467' x='86200' y='59000' />
+        <zone h='5200' id='10' mode='compact' param='[Parameters].[Parameter 0830190968479744]' type-v2='paramctrl' w='11467' x='86200' y='66600' />
+        <zone h='11200' id='7' name='Participants' w='23000' x='267' y='17300'>
+          <layout-cache fixed-size-h='334' fixed-size-w='85' type-h='fixed' type-w='fixed' />
+        </zone>
+        <zone h='11900' id='13' name='Session Completion' w='21200' x='23133' y='17800' />
+        <zone h='11100' id='14' name='Recorded Cost' w='15800' x='44267' y='17600' />
+        <zone h='11100' id='15' name='Cost per Session' w='18600' x='59667' y='17000' />
+        <zone h='17000' id='16' name='Reach' w='19800' x='79533' y='16000' />
+        <zone h='40100' id='17' name='Delivery and Baseline' w='83333' x='933' y='37300' />
+        <zone h='13700' id='25' type-v2='text' w='33333' x='1267' y='84400'>
+          <formatted-text>
+            <run bold='true' fontcolor='#000000' fontname='Benton Sans Book'>Synthetic demonstration — not an actual district.</run>
+            <run fontcolor='#000000' fontname='Benton Sans Book'>
+Participants include zero-session attendees. Completion measures attended versus planned student-sessions. Costs are the supplied intervention costs, not a complete program budget. The first observed year, 2023–24, lacks prior-year baseline data.</run>
+          </formatted-text>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <layout-options>
+            <title>
+              <formatted-text>
+                <run fontsize='28'>&lt;Sheet Name&gt;</run>
+              </formatted-text>
+            </title>
+          </layout-options>
+          <size maxheight='1300' minheight='1300' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='39' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98400' id='38' param='vert' type-v2='layout-flow' w='98934' x='533' y='800'>
+                <zone h='8600' id='20' type-v2='title' w='98934' x='533' y='800'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='170' h='17000' id='16' is-fixed='true' name='Reach' w='19800' x='79533' y='16000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='111' h='11100' id='15' is-fixed='true' name='Cost per Session' w='18600' x='59667' y='17000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='6200' id='8' mode='dropdown' name='Participants' param='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Grade Level:ok]' type-v2='filter' w='11467' x='86400' y='50700'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='6200' id='9' mode='dropdown' name='Participants' param='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:School Year:nk]' type-v2='filter' w='11467' x='86200' y='59000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='112' h='11200' id='7' is-fixed='true' name='Participants' w='23000' x='267' y='17300'>
+                  <layout-cache fixed-size-h='334' fixed-size-w='85' type-h='fixed' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='111' h='11100' id='14' is-fixed='true' name='Recorded Cost' w='15800' x='44267' y='17600'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='119' h='11900' id='13' is-fixed='true' name='Session Completion' w='21200' x='23133' y='17800'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='40100' id='17' is-fixed='true' name='Delivery and Baseline' w='83333' x='933' y='37300'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='5200' id='10' mode='compact' param='[Parameters].[Parameter 0830190968479744]' type-v2='paramctrl' w='11467' x='86200' y='66600'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='13700' id='25' type-v2='text' w='33333' x='1267' y='84400'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book'>Synthetic demonstration — not an actual district.</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book'>
+Participants include zero-session attendees. Completion measures attended versus planned student-sessions. Costs are the supplied intervention costs, not a complete program budget. The first observed year, 2023–24, lacks prior-year baseline data.</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{D20B0C4F-99DB-46D9-B5FD-76649FAD8ECA}' />
+    </dashboard>
+    <dashboard enable-sort-zone-taborder='true' name='Program Outcome Review Dashboard'>
+      <style />
+      <size maxheight='1000' maxwidth='1400' minheight='1000' minwidth='1400' sizing-mode='fixed' />
+      <datasources>
+        <datasource caption='Project5_Tableau_Student_Year' name='federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9' />
+      </datasources>
+      <datasource-dependencies datasource='federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9'>
+        <column aggregation='Sum' datatype='integer' name='[Grade Level]' role='dimension' type='ordinal' />
+        <column datatype='string' name='[School Year]' role='dimension' type='nominal' />
+        <column-instance column='[Grade Level]' derivation='None' name='[none:Grade Level:ok]' pivot='key' type='ordinal' />
+        <column-instance column='[School Year]' derivation='None' name='[none:School Year:nk]' pivot='key' type='nominal' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='33300' id='3' name='Outcome Availability' w='80071' x='2786' y='1700' />
+        <zone h='6200' id='4' mode='dropdown' name='Outcome Availability' param='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:School Year:nk]' type-v2='filter' w='11429' x='87000' y='9200' />
+        <zone h='33300' id='5' name='Matched Growth' w='87214' x='1929' y='36100' />
+        <zone h='8800' id='8' mode='dropdown' name='Matched Growth' param='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Grade Level:ok]' type-v2='filter' w='11429' x='87429' y='20000' />
+        <zone h='11400' id='9' name='Matched Growth' pane-specification-id='0' param='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Calculation_0830190973308938:nk]' type-v2='color' w='16643' x='83929' y='29500' />
+        <zone h='33300' id='10' name='Attendance Comparison' w='90786' x='2143' y='68900' />
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1050' minheight='1050' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='14' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98400' id='13' param='vert' type-v2='layout-flow' w='98858' x='571' y='800'>
+                <zone h='6200' id='4' mode='dropdown' name='Outcome Availability' param='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:School Year:nk]' type-v2='filter' w='11429' x='87000' y='9200'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='33300' id='3' is-fixed='true' name='Outcome Availability' w='80071' x='2786' y='1700'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8800' id='8' mode='dropdown' name='Matched Growth' param='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Grade Level:ok]' type-v2='filter' w='11429' x='87429' y='20000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='33300' id='5' is-fixed='true' name='Matched Growth' w='87214' x='1929' y='36100'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='11400' id='9' name='Matched Growth' pane-specification-id='0' param='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Calculation_0830190973308938:nk]' type-v2='color' w='16643' x='83929' y='29500'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='33300' id='10' is-fixed='true' name='Attendance Comparison' w='90786' x='2143' y='68900'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{20DB8370-58AA-4885-8A1C-EEE245CE621A}' />
+    </dashboard>
+  </dashboards>
+  <windows saved-dpi-scale-factor='1.5' source-height='44'>
+    <window class='worksheet' name='Participants'>
+      <cards>
+        <edge name='left'>
+          <strip size='231'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='dropdown' param='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Grade Level:ok]' type='filter' />
+            <card mode='dropdown' param='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:School Year:nk]' type='filter' />
+            <card mode='compact' param='[Parameters].[Parameter 0830190968479744]' type='parameter' />
+            <card mode='compact' param='[Parameters].[Parameter 0830190969257985]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{536703AB-FF73-45AE-ABDF-D56A147F92FE}' />
+    </window>
+    <window class='worksheet' name='Session Completion'>
+      <cards>
+        <edge name='left'>
+          <strip size='230'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='dropdown' param='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:School Year:nk]' type='filter' />
+            <card mode='dropdown' param='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Grade Level:ok]' type='filter' />
+            <card mode='compact' param='[Parameters].[Parameter 0830190968479744]' type='parameter' />
+            <card mode='compact' param='[Parameters].[Parameter 0830190969257985]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{6F3762CD-C9F1-4988-B520-E98ABF7D2F7E}' />
+    </window>
+    <window class='worksheet' name='Recorded Cost'>
+      <cards>
+        <edge name='left'>
+          <strip size='230'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='dropdown' param='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:School Year:nk]' type='filter' />
+            <card mode='dropdown' param='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Grade Level:ok]' type='filter' />
+            <card mode='compact' param='[Parameters].[Parameter 0830190968479744]' type='parameter' />
+            <card mode='compact' param='[Parameters].[Parameter 0830190969257985]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{F51F7335-8EE8-49ED-A6F2-E4246F6AAE6D}' />
+    </window>
+    <window class='worksheet' name='Cost per Session'>
+      <cards>
+        <edge name='left'>
+          <strip size='230'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='dropdown' param='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:School Year:nk]' type='filter' />
+            <card mode='dropdown' param='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Grade Level:ok]' type='filter' />
+            <card mode='compact' param='[Parameters].[Parameter 0830190968479744]' type='parameter' />
+            <card mode='compact' param='[Parameters].[Parameter 0830190969257985]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{9592769B-2F59-41E1-AC0F-E0159FAD6953}' />
+    </window>
+    <window class='worksheet' name='Reach'>
+      <cards>
+        <edge name='left'>
+          <strip size='230'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='dropdown' param='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Grade Level:ok]' type='filter' />
+            <card mode='dropdown' param='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:School Year:nk]' type='filter' />
+            <card mode='compact' param='[Parameters].[Parameter 0830190968479744]' type='parameter' />
+            <card mode='compact' param='[Parameters].[Parameter 0830190969257985]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{C6C1834F-32F4-476E-9D7D-17994745A6EF}' />
+    </window>
+    <window class='worksheet' name='Delivery and Baseline'>
+      <cards>
+        <edge name='left'>
+          <strip size='242'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='dropdown' param='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:School Year:nk]' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{417BBEBC-72A6-49C6-BC4D-88097DEECF68}' />
+    </window>
+    <window class='dashboard' name='Program Operations Dashboard'>
+      <viewpoints>
+        <viewpoint name='Cost per Session'>
+          <zoom type='fit-width' />
+        </viewpoint>
+        <viewpoint name='Delivery and Baseline'>
+          <zoom type='fit-width' />
+        </viewpoint>
+        <viewpoint name='Participants'>
+          <zoom type='fit-width' />
+        </viewpoint>
+        <viewpoint name='Reach'>
+          <zoom type='fit-width' />
+        </viewpoint>
+        <viewpoint name='Recorded Cost'>
+          <zoom type='fit-width' />
+        </viewpoint>
+        <viewpoint name='Session Completion'>
+          <zoom type='fit-width' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{53F9FF39-2845-409B-9F95-E91B27122070}' />
+    </window>
+    <window class='worksheet' name='Outcome Availability'>
+      <cards>
+        <edge name='left'>
+          <strip size='236'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='dropdown' param='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:School Year:nk]' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{FEE524D3-0031-4C54-BEBE-CB11EF3D1171}' />
+    </window>
+    <window class='worksheet' name='Matched Growth'>
+      <cards>
+        <edge name='left'>
+          <strip size='221'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='268'>
+            <card param='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Prior Need Category:nk]' type='filter' />
+            <card param='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Calculation_0830190973308938:nk]' type='filter' />
+            <card mode='dropdown' param='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Grade Level:ok]' type='filter' />
+            <card pane-specification-id='0' param='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Calculation_0830190973308938:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{5EA28F68-A374-42DD-A913-D2EF7E8D996A}' />
+    </window>
+    <window class='worksheet' name='Attendance Comparison'>
+      <cards>
+        <edge name='left'>
+          <strip size='300'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0rvcuou1cpw2pl1fjzxsi0p5cmt9].[none:Grade Level:ok]' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{9DA50071-9A8A-4E5C-9AF8-FA2889A36E89}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Program Outcome Review Dashboard'>
+      <viewpoints>
+        <viewpoint name='Attendance Comparison'>
+          <zoom type='fit-width' />
+        </viewpoint>
+        <viewpoint name='Matched Growth'>
+          <zoom type='fit-height' />
+        </viewpoint>
+        <viewpoint name='Outcome Availability'>
+          <zoom type='fit-width' />
+        </viewpoint>
+      </viewpoints>
+      <active id='4' />
+      <simple-id uuid='{A775B50B-C4FB-401A-843A-94396D98D5AB}' />
+    </window>
+  </windows>
+</workbook>
