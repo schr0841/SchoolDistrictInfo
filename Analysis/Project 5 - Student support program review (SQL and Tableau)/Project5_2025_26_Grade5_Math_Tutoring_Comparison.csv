@@ -1,0 +1,7 @@
+"school_year","grade_level","target_program","target_subject","prior_need_category","comparison_group","students","students_with_valid_attendance","present_days","membership_days","attendance_rate","assessment_eligible_students","paired_students","eligible_students_without_pair","mean_paired_growth_points"
+"2025-26",5,"Math tutoring","Math","Prior absence: 10% or more","No recorded intervention",267,267,42248,48060,0.8791,267,242,25,19.61
+"2025-26",5,"Math tutoring","Math","Prior absence: 10% or more","Recorded participant",13,13,2155,2340,0.9209,13,12,1,10.50
+"2025-26",5,"Math tutoring","Math","Prior absence: 5% to under 10%","No recorded intervention",495,495,83224,89100,0.9341,495,457,38,18.32
+"2025-26",5,"Math tutoring","Math","Prior absence: 5% to under 10%","Recorded participant",43,43,7313,7740,0.9448,43,40,3,21.23
+"2025-26",5,"Math tutoring","Math","Prior absence: under 5%","No recorded intervention",597,597,104031,107460,0.9681,597,548,49,18.40
+"2025-26",5,"Math tutoring","Math","Prior absence: under 5%","Recorded participant",67,67,11670,12060,0.9677,67,60,7,17.07
