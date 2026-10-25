@@ -26,3 +26,26 @@ ORDER BY school_year, intervention_type;
 -- Optional check: run separately. Expected result: NULL, not zero.
 SELECT ROUND(100::numeric / NULLIF(0, 0), 2)
     AS zero_attendance_cost_example;
+
+
+-- Summary: In 2023-2024, Attendance mentoring had 1942 recorded participants, including 
+-- 0 who attended no sessions. Students attended 40061 of 54227 planned sessions, 
+-- a session completion rate of 73.88%. Total recorded cost was $1430114.71, equivalent 
+-- to $35.70 per attended session. These figures describe program delivery; they do 
+-- not establish program effectiveness.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+"school_year","program","intervention_records","participants","participants_attending_at_least_one_session","participants_with_zero_attendance","planned_sessions","attended_sessions","unattended_planned_sessions","session_completion_rate","total_recorded_cost","cost_per_attended_session"
+"2023-24","Attendance mentoring",1942,1942,1942,0,54227,40061,14166,0.7388,1430114.71,35.70
+"2023-24","Math tutoring",1677,1677,1677,0,46947,42469,4478,0.9046,1247468.51,29.37
+"2023-24","Reading support",1646,1646,1646,0,46367,42020,4347,0.9062,1232590.95,29.33
+"2024-25","Attendance mentoring",2017,2017,2017,0,56824,42671,14153,0.7509,1510786.76,35.41
+"2024-25","Math tutoring",1468,1468,1468,0,41242,37436,3806,0.9077,1095829.34,29.27
+"2024-25","Reading support",1477,1477,1477,0,41224,37436,3788,0.9081,1091501.12,29.16
+"2025-26","Attendance mentoring",1954,1954,1954,0,55033,41255,13778,0.7496,1449282.33,35.13
+"2025-26","Math tutoring",1300,1300,1300,0,36173,32900,3273,0.9095,968402.00,29.43
+"2025-26","Reading support",1363,1363,1363,0,38240,34648,3592,0.9061,1019920.96,29.44
