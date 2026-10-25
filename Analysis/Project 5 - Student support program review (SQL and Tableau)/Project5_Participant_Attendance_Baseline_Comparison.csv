@@ -1,0 +1,4 @@
+"school_year","prior_school_year","program","grade_level","prior_need_category","comparable_participants","baseline_present_days","baseline_membership_days","current_present_days","current_membership_days","baseline_attendance_rate","current_attendance_rate","attendance_change_percentage_points"
+"2025-26","2024-25","Math tutoring",5,"Prior absence: 10% or more",13,2081,2340,2155,2340,0.8893,0.9209,3.16
+"2025-26","2024-25","Math tutoring",5,"Prior absence: 5% to under 10%",43,7229,7740,7313,7740,0.9340,0.9448,1.09
+"2025-26","2024-25","Math tutoring",5,"Prior absence: under 5%",67,11749,12060,11670,12060,0.9742,0.9677,-0.66

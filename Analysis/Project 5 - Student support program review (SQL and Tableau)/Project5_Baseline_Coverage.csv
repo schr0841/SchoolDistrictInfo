@@ -1,0 +1,10 @@
+"school_year","program","participants","participants_with_prior_baseline","participants_without_prior_baseline","prior_baseline_coverage_rate","current_planned_sessions","current_attended_sessions","current_session_completion_rate"
+"2023-24","Attendance mentoring",1942,0,1942,0.0000,54227,40061,0.7388
+"2023-24","Math tutoring",1677,0,1677,0.0000,46947,42469,0.9046
+"2023-24","Reading support",1646,0,1646,0.0000,46367,42020,0.9062
+"2024-25","Attendance mentoring",2017,2017,0,1.0000,56824,42671,0.7509
+"2024-25","Math tutoring",1468,1468,0,1.0000,41242,37436,0.9077
+"2024-25","Reading support",1477,1477,0,1.0000,41224,37436,0.9081
+"2025-26","Attendance mentoring",1954,1954,0,1.0000,55033,41255,0.7496
+"2025-26","Math tutoring",1300,1300,0,1.0000,36173,32900,0.9095
+"2025-26","Reading support",1363,1363,0,1.0000,38240,34648,0.9061

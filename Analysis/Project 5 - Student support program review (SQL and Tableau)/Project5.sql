@@ -184,3 +184,113 @@ ORDER BY prior_need_category, comparison_group;
 -- missing tests remain questions for further study.
 
 
+-- Project 5, Part 3: Prior-year attendance baseline
+-- Synthetic demonstration — not an actual district.
+-- Requires public.project5_student_year from Part 2.
+-- Run each query separately. No database objects are changed.
+
+-- QUERY 1: Baseline coverage and CURRENT-YEAR delivery for all participants.
+WITH participants AS (
+    SELECT *,
+           prior_membership_days > 0 AND prior_absent_days IS NOT NULL
+               AS has_prior_baseline
+    FROM public.project5_student_year
+    WHERE recorded_participant
+)
+SELECT school_year, program,
+       COUNT(*) AS participants,
+       COUNT(*) FILTER (WHERE has_prior_baseline) AS participants_with_prior_baseline,
+       COUNT(*) FILTER (WHERE has_prior_baseline IS NOT TRUE) AS participants_without_prior_baseline,
+       ROUND((COUNT(*) FILTER (WHERE has_prior_baseline))::numeric
+           / NULLIF(COUNT(*), 0), 4) AS prior_baseline_coverage_rate,
+       SUM(planned_sessions) AS current_planned_sessions,
+       SUM(attended_sessions) AS current_attended_sessions,
+       ROUND(SUM(attended_sessions)::numeric
+           / NULLIF(SUM(planned_sessions), 0), 4) AS current_session_completion_rate
+FROM participants
+GROUP BY school_year, program
+ORDER BY school_year, program;
+
+-- Prior-year attendance serves as the baseline when available. For Math Tutoring in 2024-25, 
+-- 1468 of 1468 recorded participants had usable previous-year attendance; 0 
+-- lacked a baseline. Participants without baseline data remain included in 
+-- program delivery summaries but are excluded from the prior-to-current attendance 
+-- comparison.
+
+-- All 2023–24 participants lack observed prior-year attendance because the supplied dataset 
+-- does not include 2022–23. Missing baseline data are not interpreted as zero attendance 
+-- or low need.
+
+-- QUERY 2: Attendance comparison using the SAME students in both years.
+-- First-year participants remain in Query 1 but cannot enter this comparison.
+-- Change settings for a different current year, program, or current grade.
+WITH settings AS (
+    SELECT '2025-26'::text AS target_year,
+           'Math tutoring'::text AS target_program,
+           5::integer AS target_grade
+), comparable AS (
+    SELECT v.*,
+           prior_membership_days - prior_absent_days AS prior_present_days
+    FROM public.project5_student_year v
+    CROSS JOIN settings s
+    WHERE v.recorded_participant
+      AND v.school_year = s.target_year
+      AND v.program = s.target_program
+      AND v.grade_level = s.target_grade
+      AND v.prior_membership_days > 0
+      AND v.prior_absent_days IS NOT NULL
+      AND v.membership_days > 0
+      AND v.present_days IS NOT NULL
+), totals AS (
+    SELECT school_year, prior_school_year, program, grade_level, prior_need_category,
+           COUNT(*) AS comparable_participants,
+           SUM(prior_present_days) AS baseline_present_days,
+           SUM(prior_membership_days) AS baseline_membership_days,
+           SUM(present_days) AS current_present_days,
+           SUM(membership_days) AS current_membership_days
+    FROM comparable
+    GROUP BY school_year, prior_school_year, program, grade_level, prior_need_category
+)
+SELECT *,
+       ROUND(baseline_present_days::numeric
+           / NULLIF(baseline_membership_days, 0), 4) AS baseline_attendance_rate,
+       ROUND(current_present_days::numeric
+           / NULLIF(current_membership_days, 0), 4) AS current_attendance_rate,
+       ROUND(100 * (
+           current_present_days::numeric / NULLIF(current_membership_days, 0)
+           - baseline_present_days::numeric / NULLIF(baseline_membership_days, 0)
+       ), 2) AS attendance_change_percentage_points
+FROM totals
+ORDER BY prior_need_category;
+
+-- Interpretation: baseline = previous school year; delivery and outcomes =
+-- current school year. Annual current attendance includes days before and
+-- during the program, so this is not a strictly post-intervention outcome.
+-- First observed year (2023-24) has no 2022-23 baseline in this dataset.
+-- No baseline is missing information, not zero attendance or low need.
+-- Differences over time are descriptive, not evidence of program impact.
+
+-- Among 13 current fifth-grade Math tutoring participants in the
+-- Prior absence: 10% or more category, attendance was 88.93% in 
+-- 2024-25 and 92.09% in 2025-26, a change of 3.16% percentage points.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
