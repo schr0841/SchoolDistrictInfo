@@ -61,4 +61,6 @@ Annual totals are retrospective and cannot be presented as a midyear alert. A re
 
 ## Suggested reporting language
 
-> Using hypothetical thresholds of at least 18 annual absent days or at least 2 failed course-semesters, [N] grade [G] students in [year] met at least one rule. [A] met the absence rule, [F] met the failure rule, and [B] met both. [U] additional students had unresolved selection because neither observed rule was met and at least one rule could not be evaluated. The results describe retrospective candidates for human review, not a validated prediction or an automatic decision.
+> Using hypothetical thresholds of at least 18 annual absent days or at least 2 failed course-semesters, 736 grade 6 students in 2023-24 met at least one rule. 442 met the absence rule, 479 met the failure rule, and 185 met both. 0 additional students had unresolved selection because neither observed rule was met and at least one rule could not be evaluated. The results describe retrospective candidates for human review, not a validated prediction or an automatic decision.
+
+These retrospective rules identify possible counselor check-in candidates for human review. They are not a validated prediction and must not determine eligibility, discipline, or placement. A midyear alert would require date-limited attendance and course information available at that time.
