@@ -281,6 +281,34 @@ ORDER BY prior_need_category;
 
 
 
+-- Project 5: Tableau student-year export
+-- Synthetic demonstration — not an actual district.
+-- Requires public.project5_student_year from Project5_Student_Year_Comparisons.sql.
+-- Run this SELECT and export the result as Project5_Tableau_Student_Year.csv.
+-- Expected: 60000 rows, one per student/year. No raw fact joins.
+SELECT v.student_id AS "Student ID",
+       v.school_year AS "School Year",
+       v.grade_level AS "Grade Level",
+       s.school_name AS "School Name",
+       s.school_level AS "School Level",
+       v.program AS "Program",
+       v.planned_sessions AS "Planned Sessions",
+       v.attended_sessions AS "Attended Sessions",
+       v.intervention_cost AS "Intervention Cost",
+       v.membership_days AS "Membership Days",
+       v.present_days AS "Present Days",
+       v.prior_school_year AS "Prior School Year",
+       v.prior_membership_days AS "Prior Membership Days",
+       v.prior_absent_days AS "Prior Absent Days",
+       v.prior_need_category AS "Prior Need Category",
+       v.math_growth_points AS "Math Growth Points",
+       v.reading_growth_points AS "Reading Growth Points",
+       CASE WHEN v.assessment_eligible THEN 1 ELSE 0 END AS "Assessment Eligible Flag",
+       CASE WHEN v.prior_membership_days > 0 AND v.prior_absent_days IS NOT NULL
+            THEN 1 ELSE 0 END AS "Prior Baseline Flag"
+FROM public.project5_student_year v
+JOIN public.schools s ON s.school_id = v.school_id
+ORDER BY v.school_year, v.student_id;
 
 
 
