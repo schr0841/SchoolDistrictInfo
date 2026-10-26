@@ -71,3 +71,9 @@ These metrics describe program reach and delivery. They do not establish causal 
 ## Suggested findings statement
 
 > In [year], [program] had [N] recorded participants, including [N] who attended no sessions. Students attended [A] of [P] planned sessions, a session completion rate of [X%]. Total recorded cost was [$C], equivalent to [$D] per attended session. These figures describe program delivery; they do not establish program effectiveness.
+
+Targeted selection:	Students may receive support because they have greater needs. Same grade and prior-absence category do not ensure equal prior academic achievement or referral reasons.
+
+Regression to the mean:	Students selected after an unusually poor result may later show less extreme results even without an intervention. Improvement alone does not establish an effect.
+
+Unobserved confounding:	Family support, health, motivation, referrals, staffing, scheduling, and other services may influence both participation and outcomes. These factors are not adequately captured here.
