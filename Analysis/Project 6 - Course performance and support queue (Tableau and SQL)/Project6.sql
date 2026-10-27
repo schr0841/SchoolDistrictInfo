@@ -248,3 +248,55 @@ ORDER BY grade_level, student_alias;
 -- Grade/course coverage remains visible even when another rule is met.
 
 
+-- Project 6: Reconcile Aggregate Board Overview with SQL.
+-- Synthetic demonstration — not an actual district.
+-- Use the SAME year, school, and grade selections as Tableau.
+-- NULL school/grade means all eligible schools/grades.
+WITH settings AS (
+    SELECT '2025-26'::text AS target_year,
+           NULL::text AS target_school_id,
+           NULL::integer AS target_grade
+), scoped AS (
+    SELECT r.*
+    FROM public.project6_support_rules r
+    CROSS JOIN settings s
+    WHERE r.school_year = s.target_year
+      AND (s.target_school_id IS NULL OR r.school_id = s.target_school_id)
+      AND (s.target_grade IS NULL OR r.grade_level = s.target_grade)
+), counts AS (
+    SELECT school_year, grade_level,
+           COUNT(*) AS eligible_students,
+           COUNT(*) FILTER (WHERE reason_category = 'Absence rule')
+               AS absence_segment_candidates,
+           COUNT(*) FILTER (WHERE reason_category = 'Course-failure rule')
+               AS failure_segment_candidates,
+           COUNT(*) FILTER (WHERE reason_category = 'Both rules')
+               AS both_rules_candidates,
+           COUNT(*) FILTER (WHERE any_rule_met IS TRUE) AS total_candidates,
+           COUNT(*) FILTER (WHERE any_rule_met IS NULL) AS unresolved_selection,
+           COUNT(*) FILTER (WHERE any_rule_met IS FALSE) AS neither_rule_met
+    FROM scoped
+    GROUP BY school_year, grade_level
+)
+SELECT *,
+       ROUND(total_candidates::numeric / NULLIF(eligible_students, 0), 4)
+           AS candidate_share,
+       ROUND(100.0 * total_candidates / NULLIF(eligible_students, 0), 2)
+           AS candidate_percent,
+       (absence_segment_candidates + failure_segment_candidates
+           + both_rules_candidates = total_candidates) AS segments_reconcile,
+       (total_candidates + unresolved_selection + neither_rule_met
+           = eligible_students) AS population_reconciles
+FROM counts
+ORDER BY school_year, grade_level;
+
+
+
+
+
+
+
+
+
+
+
