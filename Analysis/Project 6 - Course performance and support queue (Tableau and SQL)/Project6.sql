@@ -292,6 +292,106 @@ ORDER BY school_year, grade_level;
 
 
 
+-- Project 6: Threshold sensitivity and hypothetical review workload.
+-- Synthetic demonstration — not an actual district.
+-- READ ONLY. Requires public.project6_student_year_courses from Part 1.
+-- Run the entire query. Default: 2025-26, all schools, grades 6-12.
+-- Each scenario selects students meeting absence threshold OR failure threshold.
+-- 15 minutes is an illustrative initial review assumption, not measured workload.
+WITH settings AS (
+    SELECT '2025-26'::text AS target_year,
+           NULL::text AS target_school_id,
+           15::numeric AS minutes_per_initial_review
+), scenarios AS (
+    SELECT a.absence_threshold_days, f.failure_threshold
+    FROM (VALUES (12), (18), (24)) AS a(absence_threshold_days)
+    CROSS JOIN (VALUES (1), (2), (3)) AS f(failure_threshold)
+), scoped AS (
+    SELECT c.*, s.minutes_per_initial_review
+    FROM public.project6_student_year_courses c
+    CROSS JOIN settings s
+    WHERE c.course_eligible
+      AND c.school_year = s.target_year
+      AND (s.target_school_id IS NULL OR c.school_id = s.target_school_id)
+), evaluated AS (
+    SELECT c.*, t.absence_threshold_days, t.failure_threshold,
+           CASE
+               WHEN c.membership_days IS NULL OR c.membership_days <> 180
+                 OR c.absent_days IS NULL OR c.absent_days < 0
+                 OR c.absent_days > c.membership_days THEN NULL::boolean
+               ELSE c.absent_days >= t.absence_threshold_days
+           END AS absence_met,
+           CASE
+               WHEN c.failed_course_semesters IS NULL THEN NULL::boolean
+               WHEN c.failed_course_semesters >= t.failure_threshold THEN TRUE
+               WHEN c.course_semester_records = c.expected_course_semester_records
+                   THEN FALSE
+               ELSE NULL::boolean
+           END AS failure_met
+    FROM scoped c CROSS JOIN scenarios t
+), totals AS (
+    SELECT school_year, grade_level,
+           absence_threshold_days, failure_threshold,
+           MAX(minutes_per_initial_review) AS minutes_per_initial_review,
+           COUNT(*) AS students_in_review_scope,
+           COUNT(*) FILTER (WHERE absence_met IS TRUE) AS meets_absence_threshold,
+           COUNT(*) FILTER (WHERE failure_met IS TRUE) AS meets_failure_threshold,
+           COUNT(*) FILTER (WHERE absence_met IS TRUE AND failure_met IS TRUE)
+               AS meets_both_thresholds,
+           COUNT(*) FILTER (WHERE (absence_met OR failure_met) IS TRUE)
+               AS unique_review_candidates,
+           COUNT(*) FILTER (WHERE (absence_met OR failure_met) IS NULL)
+               AS unresolved_selection,
+           COUNT(*) FILTER (WHERE (absence_met OR failure_met) IS FALSE)
+               AS neither_threshold_met
+    FROM evaluated
+    GROUP BY GROUPING SETS (
+        (school_year, grade_level, absence_threshold_days, failure_threshold),
+        (school_year, absence_threshold_days, failure_threshold)
+    )
+), baseline AS (
+    SELECT *,
+           MAX(unique_review_candidates) FILTER (
+               WHERE absence_threshold_days = 18 AND failure_threshold = 2
+           ) OVER (PARTITION BY school_year, grade_level)
+               AS baseline_18_day_2_failure_candidates
+    FROM totals
+)
+SELECT school_year, grade_level,
+       CASE WHEN grade_level IS NULL THEN 'All grades 6-12'
+            ELSE 'Grade ' || grade_level::text END AS grade_group,
+       absence_threshold_days, failure_threshold,
+       CASE WHEN absence_threshold_days = 18 AND failure_threshold = 2
+            THEN 'Starting rule' ELSE 'Hypothetical scenario' END AS scenario_type,
+       students_in_review_scope, meets_absence_threshold,
+       meets_failure_threshold, meets_both_thresholds,
+       unique_review_candidates,
+       ROUND(100.0 * unique_review_candidates
+           / NULLIF(students_in_review_scope, 0), 2) AS candidate_percent,
+       baseline_18_day_2_failure_candidates,
+       unique_review_candidates - baseline_18_day_2_failure_candidates
+           AS candidate_change_vs_starting_rule,
+       unresolved_selection, neither_threshold_met,
+       minutes_per_initial_review,
+       ROUND(unique_review_candidates * minutes_per_initial_review / 60, 2)
+           AS estimated_initial_review_hours,
+       (meets_absence_threshold + meets_failure_threshold - meets_both_thresholds
+           = unique_review_candidates) AS overlap_reconciles,
+       (unique_review_candidates + unresolved_selection + neither_threshold_met
+           = students_in_review_scope) AS population_reconciles
+FROM baseline
+ORDER BY grade_level NULLS FIRST, absence_threshold_days, failure_threshold;
+
+-- All-grades rows are already totals: do NOT sum them with individual grades.
+-- All nine scenarios reuse the same population: do NOT sum across scenarios.
+-- Lower one threshold while holding the other fixed to explain its effect.
+-- Changing both simultaneously does not isolate either threshold's effect.
+-- Counts are unique students within the selected year; no risk ranking is implied.
+-- Completeness/missingness handling matches the Part 2 rules.
+-- Annual data are retrospective, not usable as an early-year operational alert.
+-- Initial review hours omit check-ins, coordination, follow-up, documentation,
+-- existing caseloads, school calendars, and ongoing counselor responsibilities.
+
 
 
 

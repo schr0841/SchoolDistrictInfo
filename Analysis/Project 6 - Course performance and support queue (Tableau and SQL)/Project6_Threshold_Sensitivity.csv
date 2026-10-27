@@ -1,0 +1,73 @@
+"school_year","grade_level","grade_group","absence_threshold_days","failure_threshold","scenario_type","students_in_review_scope","meets_absence_threshold","meets_failure_threshold","meets_both_thresholds","unique_review_candidates","candidate_percent","baseline_18_day_2_failure_candidates","candidate_change_vs_starting_rule","unresolved_selection","neither_threshold_met","minutes_per_initial_review","estimated_initial_review_hours","overlap_reconciles","population_reconciles"
+"2025-26",NULL,"All grades 6-12",12,1,"Hypothetical scenario",12726,5572,5622,3062,8132,63.90,5086,3046,0,4594,15,2033.00,True,True
+"2025-26",NULL,"All grades 6-12",12,2,"Hypothetical scenario",12726,5572,3465,2061,6976,54.82,5086,1890,0,5750,15,1744.00,True,True
+"2025-26",NULL,"All grades 6-12",12,3,"Hypothetical scenario",12726,5572,2258,1444,6386,50.18,5086,1300,0,6340,15,1596.50,True,True
+"2025-26",NULL,"All grades 6-12",18,1,"Hypothetical scenario",12726,2868,5622,1765,6725,52.84,5086,1639,0,6001,15,1681.25,True,True
+"2025-26",NULL,"All grades 6-12",18,2,"Starting rule",12726,2868,3465,1247,5086,39.97,5086,0,0,7640,15,1271.50,True,True
+"2025-26",NULL,"All grades 6-12",18,3,"Hypothetical scenario",12726,2868,2258,927,4199,33.00,5086,-887,0,8527,15,1049.75,True,True
+"2025-26",NULL,"All grades 6-12",24,1,"Hypothetical scenario",12726,1439,5622,984,6077,47.75,5086,991,0,6649,15,1519.25,True,True
+"2025-26",NULL,"All grades 6-12",24,2,"Hypothetical scenario",12726,1439,3465,711,4193,32.95,5086,-893,0,8533,15,1048.25,True,True
+"2025-26",NULL,"All grades 6-12",24,3,"Hypothetical scenario",12726,1439,2258,545,3152,24.77,5086,-1934,0,9574,15,788.00,True,True
+"2025-26",6,"Grade 6",12,1,"Hypothetical scenario",1818,785,841,461,1165,64.08,739,426,0,653,15,291.25,True,True
+"2025-26",6,"Grade 6",12,2,"Hypothetical scenario",1818,785,509,295,999,54.95,739,260,0,819,15,249.75,True,True
+"2025-26",6,"Grade 6",12,3,"Hypothetical scenario",1818,785,334,212,907,49.89,739,168,0,911,15,226.75,True,True
+"2025-26",6,"Grade 6",18,1,"Hypothetical scenario",1818,414,841,275,980,53.91,739,241,0,838,15,245.00,True,True
+"2025-26",6,"Grade 6",18,2,"Starting rule",1818,414,509,184,739,40.65,739,0,0,1079,15,184.75,True,True
+"2025-26",6,"Grade 6",18,3,"Hypothetical scenario",1818,414,334,143,605,33.28,739,-134,0,1213,15,151.25,True,True
+"2025-26",6,"Grade 6",24,1,"Hypothetical scenario",1818,217,841,158,900,49.50,739,161,0,918,15,225.00,True,True
+"2025-26",6,"Grade 6",24,2,"Hypothetical scenario",1818,217,509,104,622,34.21,739,-117,0,1196,15,155.50,True,True
+"2025-26",6,"Grade 6",24,3,"Hypothetical scenario",1818,217,334,82,469,25.80,739,-270,0,1349,15,117.25,True,True
+"2025-26",7,"Grade 7",12,1,"Hypothetical scenario",1818,808,782,417,1173,64.52,715,458,0,645,15,293.25,True,True
+"2025-26",7,"Grade 7",12,2,"Hypothetical scenario",1818,808,473,275,1006,55.34,715,291,0,812,15,251.50,True,True
+"2025-26",7,"Grade 7",12,3,"Hypothetical scenario",1818,808,308,193,923,50.77,715,208,0,895,15,230.75,True,True
+"2025-26",7,"Grade 7",18,1,"Hypothetical scenario",1818,397,782,229,950,52.26,715,235,0,868,15,237.50,True,True
+"2025-26",7,"Grade 7",18,2,"Starting rule",1818,397,473,155,715,39.33,715,0,0,1103,15,178.75,True,True
+"2025-26",7,"Grade 7",18,3,"Hypothetical scenario",1818,397,308,118,587,32.29,715,-128,0,1231,15,146.75,True,True
+"2025-26",7,"Grade 7",24,1,"Hypothetical scenario",1818,191,782,134,839,46.15,715,124,0,979,15,209.75,True,True
+"2025-26",7,"Grade 7",24,2,"Hypothetical scenario",1818,191,473,96,568,31.24,715,-147,0,1250,15,142.00,True,True
+"2025-26",7,"Grade 7",24,3,"Hypothetical scenario",1818,191,308,77,422,23.21,715,-293,0,1396,15,105.50,True,True
+"2025-26",8,"Grade 8",12,1,"Hypothetical scenario",1818,782,804,442,1144,62.93,728,416,0,674,15,286.00,True,True
+"2025-26",8,"Grade 8",12,2,"Hypothetical scenario",1818,782,488,299,971,53.41,728,243,0,847,15,242.75,True,True
+"2025-26",8,"Grade 8",12,3,"Hypothetical scenario",1818,782,321,207,896,49.28,728,168,0,922,15,224.00,True,True
+"2025-26",8,"Grade 8",18,1,"Hypothetical scenario",1818,428,804,269,963,52.97,728,235,0,855,15,240.75,True,True
+"2025-26",8,"Grade 8",18,2,"Starting rule",1818,428,488,188,728,40.04,728,0,0,1090,15,182.00,True,True
+"2025-26",8,"Grade 8",18,3,"Hypothetical scenario",1818,428,321,134,615,33.83,728,-113,0,1203,15,153.75,True,True
+"2025-26",8,"Grade 8",24,1,"Hypothetical scenario",1818,231,804,160,875,48.13,728,147,0,943,15,218.75,True,True
+"2025-26",8,"Grade 8",24,2,"Hypothetical scenario",1818,231,488,107,612,33.66,728,-116,0,1206,15,153.00,True,True
+"2025-26",8,"Grade 8",24,3,"Hypothetical scenario",1818,231,321,77,475,26.13,728,-253,0,1343,15,118.75,True,True
+"2025-26",9,"Grade 9",12,1,"Hypothetical scenario",1818,791,784,428,1147,63.09,697,450,0,671,15,286.75,True,True
+"2025-26",9,"Grade 9",12,2,"Hypothetical scenario",1818,791,486,294,983,54.07,697,286,0,835,15,245.75,True,True
+"2025-26",9,"Grade 9",12,3,"Hypothetical scenario",1818,791,318,212,897,49.34,697,200,0,921,15,224.25,True,True
+"2025-26",9,"Grade 9",18,1,"Hypothetical scenario",1818,386,784,236,934,51.38,697,237,0,884,15,233.50,True,True
+"2025-26",9,"Grade 9",18,2,"Starting rule",1818,386,486,175,697,38.34,697,0,0,1121,15,174.25,True,True
+"2025-26",9,"Grade 9",18,3,"Hypothetical scenario",1818,386,318,136,568,31.24,697,-129,0,1250,15,142.00,True,True
+"2025-26",9,"Grade 9",24,1,"Hypothetical scenario",1818,172,784,115,841,46.26,697,144,0,977,15,210.25,True,True
+"2025-26",9,"Grade 9",24,2,"Hypothetical scenario",1818,172,486,91,567,31.19,697,-130,0,1251,15,141.75,True,True
+"2025-26",9,"Grade 9",24,3,"Hypothetical scenario",1818,172,318,71,419,23.05,697,-278,0,1399,15,104.75,True,True
+"2025-26",10,"Grade 10",12,1,"Hypothetical scenario",1818,799,814,430,1183,65.07,724,459,0,635,15,295.75,True,True
+"2025-26",10,"Grade 10",12,2,"Hypothetical scenario",1818,799,490,288,1001,55.06,724,277,0,817,15,250.25,True,True
+"2025-26",10,"Grade 10",12,3,"Hypothetical scenario",1818,799,314,200,913,50.22,724,189,0,905,15,228.25,True,True
+"2025-26",10,"Grade 10",18,1,"Hypothetical scenario",1818,410,814,248,976,53.69,724,252,0,842,15,244.00,True,True
+"2025-26",10,"Grade 10",18,2,"Starting rule",1818,410,490,176,724,39.82,724,0,0,1094,15,181.00,True,True
+"2025-26",10,"Grade 10",18,3,"Hypothetical scenario",1818,410,314,125,599,32.95,724,-125,0,1219,15,149.75,True,True
+"2025-26",10,"Grade 10",24,1,"Hypothetical scenario",1818,217,814,142,889,48.90,724,165,0,929,15,222.25,True,True
+"2025-26",10,"Grade 10",24,2,"Hypothetical scenario",1818,217,490,108,599,32.95,724,-125,0,1219,15,149.75,True,True
+"2025-26",10,"Grade 10",24,3,"Hypothetical scenario",1818,217,314,79,452,24.86,724,-272,0,1366,15,113.00,True,True
+"2025-26",11,"Grade 11",12,1,"Hypothetical scenario",1818,825,791,444,1172,64.47,749,423,0,646,15,293.00,True,True
+"2025-26",11,"Grade 11",12,2,"Hypothetical scenario",1818,825,505,303,1027,56.49,749,278,0,791,15,256.75,True,True
+"2025-26",11,"Grade 11",12,3,"Hypothetical scenario",1818,825,329,212,942,51.82,749,193,0,876,15,235.50,True,True
+"2025-26",11,"Grade 11",18,1,"Hypothetical scenario",1818,424,791,252,963,52.97,749,214,0,855,15,240.75,True,True
+"2025-26",11,"Grade 11",18,2,"Starting rule",1818,424,505,180,749,41.20,749,0,0,1069,15,187.25,True,True
+"2025-26",11,"Grade 11",18,3,"Hypothetical scenario",1818,424,329,140,613,33.72,749,-136,0,1205,15,153.25,True,True
+"2025-26",11,"Grade 11",24,1,"Hypothetical scenario",1818,211,791,140,862,47.41,749,113,0,956,15,215.50,True,True
+"2025-26",11,"Grade 11",24,2,"Hypothetical scenario",1818,211,505,105,611,33.61,749,-138,0,1207,15,152.75,True,True
+"2025-26",11,"Grade 11",24,3,"Hypothetical scenario",1818,211,329,86,454,24.97,749,-295,0,1364,15,113.50,True,True
+"2025-26",12,"Grade 12",12,1,"Hypothetical scenario",1818,782,806,440,1148,63.15,734,414,0,670,15,287.00,True,True
+"2025-26",12,"Grade 12",12,2,"Hypothetical scenario",1818,782,514,307,989,54.40,734,255,0,829,15,247.25,True,True
+"2025-26",12,"Grade 12",12,3,"Hypothetical scenario",1818,782,334,208,908,49.94,734,174,0,910,15,227.00,True,True
+"2025-26",12,"Grade 12",18,1,"Hypothetical scenario",1818,409,806,256,959,52.75,734,225,0,859,15,239.75,True,True
+"2025-26",12,"Grade 12",18,2,"Starting rule",1818,409,514,189,734,40.37,734,0,0,1084,15,183.50,True,True
+"2025-26",12,"Grade 12",18,3,"Hypothetical scenario",1818,409,334,131,612,33.66,734,-122,0,1206,15,153.00,True,True
+"2025-26",12,"Grade 12",24,1,"Hypothetical scenario",1818,200,806,135,871,47.91,734,137,0,947,15,217.75,True,True
+"2025-26",12,"Grade 12",24,2,"Hypothetical scenario",1818,200,514,100,614,33.77,734,-120,0,1204,15,153.50,True,True
+"2025-26",12,"Grade 12",24,3,"Hypothetical scenario",1818,200,334,73,461,25.36,734,-273,0,1357,15,115.25,True,True
