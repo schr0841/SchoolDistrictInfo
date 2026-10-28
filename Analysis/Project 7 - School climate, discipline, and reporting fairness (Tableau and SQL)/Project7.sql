@@ -384,3 +384,9 @@ ORDER BY school_year, item_name;
 -- A survey record establishes participation—even if the student skipped all three items.
 
 -- Calculate percentages with the correct denominators.
+
+-- “Survey participation was calculated among enrolled students in grades 4–12 for each 
+-- school year. Favorable response share represents ratings of 4 or 5 among students
+-- who answered each item. Skipped-item rates represent missing item responses among
+-- survey participants; students without a survey record were counted separately as 
+-- nonparticipants.”
