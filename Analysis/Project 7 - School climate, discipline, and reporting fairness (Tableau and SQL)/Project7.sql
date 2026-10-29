@@ -636,6 +636,339 @@ ORDER BY
 
 
 
+-- Synthetic demonstration — not an actual district
+-- Project 7: protected survey export.
+--
+-- Reporting grain:
+-- School year × school level × race/ethnicity × survey item.
+--
+-- Portfolio rule:
+-- If any checked count is below 10, suppress all numeric
+-- results for that row, including related percentages.
+--
+-- Do not publish the intermediate CTE results.
+
+WITH eligible_students AS (
+    SELECT
+        e.student_id,
+        e.school_year,
+        sc.school_level,
+        COALESCE(
+            NULLIF(BTRIM(s.race_ethnicity), ''),
+            'Unknown'
+        ) AS race_ethnicity,
+        r.response_id,
+        r.belonging,
+        r.safety,
+        r.adult_support
+    FROM enrollment AS e
+    JOIN students AS s
+        ON e.student_id = s.student_id
+    JOIN schools AS sc
+        ON e.school_id = sc.school_id
+    LEFT JOIN survey_responses AS r
+        ON e.student_id = r.student_id
+       AND e.school_year = r.school_year
+    WHERE e.grade_level BETWEEN 4 AND 12
+),
+student_items AS (
+    SELECT
+        e.student_id,
+        e.school_year,
+        e.school_level,
+        e.race_ethnicity,
+        e.response_id,
+        item.item_name,
+        item.rating
+    FROM eligible_students AS e
+    CROSS JOIN LATERAL (
+        VALUES
+            ('belonging', e.belonging),
+            ('safety', e.safety),
+            ('adult_support', e.adult_support)
+    ) AS item(item_name, rating)
+),
+counts AS (
+    SELECT
+        school_year,
+        school_level,
+        race_ethnicity,
+        item_name,
+
+        COUNT(DISTINCT student_id) AS eligible_students,
+
+        COUNT(DISTINCT student_id)
+            FILTER (WHERE response_id IS NOT NULL)
+            AS participants,
+
+        COUNT(DISTINCT student_id)
+            FILTER (WHERE response_id IS NULL)
+            AS nonparticipants,
+
+        COUNT(DISTINCT student_id)
+            FILTER (WHERE rating IS NOT NULL)
+            AS valid_responses,
+
+        COUNT(DISTINCT student_id)
+            FILTER (WHERE rating >= 4)
+            AS favorable_responses,
+
+        COUNT(DISTINCT student_id)
+            FILTER (WHERE rating < 4)
+            AS unfavorable_responses,
+
+        COUNT(DISTINCT student_id)
+            FILTER (
+                WHERE response_id IS NOT NULL
+                  AND rating IS NULL
+            ) AS skipped_responses
+
+    FROM student_items
+    GROUP BY
+        school_year,
+        school_level,
+        race_ethnicity,
+        item_name
+),
+suppression AS (
+    SELECT
+        *,
+        LEAST(
+            eligible_students,
+            participants,
+            nonparticipants,
+            valid_responses,
+            favorable_responses,
+            unfavorable_responses,
+            skipped_responses
+        ) < 10 AS suppress_row
+    FROM counts
+)
+SELECT
+    school_year,
+    school_level,
+    race_ethnicity,
+    item_name,
+
+    CASE
+        WHEN suppress_row THEN 'Suppressed'
+        ELSE 'Reportable'
+    END AS reporting_status,
+
+    CASE WHEN NOT suppress_row
+        THEN eligible_students
+    END AS eligible_students,
+
+    CASE WHEN NOT suppress_row
+        THEN participants
+    END AS survey_participants,
+
+    CASE WHEN NOT suppress_row
+        THEN nonparticipants
+    END AS survey_nonparticipants,
+
+    CASE WHEN NOT suppress_row
+        THEN valid_responses
+    END AS valid_item_responses,
+
+    CASE WHEN NOT suppress_row
+        THEN favorable_responses
+    END AS favorable_responses,
+
+    CASE WHEN NOT suppress_row
+        THEN unfavorable_responses
+    END AS unfavorable_responses,
+
+    CASE WHEN NOT suppress_row
+        THEN skipped_responses
+    END AS skipped_item_responses,
+
+    CASE WHEN NOT suppress_row THEN
+        ROUND(
+            100.0 * participants
+            / NULLIF(eligible_students, 0),
+            2
+        )
+    END AS participation_pct,
+
+    CASE WHEN NOT suppress_row THEN
+        ROUND(
+            100.0 * favorable_responses
+            / NULLIF(valid_responses, 0),
+            2
+        )
+    END AS favorable_response_pct,
+
+    CASE WHEN NOT suppress_row THEN
+        ROUND(
+            100.0 * skipped_responses
+            / NULLIF(participants, 0),
+            2
+        )
+    END AS skipped_item_pct
+
+FROM suppression
+ORDER BY
+    school_year,
+    school_level,
+    race_ethnicity,
+    item_name;
+
+
+
+
+-- Synthetic demonstration — not an actual district
+-- Project 7: protected discipline export.
+--
+-- Reporting grain:
+-- School year × school level × race/ethnicity.
+--
+-- Population:
+-- All enrolled grades. The grades 4–12 restriction applies
+-- to the survey, not to discipline.
+--
+-- Portfolio suppression rule:
+-- If any checked count is below 10, suppress every numeric
+-- result in that row, including both discipline rates.
+--
+-- Export only the final SELECT results.
+
+WITH incidents_by_student_year AS (
+    -- Aggregate incidents before joining enrollment.
+    -- This produces one row per student and school year.
+    SELECT
+        student_id,
+        school_year,
+        COUNT(DISTINCT incident_id) AS incident_count
+    FROM discipline_incidents
+    GROUP BY
+        student_id,
+        school_year
+),
+student_year AS (
+    -- Keep every enrolled student, including those with
+    -- no recorded incident.
+    SELECT
+        e.student_id,
+        e.school_year,
+        sc.school_level,
+
+        COALESCE(
+            NULLIF(BTRIM(s.race_ethnicity), ''),
+            'Unknown'
+        ) AS race_ethnicity,
+
+        COALESCE(i.incident_count, 0) AS incident_count
+
+    FROM enrollment AS e
+
+    JOIN students AS s
+        ON e.student_id = s.student_id
+
+    JOIN schools AS sc
+        ON e.school_id = sc.school_id
+
+    LEFT JOIN incidents_by_student_year AS i
+        ON e.student_id = i.student_id
+       AND e.school_year = i.school_year
+),
+group_counts AS (
+    -- Calculate the counts needed for reporting
+    -- and complementary suppression.
+    SELECT
+        school_year,
+        school_level,
+        race_ethnicity,
+
+        COUNT(DISTINCT student_id) AS enrolled_students,
+
+        SUM(incident_count) AS total_incidents,
+
+        COUNT(DISTINCT student_id)
+            FILTER (WHERE incident_count > 0)
+            AS students_with_any_incident,
+
+        COUNT(DISTINCT student_id)
+            FILTER (WHERE incident_count = 0)
+            AS students_with_no_incident
+
+    FROM student_year
+
+    GROUP BY
+        school_year,
+        school_level,
+        race_ethnicity
+),
+suppression AS (
+    -- Flag the whole row if any checked count is below 10.
+    SELECT
+        *,
+        LEAST(
+            enrolled_students,
+            total_incidents,
+            students_with_any_incident,
+            students_with_no_incident
+        ) < 10 AS suppress_row
+    FROM group_counts
+)
+SELECT
+    school_year,
+    school_level,
+    race_ethnicity,
+
+    CASE
+        WHEN suppress_row THEN 'Suppressed'
+        ELSE 'Reportable'
+    END AS reporting_status,
+
+    CASE WHEN NOT suppress_row
+        THEN enrolled_students
+    END AS enrolled_students,
+
+    CASE WHEN NOT suppress_row
+        THEN total_incidents
+    END AS total_incidents,
+
+    CASE WHEN NOT suppress_row
+        THEN students_with_any_incident
+    END AS students_with_any_incident,
+
+    CASE WHEN NOT suppress_row
+        THEN students_with_no_incident
+    END AS students_with_no_incident,
+
+    CASE WHEN NOT suppress_row THEN
+        ROUND(
+            100.0 * total_incidents
+            / NULLIF(enrolled_students, 0),
+            2
+        )
+    END AS incidents_per_100_enrolled_students,
+
+    CASE WHEN NOT suppress_row THEN
+        ROUND(
+            100.0 * students_with_any_incident
+            / NULLIF(enrolled_students, 0),
+            2
+        )
+    END AS pct_students_with_any_incident
+
+FROM suppression
+
+ORDER BY
+    school_year,
+    school_level,
+    race_ethnicity;
+
+
+-- saved as project7_discipline_rates_by_group_public_suppressed.csv
+
+-- Synthetic demonstration — not an actual district. Counts below 10 
+-- and associated values are suppressed under a portfolio reporting convention. 
+-- Additional totals and filter restrictions may be needed to prevent reconstruction.
+-- Ten is not a claim about legal sufficiency.
+
+
 
 
 

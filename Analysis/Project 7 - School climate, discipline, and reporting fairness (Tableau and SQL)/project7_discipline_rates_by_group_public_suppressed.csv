@@ -1,0 +1,73 @@
+"school_year","school_level","race_ethnicity","reporting_status","enrolled_students","total_incidents","students_with_any_incident","students_with_no_incident","incidents_per_100_enrolled_students","pct_students_with_any_incident"
+"2023-24","Elementary","American Indian or Alaska Native","Suppressed",NULL,NULL,NULL,NULL,NULL,NULL
+"2023-24","Elementary","Asian","Reportable",776,35,29,747,4.51,3.74
+"2023-24","Elementary","Black","Reportable",2047,107,88,1959,5.23,4.30
+"2023-24","Elementary","Hispanic or Latino","Reportable",3095,155,136,2959,5.01,4.39
+"2023-24","Elementary","Native Hawaiian or Pacific Islander","Suppressed",NULL,NULL,NULL,NULL,NULL,NULL
+"2023-24","Elementary","Not reported","Suppressed",NULL,NULL,NULL,NULL,NULL,NULL
+"2023-24","Elementary","Two or more races","Reportable",649,42,34,615,6.47,5.24
+"2023-24","Elementary","White","Reportable",3941,199,172,3769,5.05,4.36
+"2023-24","High","American Indian or Alaska Native","Suppressed",NULL,NULL,NULL,NULL,NULL,NULL
+"2023-24","High","Asian","Reportable",244,35,30,214,14.34,12.30
+"2023-24","High","Black","Reportable",705,104,89,616,14.75,12.62
+"2023-24","High","Hispanic or Latino","Reportable",1007,139,122,885,13.80,12.12
+"2023-24","High","Native Hawaiian or Pacific Islander","Suppressed",NULL,NULL,NULL,NULL,NULL,NULL
+"2023-24","High","Not reported","Suppressed",NULL,NULL,NULL,NULL,NULL,NULL
+"2023-24","High","Two or more races","Reportable",204,37,29,175,18.14,14.22
+"2023-24","High","White","Reportable",1307,201,169,1138,15.38,12.93
+"2023-24","Middle","American Indian or Alaska Native","Suppressed",NULL,NULL,NULL,NULL,NULL,NULL
+"2023-24","Middle","Asian","Reportable",386,66,55,331,17.10,14.25
+"2023-24","Middle","Black","Reportable",1065,131,113,952,12.30,10.61
+"2023-24","Middle","Hispanic or Latino","Reportable",1453,189,160,1293,13.01,11.01
+"2023-24","Middle","Native Hawaiian or Pacific Islander","Suppressed",NULL,NULL,NULL,NULL,NULL,NULL
+"2023-24","Middle","Not reported","Reportable",109,13,11,98,11.93,10.09
+"2023-24","Middle","Two or more races","Reportable",328,60,50,278,18.29,15.24
+"2023-24","Middle","White","Reportable",2012,285,245,1767,14.17,12.18
+"2024-25","Elementary","American Indian or Alaska Native","Suppressed",NULL,NULL,NULL,NULL,NULL,NULL
+"2024-25","Elementary","Asian","Reportable",661,34,28,633,5.14,4.24
+"2024-25","Elementary","Black","Reportable",1711,106,88,1623,6.20,5.14
+"2024-25","Elementary","Hispanic or Latino","Reportable",2598,127,107,2491,4.89,4.12
+"2024-25","Elementary","Native Hawaiian or Pacific Islander","Suppressed",NULL,NULL,NULL,NULL,NULL,NULL
+"2024-25","Elementary","Not reported","Suppressed",NULL,NULL,NULL,NULL,NULL,NULL
+"2024-25","Elementary","Two or more races","Reportable",546,37,34,512,6.78,6.23
+"2024-25","Elementary","White","Reportable",3241,177,147,3094,5.46,4.54
+"2024-25","High","American Indian or Alaska Native","Suppressed",NULL,NULL,NULL,NULL,NULL,NULL
+"2024-25","High","Asian","Reportable",366,53,43,323,14.48,11.75
+"2024-25","High","Black","Reportable",1072,148,126,946,13.81,11.75
+"2024-25","High","Hispanic or Latino","Reportable",1479,186,159,1320,12.58,10.75
+"2024-25","High","Native Hawaiian or Pacific Islander","Suppressed",NULL,NULL,NULL,NULL,NULL,NULL
+"2024-25","High","Not reported","Reportable",130,21,17,113,16.15,13.08
+"2024-25","High","Two or more races","Reportable",310,38,31,279,12.26,10.00
+"2024-25","High","White","Reportable",1984,276,230,1754,13.91,11.59
+"2024-25","Middle","American Indian or Alaska Native","Suppressed",NULL,NULL,NULL,NULL,NULL,NULL
+"2024-25","Middle","Asian","Reportable",379,63,50,329,16.62,13.19
+"2024-25","Middle","Black","Reportable",1034,186,154,880,17.99,14.89
+"2024-25","Middle","Hispanic or Latino","Reportable",1478,212,184,1294,14.34,12.45
+"2024-25","Middle","Native Hawaiian or Pacific Islander","Suppressed",NULL,NULL,NULL,NULL,NULL,NULL
+"2024-25","Middle","Not reported","Reportable",99,11,11,88,11.11,11.11
+"2024-25","Middle","Two or more races","Reportable",325,48,41,284,14.77,12.62
+"2024-25","Middle","White","Reportable",2035,329,269,1766,16.17,13.22
+"2025-26","Elementary","American Indian or Alaska Native","Suppressed",NULL,NULL,NULL,NULL,NULL,NULL
+"2025-26","Elementary","Asian","Reportable",519,32,23,496,6.17,4.43
+"2025-26","Elementary","Black","Reportable",1356,65,55,1301,4.79,4.06
+"2025-26","Elementary","Hispanic or Latino","Reportable",2109,125,105,2004,5.93,4.98
+"2025-26","Elementary","Native Hawaiian or Pacific Islander","Suppressed",NULL,NULL,NULL,NULL,NULL,NULL
+"2025-26","Elementary","Not reported","Suppressed",NULL,NULL,NULL,NULL,NULL,NULL
+"2025-26","Elementary","Two or more races","Reportable",449,17,16,433,3.79,3.56
+"2025-26","Elementary","White","Reportable",2567,151,124,2443,5.88,4.83
+"2025-26","High","American Indian or Alaska Native","Suppressed",NULL,NULL,NULL,NULL,NULL,NULL
+"2025-26","High","Asian","Reportable",504,73,62,442,14.48,12.30
+"2025-26","High","Black","Reportable",1422,219,175,1247,15.40,12.31
+"2025-26","High","Hispanic or Latino","Reportable",1982,309,261,1721,15.59,13.17
+"2025-26","High","Native Hawaiian or Pacific Islander","Reportable",71,16,14,57,22.54,19.72
+"2025-26","High","Not reported","Reportable",165,15,15,150,9.09,9.09
+"2025-26","High","Two or more races","Reportable",422,65,57,365,15.40,13.51
+"2025-26","High","White","Reportable",2633,367,304,2329,13.94,11.55
+"2025-26","Middle","American Indian or Alaska Native","Suppressed",NULL,NULL,NULL,NULL,NULL,NULL
+"2025-26","Middle","Asian","Reportable",383,56,47,336,14.62,12.27
+"2025-26","Middle","Black","Reportable",1039,157,128,911,15.11,12.32
+"2025-26","Middle","Hispanic or Latino","Reportable",1464,226,188,1276,15.44,12.84
+"2025-26","Middle","Native Hawaiian or Pacific Islander","Suppressed",NULL,NULL,NULL,NULL,NULL,NULL
+"2025-26","Middle","Not reported","Suppressed",NULL,NULL,NULL,NULL,NULL,NULL
+"2025-26","Middle","Two or more races","Reportable",310,48,38,272,15.48,12.26
+"2025-26","Middle","White","Reportable",2060,340,278,1782,16.50,13.50
