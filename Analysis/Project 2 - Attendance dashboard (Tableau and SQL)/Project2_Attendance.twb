@@ -10,11 +10,13 @@
     <IntuitiveSorting_SP2 />
     <MarkAnimation />
     <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
     <ObjectModelTableType />
     <SchemaViewerObjectModel />
     <SetMembershipControl />
     <SheetIdentifierTracking />
     <SortTagCleanup />
+    <VConnDownstreamExtractsWithWarnings />
     <WindowsPersistSimpleIdentifiers />
     <_.fcp.WorkbookFingerprinting.true...WorkbookFingerprinting />
     <WorksheetBackgroundTransparency />
@@ -25,6 +27,389 @@
     <preference name='ui.shelf.height' value='26' />
   </preferences>
   <datasources>
+    <datasource caption='District Attendance' inline='true' name='federated.1t4hajz0r5f7cg1109hj30mn29f7' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='localhost' name='postgres.0bd26wp0h1832x1gsnmu80lw2nww'>
+            <connection authentication='username-password' class='postgres' dbname='schooldistrictinfo' one-time-sql='' port='5433' server='localhost' username='postgres' />
+          </named-connection>
+        </named-connections>
+        <relation connection='postgres.0bd26wp0h1832x1gsnmu80lw2nww' name='student_year_metrics' table='[public].[student_year_metrics]' type='table' />
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>student_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[student_id]</local-name>
+            <parent-name>[student_year_metrics]</parent-name>
+            <remote-alias>student_id</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>school_year</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[school_year]</local-name>
+            <parent-name>[student_year_metrics]</parent-name>
+            <remote-alias>school_year</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>school_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[school_id]</local-name>
+            <parent-name>[student_year_metrics]</parent-name>
+            <remote-alias>school_id</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>grade_level</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[grade_level]</local-name>
+            <parent-name>[student_year_metrics]</parent-name>
+            <remote-alias>grade_level</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>economic_disadvantage</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[economic_disadvantage]</local-name>
+            <parent-name>[student_year_metrics]</parent-name>
+            <remote-alias>economic_disadvantage</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>english_learner</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[english_learner]</local-name>
+            <parent-name>[student_year_metrics]</parent-name>
+            <remote-alias>english_learner</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>iep</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[iep]</local-name>
+            <parent-name>[student_year_metrics]</parent-name>
+            <remote-alias>iep</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>prior_year_transfer</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[prior_year_transfer]</local-name>
+            <parent-name>[student_year_metrics]</parent-name>
+            <remote-alias>prior_year_transfer</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>student_alias</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[student_alias]</local-name>
+            <parent-name>[student_year_metrics]</parent-name>
+            <remote-alias>student_alias</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>gender</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[gender]</local-name>
+            <parent-name>[student_year_metrics]</parent-name>
+            <remote-alias>gender</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>race_ethnicity</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[race_ethnicity]</local-name>
+            <parent-name>[student_year_metrics]</parent-name>
+            <remote-alias>race_ethnicity</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>home_language</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[home_language]</local-name>
+            <parent-name>[student_year_metrics]</parent-name>
+            <remote-alias>home_language</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>membership_days</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[membership_days]</local-name>
+            <parent-name>[student_year_metrics]</parent-name>
+            <remote-alias>membership_days</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>present_days</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[present_days]</local-name>
+            <parent-name>[student_year_metrics]</parent-name>
+            <remote-alias>present_days</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>absent_days</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[absent_days]</local-name>
+            <parent-name>[student_year_metrics]</parent-name>
+            <remote-alias>absent_days</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>attendance_rate</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[attendance_rate]</local-name>
+            <parent-name>[student_year_metrics]</parent-name>
+            <remote-alias>attendance_rate</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>17</precision>
+            <contains-null>true</contains-null>
+            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>chronically_absent</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[chronically_absent]</local-name>
+            <parent-name>[student_year_metrics]</parent-name>
+            <remote-alias>chronically_absent</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>mean_course_grade</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[mean_course_grade]</local-name>
+            <parent-name>[student_year_metrics]</parent-name>
+            <remote-alias>mean_course_grade</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>17</precision>
+            <contains-null>true</contains-null>
+            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>credits_earned</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[credits_earned]</local-name>
+            <parent-name>[student_year_metrics]</parent-name>
+            <remote-alias>credits_earned</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>17</precision>
+            <contains-null>true</contains-null>
+            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>failed_course_semesters</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[failed_course_semesters]</local-name>
+            <parent-name>[student_year_metrics]</parent-name>
+            <remote-alias>failed_course_semesters</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>incident_count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[incident_count]</local-name>
+            <parent-name>[student_year_metrics]</parent-name>
+            <remote-alias>incident_count</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>suspension_days</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[suspension_days]</local-name>
+            <parent-name>[student_year_metrics]</parent-name>
+            <remote-alias>suspension_days</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column aggregation='None' caption='Absent Days (bin)' datatype='integer' name='[Absent Days (bin)]' role='dimension' type='ordinal'>
+        <calculation class='bin' decimals='0' formula='[absent_days]' peg='0' size='5' />
+      </column>
+      <column caption='Students' datatype='integer' name='[Calculation_2083081964617728]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNTD([student_id])' />
+      </column>
+      <column caption='Overall Attendance Rate' datatype='real' default-format='p0.0%' name='[Calculation_2083081965846529]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([present_days])/SUM([membership_days])' />
+      </column>
+      <column caption='Student Annual Absence Rate' datatype='real' default-format='p0.0%' name='[Calculation_2083082034081794]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [membership_days] &gt;0 THEN&#13;&#10;    FLOAT([absent_days])/[membership_days]&#13;&#10;END' />
+      </column>
+      <column caption='Chronic Absence Flag' datatype='integer' name='[Calculation_2083082035974147]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF ISNULL([Calculation_2083082034081794]) THEN&#13;&#10;NULL&#13;&#10;ELSEIF [Calculation_2083082034081794]&gt;= 0.10 THEN&#13;&#10;1&#13;&#10;ELSE &#13;&#10;0&#13;&#10;END' />
+      </column>
+      <column caption='Chronic Absence Rate' datatype='real' default-format='p0.0%' name='[Calculation_2083082042847236]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([Calculation_2083082035974147])/COUNT([Calculation_2083082035974147])' />
+      </column>
+      <column caption='student_year_metrics' datatype='table' name='[__tableau_internal_object_id__].[student_year_metrics_127006EA6FE84F168549E20069BF4101]' role='measure' type='quantitative' />
+      <column caption='Absent Days' datatype='integer' name='[absent_days]' role='measure' type='quantitative' />
+      <column caption='Attendance Rate' datatype='real' name='[attendance_rate]' role='measure' type='quantitative' />
+      <column caption='Chronically Absent' datatype='boolean' name='[chronically_absent]' role='dimension' type='nominal' />
+      <column caption='Credits Earned' datatype='real' name='[credits_earned]' role='measure' type='quantitative' />
+      <column caption='Economic Disadvantage' datatype='boolean' name='[economic_disadvantage]' role='dimension' type='nominal' />
+      <column caption='English Learner' datatype='boolean' name='[english_learner]' role='dimension' type='nominal' />
+      <column caption='Failed Course Semesters' datatype='integer' name='[failed_course_semesters]' role='measure' type='quantitative' />
+      <column caption='Gender' datatype='string' name='[gender]' role='dimension' type='nominal' />
+      <column aggregation='Sum' caption='Grade Level' datatype='integer' name='[grade_level]' role='dimension' type='ordinal' />
+      <column caption='Home Language' datatype='string' name='[home_language]' role='dimension' type='nominal' />
+      <column caption='Iep' datatype='boolean' name='[iep]' role='dimension' type='nominal' />
+      <column caption='Incident Count' datatype='integer' name='[incident_count]' role='measure' type='quantitative' />
+      <column caption='Mean Course Grade' datatype='real' name='[mean_course_grade]' role='measure' type='quantitative' />
+      <column caption='Membership Days' datatype='integer' name='[membership_days]' role='measure' type='quantitative' />
+      <column caption='Present Days' datatype='integer' name='[present_days]' role='measure' type='quantitative' />
+      <column caption='Prior Year Transfer' datatype='boolean' name='[prior_year_transfer]' role='dimension' type='nominal' />
+      <column caption='Race Ethnicity' datatype='string' name='[race_ethnicity]' role='dimension' type='nominal' />
+      <column caption='School Id' datatype='string' name='[school_id]' role='dimension' type='nominal' />
+      <column caption='School Year' datatype='string' name='[school_year]' role='dimension' type='nominal' />
+      <column caption='Student Alias' datatype='string' name='[student_alias]' role='dimension' type='nominal' />
+      <column caption='Student Id' datatype='string' name='[student_id]' role='dimension' type='nominal' />
+      <column caption='Suspension Days' datatype='integer' name='[suspension_days]' role='measure' type='quantitative' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='student_year_metrics' id='student_year_metrics_127006EA6FE84F168549E20069BF4101'>
+            <properties context=''>
+              <relation connection='postgres.0bd26wp0h1832x1gsnmu80lw2nww' name='student_year_metrics' table='[public].[student_year_metrics]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
     <datasource caption='School Annual (schooldistrictinfo)' inline='true' name='federated.1rtz7gh06qct0912lut2r1cynslq' version='18.1'>
       <connection class='federated'>
         <named-connections>
@@ -540,6 +925,175 @@
       <column caption='School Name' datatype='string' name='[school_name]' role='dimension' type='nominal' />
       <column caption='School Year' datatype='string' name='[school_year]' role='dimension' type='nominal' />
       <column caption='Students' datatype='integer' name='[students]' role='measure' type='quantitative' />
+      <extract count='-1' enabled='true' object-id='' units='records' user-specific='false'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/schre/GitHub/SchoolDistrictInfo/Analysis/Project 2 - Attendance dashboard (Tableau and SQL)/School Monthly.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='10/30/2026 06:40:19 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh>
+            <refresh-event add-from-file-path='School Monthly' increment-value='%null%' refresh-type='create' rows-inserted='810' timestamp-start='2026-10-30 18:40:19.350' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>school_year</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[school_year]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>school_year</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Project2_Monthly_Attendance.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[Project2_Monthly_Attendance.csv_095B7A12CCB543DBBBBE89D28E158512]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>school_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[school_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>school_id</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Project2_Monthly_Attendance.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>30</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[Project2_Monthly_Attendance.csv_095B7A12CCB543DBBBBE89D28E158512]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>school_name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[school_name]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>school_name</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Project2_Monthly_Attendance.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>30</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[Project2_Monthly_Attendance.csv_095B7A12CCB543DBBBBE89D28E158512]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>school_level</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[school_level]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>school_level</remote-alias>
+              <ordinal>3</ordinal>
+              <family>Project2_Monthly_Attendance.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[Project2_Monthly_Attendance.csv_095B7A12CCB543DBBBBE89D28E158512]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>month_start</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[month_start]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>month_start</remote-alias>
+              <ordinal>4</ordinal>
+              <family>Project2_Monthly_Attendance.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>27</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Project2_Monthly_Attendance.csv_095B7A12CCB543DBBBBE89D28E158512]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>month_label</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[month_label]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>month_label</remote-alias>
+              <ordinal>5</ordinal>
+              <family>Project2_Monthly_Attendance.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[Project2_Monthly_Attendance.csv_095B7A12CCB543DBBBBE89D28E158512]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>academic_month_order</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[academic_month_order]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>academic_month_order</remote-alias>
+              <ordinal>6</ordinal>
+              <family>Project2_Monthly_Attendance.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Project2_Monthly_Attendance.csv_095B7A12CCB543DBBBBE89D28E158512]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>students</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[students]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>students</remote-alias>
+              <ordinal>7</ordinal>
+              <family>Project2_Monthly_Attendance.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>78</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Project2_Monthly_Attendance.csv_095B7A12CCB543DBBBBE89D28E158512]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>membership_days</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[membership_days]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>membership_days</remote-alias>
+              <ordinal>8</ordinal>
+              <family>Project2_Monthly_Attendance.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>78</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Project2_Monthly_Attendance.csv_095B7A12CCB543DBBBBE89D28E158512]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>present_days</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[present_days]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>present_days</remote-alias>
+              <ordinal>9</ordinal>
+              <family>Project2_Monthly_Attendance.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>750</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Project2_Monthly_Attendance.csv_095B7A12CCB543DBBBBE89D28E158512]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>absent_days</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[absent_days]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>absent_days</remote-alias>
+              <ordinal>10</ordinal>
+              <family>Project2_Monthly_Attendance.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>517</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Project2_Monthly_Attendance.csv_095B7A12CCB543DBBBBE89D28E158512]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
       <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
       <semantic-values>
         <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
@@ -564,388 +1118,8 @@
                 </columns>
               </relation>
             </properties>
-          </object>
-        </objects>
-      </object-graph>
-    </datasource>
-    <datasource caption='District Attendance' inline='true' name='federated.1t4hajz0r5f7cg1109hj30mn29f7' version='18.1'>
-      <connection class='federated'>
-        <named-connections>
-          <named-connection caption='localhost' name='postgres.0bd26wp0h1832x1gsnmu80lw2nww'>
-            <connection authentication='username-password' class='postgres' dbname='schooldistrictinfo' one-time-sql='' port='5433' server='localhost' username='postgres' />
-          </named-connection>
-        </named-connections>
-        <relation connection='postgres.0bd26wp0h1832x1gsnmu80lw2nww' name='student_year_metrics' table='[public].[student_year_metrics]' type='table' />
-        <metadata-records>
-          <metadata-record class='column'>
-            <remote-name>student_id</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[student_id]</local-name>
-            <parent-name>[student_year_metrics]</parent-name>
-            <remote-alias>student_id</remote-alias>
-            <ordinal>1</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <width>2147483647</width>
-            <contains-null>true</contains-null>
-            <cast-to-local-type>true</cast-to-local-type>
-            <collation flag='0' name='LEN_RUS' />
-            <attributes>
-              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
-            </attributes>
-            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>school_year</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[school_year]</local-name>
-            <parent-name>[student_year_metrics]</parent-name>
-            <remote-alias>school_year</remote-alias>
-            <ordinal>2</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <width>2147483647</width>
-            <contains-null>true</contains-null>
-            <cast-to-local-type>true</cast-to-local-type>
-            <collation flag='0' name='LEN_RUS' />
-            <attributes>
-              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
-            </attributes>
-            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>school_id</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[school_id]</local-name>
-            <parent-name>[student_year_metrics]</parent-name>
-            <remote-alias>school_id</remote-alias>
-            <ordinal>3</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <width>2147483647</width>
-            <contains-null>true</contains-null>
-            <cast-to-local-type>true</cast-to-local-type>
-            <collation flag='0' name='LEN_RUS' />
-            <attributes>
-              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
-            </attributes>
-            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>grade_level</remote-name>
-            <remote-type>3</remote-type>
-            <local-name>[grade_level]</local-name>
-            <parent-name>[student_year_metrics]</parent-name>
-            <remote-alias>grade_level</remote-alias>
-            <ordinal>4</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <precision>10</precision>
-            <contains-null>true</contains-null>
-            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>economic_disadvantage</remote-name>
-            <remote-type>11</remote-type>
-            <local-name>[economic_disadvantage]</local-name>
-            <parent-name>[student_year_metrics]</parent-name>
-            <remote-alias>economic_disadvantage</remote-alias>
-            <ordinal>5</ordinal>
-            <local-type>boolean</local-type>
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>english_learner</remote-name>
-            <remote-type>11</remote-type>
-            <local-name>[english_learner]</local-name>
-            <parent-name>[student_year_metrics]</parent-name>
-            <remote-alias>english_learner</remote-alias>
-            <ordinal>6</ordinal>
-            <local-type>boolean</local-type>
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>iep</remote-name>
-            <remote-type>11</remote-type>
-            <local-name>[iep]</local-name>
-            <parent-name>[student_year_metrics]</parent-name>
-            <remote-alias>iep</remote-alias>
-            <ordinal>7</ordinal>
-            <local-type>boolean</local-type>
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>prior_year_transfer</remote-name>
-            <remote-type>11</remote-type>
-            <local-name>[prior_year_transfer]</local-name>
-            <parent-name>[student_year_metrics]</parent-name>
-            <remote-alias>prior_year_transfer</remote-alias>
-            <ordinal>8</ordinal>
-            <local-type>boolean</local-type>
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>student_alias</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[student_alias]</local-name>
-            <parent-name>[student_year_metrics]</parent-name>
-            <remote-alias>student_alias</remote-alias>
-            <ordinal>9</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <width>2147483647</width>
-            <contains-null>true</contains-null>
-            <cast-to-local-type>true</cast-to-local-type>
-            <collation flag='0' name='LEN_RUS' />
-            <attributes>
-              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
-            </attributes>
-            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>gender</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[gender]</local-name>
-            <parent-name>[student_year_metrics]</parent-name>
-            <remote-alias>gender</remote-alias>
-            <ordinal>10</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <width>2147483647</width>
-            <contains-null>true</contains-null>
-            <cast-to-local-type>true</cast-to-local-type>
-            <collation flag='0' name='LEN_RUS' />
-            <attributes>
-              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
-            </attributes>
-            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>race_ethnicity</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[race_ethnicity]</local-name>
-            <parent-name>[student_year_metrics]</parent-name>
-            <remote-alias>race_ethnicity</remote-alias>
-            <ordinal>11</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <width>2147483647</width>
-            <contains-null>true</contains-null>
-            <cast-to-local-type>true</cast-to-local-type>
-            <collation flag='0' name='LEN_RUS' />
-            <attributes>
-              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
-            </attributes>
-            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>home_language</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[home_language]</local-name>
-            <parent-name>[student_year_metrics]</parent-name>
-            <remote-alias>home_language</remote-alias>
-            <ordinal>12</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <width>2147483647</width>
-            <contains-null>true</contains-null>
-            <cast-to-local-type>true</cast-to-local-type>
-            <collation flag='0' name='LEN_RUS' />
-            <attributes>
-              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
-            </attributes>
-            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>membership_days</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[membership_days]</local-name>
-            <parent-name>[student_year_metrics]</parent-name>
-            <remote-alias>membership_days</remote-alias>
-            <ordinal>13</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <precision>19</precision>
-            <contains-null>true</contains-null>
-            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>present_days</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[present_days]</local-name>
-            <parent-name>[student_year_metrics]</parent-name>
-            <remote-alias>present_days</remote-alias>
-            <ordinal>14</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <precision>19</precision>
-            <contains-null>true</contains-null>
-            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>absent_days</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[absent_days]</local-name>
-            <parent-name>[student_year_metrics]</parent-name>
-            <remote-alias>absent_days</remote-alias>
-            <ordinal>15</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <precision>19</precision>
-            <contains-null>true</contains-null>
-            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>attendance_rate</remote-name>
-            <remote-type>131</remote-type>
-            <local-name>[attendance_rate]</local-name>
-            <parent-name>[student_year_metrics]</parent-name>
-            <remote-alias>attendance_rate</remote-alias>
-            <ordinal>16</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <precision>17</precision>
-            <contains-null>true</contains-null>
-            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>chronically_absent</remote-name>
-            <remote-type>11</remote-type>
-            <local-name>[chronically_absent]</local-name>
-            <parent-name>[student_year_metrics]</parent-name>
-            <remote-alias>chronically_absent</remote-alias>
-            <ordinal>17</ordinal>
-            <local-type>boolean</local-type>
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>mean_course_grade</remote-name>
-            <remote-type>131</remote-type>
-            <local-name>[mean_course_grade]</local-name>
-            <parent-name>[student_year_metrics]</parent-name>
-            <remote-alias>mean_course_grade</remote-alias>
-            <ordinal>18</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <precision>17</precision>
-            <contains-null>true</contains-null>
-            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>credits_earned</remote-name>
-            <remote-type>131</remote-type>
-            <local-name>[credits_earned]</local-name>
-            <parent-name>[student_year_metrics]</parent-name>
-            <remote-alias>credits_earned</remote-alias>
-            <ordinal>19</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <precision>17</precision>
-            <contains-null>true</contains-null>
-            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>failed_course_semesters</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[failed_course_semesters]</local-name>
-            <parent-name>[student_year_metrics]</parent-name>
-            <remote-alias>failed_course_semesters</remote-alias>
-            <ordinal>20</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <precision>19</precision>
-            <contains-null>true</contains-null>
-            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>incident_count</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[incident_count]</local-name>
-            <parent-name>[student_year_metrics]</parent-name>
-            <remote-alias>incident_count</remote-alias>
-            <ordinal>21</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <precision>19</precision>
-            <contains-null>true</contains-null>
-            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>suspension_days</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[suspension_days]</local-name>
-            <parent-name>[student_year_metrics]</parent-name>
-            <remote-alias>suspension_days</remote-alias>
-            <ordinal>22</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <precision>19</precision>
-            <contains-null>true</contains-null>
-            <object-id>[student_year_metrics_127006EA6FE84F168549E20069BF4101]</object-id>
-          </metadata-record>
-        </metadata-records>
-      </connection>
-      <aliases enabled='yes' />
-      <column aggregation='None' caption='Absent Days (bin)' datatype='integer' name='[Absent Days (bin)]' role='dimension' type='ordinal'>
-        <calculation class='bin' decimals='0' formula='[absent_days]' peg='0' size='5' />
-      </column>
-      <column caption='Students' datatype='integer' name='[Calculation_2083081964617728]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='COUNTD([student_id])' />
-      </column>
-      <column caption='Overall Attendance Rate' datatype='real' default-format='p0.0%' name='[Calculation_2083081965846529]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='SUM([present_days])/SUM([membership_days])' />
-      </column>
-      <column caption='Student Annual Absence Rate' datatype='real' default-format='p0.0%' name='[Calculation_2083082034081794]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='IF [membership_days] &gt;0 THEN&#13;&#10;    FLOAT([absent_days])/[membership_days]&#13;&#10;END' />
-      </column>
-      <column caption='Chronic Absence Flag' datatype='integer' name='[Calculation_2083082035974147]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='IF ISNULL([Calculation_2083082034081794]) THEN&#13;&#10;NULL&#13;&#10;ELSEIF [Calculation_2083082034081794]&gt;= 0.10 THEN&#13;&#10;1&#13;&#10;ELSE &#13;&#10;0&#13;&#10;END' />
-      </column>
-      <column caption='Chronic Absence Rate' datatype='real' default-format='p0.0%' name='[Calculation_2083082042847236]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='SUM([Calculation_2083082035974147])/COUNT([Calculation_2083082035974147])' />
-      </column>
-      <column caption='student_year_metrics' datatype='table' name='[__tableau_internal_object_id__].[student_year_metrics_127006EA6FE84F168549E20069BF4101]' role='measure' type='quantitative' />
-      <column caption='Absent Days' datatype='integer' name='[absent_days]' role='measure' type='quantitative' />
-      <column caption='Attendance Rate' datatype='real' name='[attendance_rate]' role='measure' type='quantitative' />
-      <column caption='Chronically Absent' datatype='boolean' name='[chronically_absent]' role='dimension' type='nominal' />
-      <column caption='Credits Earned' datatype='real' name='[credits_earned]' role='measure' type='quantitative' />
-      <column caption='Economic Disadvantage' datatype='boolean' name='[economic_disadvantage]' role='dimension' type='nominal' />
-      <column caption='English Learner' datatype='boolean' name='[english_learner]' role='dimension' type='nominal' />
-      <column caption='Failed Course Semesters' datatype='integer' name='[failed_course_semesters]' role='measure' type='quantitative' />
-      <column caption='Gender' datatype='string' name='[gender]' role='dimension' type='nominal' />
-      <column aggregation='Sum' caption='Grade Level' datatype='integer' name='[grade_level]' role='dimension' type='ordinal' />
-      <column caption='Home Language' datatype='string' name='[home_language]' role='dimension' type='nominal' />
-      <column caption='Iep' datatype='boolean' name='[iep]' role='dimension' type='nominal' />
-      <column caption='Incident Count' datatype='integer' name='[incident_count]' role='measure' type='quantitative' />
-      <column caption='Mean Course Grade' datatype='real' name='[mean_course_grade]' role='measure' type='quantitative' />
-      <column caption='Membership Days' datatype='integer' name='[membership_days]' role='measure' type='quantitative' />
-      <column caption='Present Days' datatype='integer' name='[present_days]' role='measure' type='quantitative' />
-      <column caption='Prior Year Transfer' datatype='boolean' name='[prior_year_transfer]' role='dimension' type='nominal' />
-      <column caption='Race Ethnicity' datatype='string' name='[race_ethnicity]' role='dimension' type='nominal' />
-      <column caption='School Id' datatype='string' name='[school_id]' role='dimension' type='nominal' />
-      <column caption='School Year' datatype='string' name='[school_year]' role='dimension' type='nominal' />
-      <column caption='Student Alias' datatype='string' name='[student_alias]' role='dimension' type='nominal' />
-      <column caption='Student Id' datatype='string' name='[student_id]' role='dimension' type='nominal' />
-      <column caption='Suspension Days' datatype='integer' name='[suspension_days]' role='measure' type='quantitative' />
-      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
-      <semantic-values>
-        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
-      </semantic-values>
-      <object-graph>
-        <objects>
-          <object caption='student_year_metrics' id='student_year_metrics_127006EA6FE84F168549E20069BF4101'>
-            <properties context=''>
-              <relation connection='postgres.0bd26wp0h1832x1gsnmu80lw2nww' name='student_year_metrics' table='[public].[student_year_metrics]' type='table' />
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
             </properties>
           </object>
         </objects>
@@ -2047,8 +2221,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='1800' minheight='1800' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='42' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98546' id='41' param='vert' type-v2='layout-flow' w='98666' x='667' y='727'>
+            <zone h='100000' id='44' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98546' id='43' param='vert' type-v2='layout-flow' w='98666' x='667' y='727'>
                 <zone forceUpdate='true' h='9545' id='3' type-v2='text' w='65333' x='2750' y='3000'>
                   <formatted-text>
                     <run fontsize='22'>Cedar Valley Attendance Overview</run>
@@ -2734,7 +2908,7 @@
       </viewpoint>
       <simple-id uuid='{DC5AABE4-9DF5-4A2B-AFAB-2768FCE867F4}' />
     </window>
-    <window class='worksheet' name='Monthly Absence Heatmap'>
+    <window class='worksheet' maximized='true' name='Monthly Absence Heatmap'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -2773,7 +2947,7 @@
       </viewpoint>
       <simple-id uuid='{2C19B367-0D42-4D2B-98E3-A8121A026DC5}' />
     </window>
-    <window class='dashboard' maximized='true' name='Attendance Dashboard'>
+    <window class='dashboard' name='Attendance Dashboard'>
       <viewpoints>
         <viewpoint name='KPI Attendance' />
         <viewpoint name='KPI Chronic Rate' />
@@ -2787,7 +2961,7 @@
           <zoom type='entire-view' />
         </viewpoint>
       </viewpoints>
-      <active id='-1' />
+      <active id='13' />
       <simple-id uuid='{BA834C00-22AA-4C2B-AE54-DE8728CE5877}' />
     </window>
   </windows>
