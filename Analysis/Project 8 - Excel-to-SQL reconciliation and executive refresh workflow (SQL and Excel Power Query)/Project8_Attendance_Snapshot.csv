@@ -1,0 +1,4 @@
+"school_year","monthly_rows","student_year_keys","duplicate_month_rows","membership_days","present_days","absent_days","rows_with_missing_day_values","rows_with_unbalanced_days","snapshot_check"
+"2023-24",180000,20000,0,3600000,3358585,241415,0,0,"PASS"
+"2024-25",180000,20000,0,3600000,3357233,242767,0,0,"PASS"
+"2025-26",180000,20000,0,3600000,3357826,242174,0,0,"PASS"

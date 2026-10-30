@@ -269,7 +269,58 @@ ORDER BY school_year, exception_type, item_or_field;
 
 
 
+-- Project 8: Read-only attendance snapshot check
+-- Expected values apply to the original synthetic dataset.
 
+WITH controls AS (
+    SELECT
+        school_year,
+        COUNT(*) AS monthly_rows,
+
+        COUNT(DISTINCT (student_id, school_year))
+            AS student_year_keys,
+
+        COUNT(*) - COUNT(DISTINCT (
+            student_id, school_year, month_start
+        )) AS duplicate_month_rows,
+
+        SUM(membership_days) AS membership_days,
+        SUM(present_days) AS present_days,
+
+        SUM(excused_absent_days + unexcused_absent_days)
+            AS absent_days,
+
+        COUNT(*) FILTER (
+            WHERE membership_days IS NULL
+               OR present_days IS NULL
+               OR excused_absent_days IS NULL
+               OR unexcused_absent_days IS NULL
+        ) AS rows_with_missing_day_values,
+
+        COUNT(*) FILTER (
+            WHERE membership_days <>
+                present_days
+                + excused_absent_days
+                + unexcused_absent_days
+        ) AS rows_with_unbalanced_days
+
+    FROM public.attendance_monthly
+    GROUP BY school_year
+)
+SELECT
+    *,
+    CASE
+        WHEN monthly_rows = 180000
+         AND student_year_keys = 20000
+         AND duplicate_month_rows = 0
+         AND membership_days = 3600000
+         AND rows_with_missing_day_values = 0
+         AND rows_with_unbalanced_days = 0
+        THEN 'PASS'
+        ELSE 'REVIEW'
+    END AS snapshot_check
+FROM controls
+ORDER BY school_year;
 
 
 
