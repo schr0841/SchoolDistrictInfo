@@ -682,6 +682,13 @@
       <simple-id uuid='{30C32A42-F552-4200-B9CA-4002F98DC1EC}' />
     </worksheet>
     <worksheet name='Matched Growth Distribution'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontsize='36'>&lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
       <table>
         <view>
           <datasources>
@@ -882,7 +889,7 @@
   <dashboards>
     <dashboard enable-sort-zone-taborder='true' name='Academic Growth'>
       <style />
-      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <size sizing-mode='automatic' />
       <datasources>
         <datasource caption='Project3_Growth_Detail' name='federated.1q9lyum1p784hl1h0fgxq0vj8ckd' />
       </datasources>
@@ -894,9 +901,9 @@
       </datasource-dependencies>
       <zones>
         <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
-          <zone h='98000' id='7' param='horz' type-v2='layout-flow' w='98400' x='800' y='1000'>
-            <zone h='98000' id='5' type-v2='layout-basic' w='82400' x='800' y='1000'>
-              <zone h='98000' id='3' name='Matched Growth Distribution' w='82400' x='800' y='1000'>
+          <zone h='99152' id='7' param='horz' type-v2='layout-flow' w='99546' x='227' y='424'>
+            <zone h='99152' id='5' type-v2='layout-basic' w='95006' x='227' y='424'>
+              <zone h='99152' id='3' name='Matched Growth Distribution' w='95006' x='227' y='424'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -905,8 +912,8 @@
                 </zone-style>
               </zone>
             </zone>
-            <zone fixed-size='160' h='98000' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='16000' x='83200' y='1000'>
-              <zone h='18500' id='8' name='Matched Growth Distribution' param='[federated.1q9lyum1p784hl1h0fgxq0vj8ckd].[none:school_year:nk]' type-v2='filter' w='16000' x='83200' y='1000'>
+            <zone fixed-size='160' h='99152' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='4540' x='95233' y='424'>
+              <zone h='7843' id='8' name='Matched Growth Distribution' param='[federated.1q9lyum1p784hl1h0fgxq0vj8ckd].[none:school_year:nk]' type-v2='filter' w='4540' x='95233' y='424'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -914,7 +921,7 @@
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone h='8750' id='21' mode='dropdown' name='Matched Growth Distribution' param='[federated.1q9lyum1p784hl1h0fgxq0vj8ckd].[none:grade_level:ok]' type-v2='filter' values='database' w='16000' x='83200' y='19500'>
+              <zone h='3710' id='21' mode='dropdown' name='Matched Growth Distribution' param='[federated.1q9lyum1p784hl1h0fgxq0vj8ckd].[none:grade_level:ok]' type-v2='filter' values='database' w='4540' x='95233' y='8267'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -1094,7 +1101,7 @@
       <simple-id uuid='{BF0536A1-FE15-4A09-A155-E46D0E55DE93}' />
     </dashboard>
   </dashboards>
-  <windows source-height='64'>
+  <windows source-height='75'>
     <window class='worksheet' name='Assessment Participation'>
       <cards>
         <edge name='left'>
@@ -1153,7 +1160,7 @@
       </cards>
       <simple-id uuid='{31EFF58B-6E92-46EE-89A2-826C579CCB67}' />
     </window>
-    <window class='worksheet' name='Matched Growth Distribution'>
+    <window class='worksheet' maximized='true' name='Matched Growth Distribution'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -1194,7 +1201,7 @@
       <active id='-1' />
       <simple-id uuid='{03F1484F-8876-451B-9F9B-DD8D2B6C1CEF}' />
     </window>
-    <window class='dashboard' maximized='true' name='Academic Growth'>
+    <window class='dashboard' name='Academic Growth'>
       <viewpoints>
         <viewpoint name='Matched Growth Distribution'>
           <zoom type='entire-view' />
